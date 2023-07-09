@@ -17,21 +17,23 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-@foreach ($category as $item)
 
+      <tr>
+
+        @foreach ($category as $item)
 
         <th scope="row">{{ $item->id}}</th>
         <td>{{ $item->name}}</td>
         <td>{{ $item->type}}</td>
+
         <td>
             <a href="" class="btn btn-success">Edit</a>
-            <a href="" class="btn btn-danger">Delete</a>
-
+            <a href="" class="btn btn-danger" onclick="return confirm('Do you want to delete ?')">Delete</a>
         </td>
 
       </tr>
       @endforeach
+
     </tbody>
   </table>
 
