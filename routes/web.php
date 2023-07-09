@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -20,3 +21,4 @@ Route::get('/', function () {
 
 
 Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
+Route::get('/category-form',[CategoryController::class,'categoryForm'])->name('category.form');
