@@ -7,12 +7,12 @@
 <form action="{{route('category.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
 
+        @if(session('success'))
+        <p class="alert alert-success"> {{session('success')}}</p>
+         @endif
 
-    @if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-    @endif
+         
+
         <div class="mb-3 mx-sm-2">
         <label for="exampleInputName1" class="form-label">Category Name</label>
         <input type="text" class="form-control" id="exampleInputName1" name="name" placeholder="Category Name..">
@@ -33,3 +33,5 @@
 
 
 @endsection
+
+
