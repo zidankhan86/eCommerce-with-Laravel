@@ -51,8 +51,13 @@
 
         <div class="mb-3 mx-sm-2">
             <label for="exampleInputNumber" class="form-label">Product Price</label>
-            <input type="number" class="form-control" id="exampleInputNumber" name="type" placeholder="Product Price..">
+            <input type="number" class="form-control" id="exampleInputNumber" name="price" placeholder="Product Price..">
             </div>
+
+            <div class="mb-3 mx-sm-2">
+                <label for="exampleInputNumber" class="form-label">Dicount Price</label>
+                <input type="number" class="form-control" id="exampleInputNumber" name="discount" placeholder="Discount Price..">
+                </div>
 
         <div class="mb-3 mx-sm-2">
             <label for="exampleInputName1" class="form-label">Shipping time</label>

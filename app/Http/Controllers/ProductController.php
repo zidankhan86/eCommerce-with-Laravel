@@ -25,7 +25,8 @@ class ProductController extends Controller
             "image"=>$request->image,
             "weight"=>$request->weight,
              "stock"=>$request->stock,
-             "type"=>$request->type,
+             "price"=>$request->price,
+             "discount"=>$request->discount,
              "time"=>$request->time,
              "description"=>$request->description,
 
