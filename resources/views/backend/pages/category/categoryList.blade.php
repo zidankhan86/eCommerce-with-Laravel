@@ -10,7 +10,7 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">Id</th>
+        <th scope="col">serial</th>
         <th scope="col">Category Name</th>
         <th scope="col">Type</th>
         <th scope="col">Action</th>
@@ -20,9 +20,9 @@
 
       <tr>
 
-        @foreach ($category as $item)
+        @foreach ($category as $key=>$item)
 
-        <th scope="row">{{ $item->id}}</th>
+        <th scope="row">{{ $key+1}}</th>
         <td>{{ $item->name}}</td>
         <td>{{ $item->type}}</td>
 
