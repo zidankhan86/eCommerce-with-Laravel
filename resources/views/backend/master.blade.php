@@ -27,10 +27,11 @@
 
 
             <div id="layoutSidenav_content">
+
                 <main>
 
 
-        @yield('content')
+            @yield('content')
 
 
 
@@ -39,7 +40,7 @@
 
 
 
-     @include('backend.fixed.footer')
+            @include('backend.fixed.footer')
 
 
 
