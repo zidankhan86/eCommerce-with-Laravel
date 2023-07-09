@@ -2,7 +2,7 @@
 
 @section('content')
 
-<br><h1 class="btn btn-success">Add Category</h1>
+<br><h4 class=" text-success text-center">Category Form</h4>
 
 <form action="{{route('category.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -11,7 +11,7 @@
         <p class="alert alert-success"> {{session('success')}}</p>
          @endif
 
-         
+
 
         <div class="mb-3 mx-sm-2">
         <label for="exampleInputName1" class="form-label">Category Name</label>
