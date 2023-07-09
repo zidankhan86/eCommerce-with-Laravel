@@ -25,6 +25,7 @@ Route::get('/', function () {
 Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
 Route::get('/category-form',[CategoryController::class,'categoryForm'])->name('category.form');
 Route::post('/category-store',[CategoryController::class,'categoryStore'])->name('category.store');
+Route::get('/category-list',[CategoryController::class,'categoryList'])->name('category.list');
 
 
 Route::get('/product-form',[ProductController::class,'productForm'])->name('product.form');

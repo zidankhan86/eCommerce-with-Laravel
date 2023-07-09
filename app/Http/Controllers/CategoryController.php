@@ -25,7 +25,10 @@ class CategoryController extends Controller
         return back()->with('success', 'Category Added Successfully');
 
     }
+    public function categoryList(){
+        return view('backend.pages.category.categoryList');
+    }
 
 
-    
+
 }
