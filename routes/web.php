@@ -22,3 +22,4 @@ Route::get('/', function () {
 
 Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
 Route::get('/category-form',[CategoryController::class,'categoryForm'])->name('category.form');
+Route::post('/category-store',[CategoryController::class,'categoryStore'])->name('category.store');
