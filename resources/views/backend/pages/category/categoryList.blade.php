@@ -12,7 +12,7 @@
       <tr>
         <th scope="col">serial</th>
         <th scope="col">Category Name</th>
-        <th scope="col">Type</th>
+        <th scope="col">Type Name</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
