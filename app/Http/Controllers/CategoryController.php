@@ -26,7 +26,8 @@ class CategoryController extends Controller
 
     }
     public function categoryList(){
-        return view('backend.pages.category.categoryList');
+        $category = Category::all();
+        return view('backend.pages.category.categoryList',compact('category'));
     }
 
 

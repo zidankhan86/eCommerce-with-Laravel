@@ -18,15 +18,20 @@
     </thead>
     <tbody>
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
+@foreach ($category as $item)
+
+
+        <th scope="row">{{ $item->id}}</th>
+        <td>{{ $item->name}}</td>
+        <td>{{ $item->type}}</td>
         <td>
             <a href="" class="btn btn-success">Edit</a>
             <a href="" class="btn btn-danger">Delete</a>
 
         </td>
+
       </tr>
+      @endforeach
     </tbody>
   </table>
 
