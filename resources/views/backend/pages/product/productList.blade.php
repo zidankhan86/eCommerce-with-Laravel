@@ -30,14 +30,14 @@
         @foreach ($products as $key=>$item)
 
         <th scope="row">{{ $key+1}}</th>
+        <td><img height="100px" width="100px" src="{{url('/public/uploads/'.$item->image)}}" alt=""></td>
         <td>{{ $item->name}}</td>
-        <td>{{ $item->name}}</td>
-        <td>{{ $item->name}}</td>
-        <td>{{ $item->name}}</td>
-        <td>{{ $item->name}}</td>
-        <td>{{ $item->name}}</td>
-        <td>{{ $item->name}}</td>
-        <td>{{ $item->type}}</td>
+        <td>{{ $item->ProductCategory->type}}</td>
+        <td>{{ $item->ProductCategory->type}}</td>
+        <td>{{ $item->stock}}</td>
+        <td>{{ $item->price}}</td>
+        <td>{{ $item->discount}}</td>
+        <td>{{ $item->time}}</td>
 
         <td>
             <a href="" class="btn btn-success">Edit</a>

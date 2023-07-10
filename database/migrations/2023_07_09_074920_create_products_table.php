@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('weight');
             $table->string('stock');
             $table->string('price');
-            $table->string('discount');
+            $table->string('discount')->nullable();
             $table->string('time');
             $table->string('description');
             $table->timestamps();
