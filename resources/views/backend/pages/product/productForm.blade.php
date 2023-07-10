@@ -41,7 +41,7 @@
              </div>
              <div class="mb-3 mx-sm-2">
                 <label for="exampleInputName1" class="form-label">Product Weight</label>
-                <input type="text" class="form-control" id="exampleInputName1" name="weight" placeholder="0.5kg..">
+                <input type="number" class="form-control" step="0.01" id="exampleInputName1" name="weight" placeholder="0.5kg..">
                  </div>
 
         <div class="mb-3 mx-sm-2">

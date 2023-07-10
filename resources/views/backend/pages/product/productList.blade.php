@@ -14,7 +14,7 @@
         <th scope="col">Image</th>
         <th scope="col"> Name</th>
         <th scope="col">Category</th>
-        <th scope="col">Product Weight</th>
+        <th scope="col">Weight</th>
         <th scope="col">Stock</th>
         <th scope="col">Product  Price</th>
         <th scope="col">Dicount Price</th>
@@ -33,10 +33,10 @@
         <td><img height="100px" width="100px" src="{{url('/public/uploads/'.$item->image)}}" alt=""></td>
         <td>{{ $item->name}}</td>
         <td>{{ $item->ProductCategory->type}}</td>
-        <td>{{ $item->ProductCategory->type}}</td>
+        <td>{{ $item->weight}} Kg</td>
         <td>{{ $item->stock}}</td>
-        <td>{{ $item->price}}</td>
-        <td>{{ $item->discount}}</td>
+        <td>{{ $item->price}} Tk.</td>
+        <td>{{ $item->discount}}%</td>
         <td>{{ $item->time}}</td>
 
         <td>

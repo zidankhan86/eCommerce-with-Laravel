@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->string('name');
             $table->string('image')->nullable();
-            $table->string('weight');
+            $table->float('weight');
             $table->string('stock');
             $table->string('price');
             $table->string('discount')->nullable();
