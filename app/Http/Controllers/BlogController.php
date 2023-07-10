@@ -12,6 +12,13 @@ class BlogController extends Controller
     }
 
     public function blogStore(Request $request){
+        $imageName = null;
+        if ($request->hasFile('image')) {
+        $file = $request->file('image');
+        $imageName = date('Ymdi').'.'.$file->extension();
+        $file->storeAs('uploads', $imageName, 'public');
+        }
+        //dd($imageName);
 
         //dd($request->all());
 
@@ -19,7 +26,7 @@ class BlogController extends Controller
 
         "tittle"=>$request->tittle,
         "description"=>$request->description,
-        "image"=>$request->image,
+        "image"=>$imageName,
 
       ]);
       return back()->with('success','Blog Uploaded Successfully!');
