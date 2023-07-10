@@ -41,6 +41,6 @@ Route::post('/bannder-store',[BannerController::class,'bannerStore'])->name('ban
 
 
 Route::get('/blog-form',[BlogController::class,'blogPost'])->name('blog.post');
-
+Route::post('/blog-store',[BlogController::class,'blogStore'])->name('blog.store');
 
 

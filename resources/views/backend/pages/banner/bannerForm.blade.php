@@ -25,7 +25,7 @@
 
             <div class="mb-3 mx-sm-2">
             <label for="exampleInputName2" class="form-label">Upload Image</label>
-            <input type="file" class="form-control" id="exampleInputName2" name="type">
+            <input type="file" class="form-control" id="exampleInputName2" name="image">
             </div>
 
 
