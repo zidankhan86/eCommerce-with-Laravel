@@ -42,6 +42,12 @@
              <div class="mb-3 mx-sm-2">
                 <label for="exampleInputName1" class="form-label">Product Weight</label>
                 <input type="number" class="form-control" step="0.01" id="exampleInputName1" name="weight" placeholder="0.5kg..">
+
+                @error('weight')
+
+                <strong class="text-danger">{{$message}}</strong>
+
+                @enderror
                  </div>
 
         <div class="mb-3 mx-sm-2">
@@ -57,6 +63,12 @@
             <div class="mb-3 mx-sm-2">
                 <label for="exampleInputNumber" class="form-label">Dicount Price</label>
                 <input type="number" class="form-control" id="exampleInputNumber" name="discount" placeholder="25%..">
+
+                @error('discount')
+
+                <strong class="text-danger">{{$message}}</strong>
+
+                @enderror
                 </div>
 
         <div class="mb-3 mx-sm-2">
