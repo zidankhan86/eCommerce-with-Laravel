@@ -61,7 +61,7 @@ class ProductController extends Controller
 
           ]);
 
-          return back()->with('success', 'Product Added Successfully');
+          return back()->with('success', 'Product Added Successfully!');
 
         }
 
