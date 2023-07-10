@@ -33,7 +33,7 @@
 
 
                           <a class="nav-link" href="{{route('product.form')}}">Add Product</a>
-                        
+
                         <a class="nav-link collapsed" href="{{route('new.arrival.product.form')}}">
                             New Arrival
 
@@ -48,7 +48,7 @@
                     Orders
                 </a>
 
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{route('banner.form')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Banner
                 </a>
