@@ -21,6 +21,10 @@ use App\Models\Product;
 
 //Backend
 
+//middleware
+//Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->middleware('admin');
+
+
 
 Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
 Route::get('/category-form',[CategoryController::class,'categoryForm'])->name('category.form');
