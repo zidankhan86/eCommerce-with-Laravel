@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Category;
 use App\Models\NewArrival;
-use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -17,6 +18,23 @@ class ProductController extends Controller
     }
 
     public function productStore(Request $request){
+
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string',
+            'category_id' => 'required',
+            'image' => 'required',
+            'weight' => 'required|numeric',
+            'stock' => 'required|integer',
+            'price' => 'required|numeric',
+            'discount' => 'nullable|numeric|max:100',
+            'time' => 'required',
+            'description' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
 
         $imageName = null;
