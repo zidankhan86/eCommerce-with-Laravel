@@ -19,10 +19,14 @@ use App\Models\Product;
 |
 */
 
+
 //Backend
 
 //middleware
-//Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->middleware('admin');
+//Route::group(['middleware' => 'admin'], function () {
+    // Routes that require admin access
+//});
+
 
 
 
