@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -35,5 +36,11 @@ Route::get('/new-arrival-product-form',[ProductController::class,'NewArrivalprod
 Route::post('/new-product-store',[ProductController::class,'newProductStore'])->name('new.product.store');
 
 
-Route::get('/bannder/form',[BannerController::class,'bannerForm'])->name('banner.form');
-Route::post('/bannder/store',[BannerController::class,'bannerStore'])->name('banner.store');
+Route::get('/bannder-form',[BannerController::class,'bannerForm'])->name('banner.form');
+Route::post('/bannder-store',[BannerController::class,'bannerStore'])->name('banner.store');
+
+
+Route::get('/blog-form',[BlogController::class,'blogPost'])->name('blog.post');
+
+
+
