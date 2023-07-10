@@ -65,8 +65,6 @@ class ProductController extends Controller
            // dd($imageName);
         }
 
-
-
               NewArrival::create([
 
              "name"=>$request->name,
@@ -82,5 +80,11 @@ class ProductController extends Controller
 
           return back()->with('success', 'New Arrival Added Successfully!');
 
+    }
+    public function productList(){
+
+        $products = Product::all();
+
+        return view('backend.pages.product.productList',compact('products'));
     }
 }

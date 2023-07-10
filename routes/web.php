@@ -38,6 +38,7 @@ Route::get('/category-list',[CategoryController::class,'categoryList'])->name('c
 
 Route::get('/product-form',[ProductController::class,'productForm'])->name('product.form');
 Route::post('/product-store',[ProductController::class,'productStore'])->name('product.store');
+Route::get('/product-list',[ProductController::class,'productList'])->name('product.list');
 Route::get('/new-arrival-product-form',[ProductController::class,'NewArrivalproductForm'])->name('new.arrival.product.form');
 Route::post('/new-product-store',[ProductController::class,'newProductStore'])->name('new.product.store');
 
