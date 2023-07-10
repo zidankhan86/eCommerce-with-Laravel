@@ -33,8 +33,8 @@
 
 
                           <a class="nav-link" href="{{route('product.form')}}">Add Product</a>
-
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                        
+                        <a class="nav-link collapsed" href="{{route('new.arrival.product.form')}}">
                             New Arrival
 
                         </a>
