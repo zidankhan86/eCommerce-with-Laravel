@@ -29,7 +29,7 @@ class BannerController extends Controller
         $imageName = date('Ymdi').'.'.$file->extension();
         $file->storeAs('uploads', $imageName, 'public');
         }
-        dd($imageName);
+       // dd($imageName);
         //dd($request->all());
 
         Banner::create([
