@@ -2,7 +2,7 @@
 
 @section('content')
 
-<br><h4 class=" text-success text-center">Banner Form</h4>
+<br><h4 class=" text-success text-center">Blog Form</h4>
 
 <form action="{{route('blog.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
