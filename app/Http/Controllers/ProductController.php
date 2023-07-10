@@ -18,13 +18,22 @@ class ProductController extends Controller
 
     public function productStore(Request $request){
 
+
+        $imageName = null;
+        if ($request->hasFile('image')) {
+        $file = $request->file('image');
+        $imageName = date('Ymdi').'.'.$file->extension();
+        $file->storeAs('uploads', $imageName, 'public');
+        }
+        //dd($imageName);
        // dd($request->all());
+
 
           Product::create([
 
             "name"=>$request->name,
             "category_id"=>$request->category_id,
-            "image"=>$request->image,
+            "image"=>$imageName,
             "weight"=>$request->weight,
              "stock"=>$request->stock,
              "price"=>$request->price,
@@ -35,19 +44,20 @@ class ProductController extends Controller
           ]);
 
           return back()->with('success', 'Product Added Successfully');
-    }
 
-    public function NewArrivalproductForm(){
-        return view('backend.pages.product.newArrivalProductForm');
-    }
+        }
 
-    public function newProductStore(Request $request){
+        public function NewArrivalproductForm(){
+            return view('backend.pages.product.newArrivalProductForm');
+        }
+
+          public function newProductStore(Request $request){
 
 
         //dd($request->all());
 
-        $imageName = null;
-        if ($request->hasFile('image')) {
+            $imageName = null;
+            if ($request->hasFile('image')) {
             $file = $request->file('image');
             $imageName = date('Ymdi').'.'.$file->extension();
             $file->storeAs('uploads', $imageName, 'public');
