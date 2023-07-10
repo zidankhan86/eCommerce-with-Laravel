@@ -46,10 +46,21 @@ class ProductController extends Controller
 
         //dd($request->all());
 
+        $imageName = null;
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $imageName = date('Ymdi').'.'.$file->extension();
+            $file->storeAs('uploads', $imageName, 'public');
+
+           // dd($imageName);
+        }
+
+
+
               NewArrival::create([
 
              "name"=>$request->name,
-             "image"=>$request->image,
+             "image"=>$imageName,
              "weight"=>$request->weight,
              "stock"=>$request->stock,
              "price"=>$request->price,
