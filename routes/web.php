@@ -19,9 +19,7 @@ use App\Models\Product;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Backend
 
 
 Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
