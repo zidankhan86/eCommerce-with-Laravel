@@ -23,6 +23,13 @@ class BannerController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
+        $imageName = null;
+        if ($request->hasFile('image')) {
+        $file = $request->file('image');
+        $imageName = date('Ymdi').'.'.$file->extension();
+        $file->storeAs('uploads', $imageName, 'public');
+        }
+        dd($imageName);
         //dd($request->all());
 
         Banner::create([
