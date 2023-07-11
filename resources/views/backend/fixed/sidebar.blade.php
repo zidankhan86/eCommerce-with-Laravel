@@ -34,7 +34,7 @@
 
                           <a class="nav-link" href="{{route('product.list')}}">Add Product</a>
 
-                        <a class="nav-link collapsed" href="{{route('new.arrival.product.form')}}">
+                        <a class="nav-link collapsed" href="{{route('new.arrival.product.list')}}">
                             New Arrival
 
                         </a>

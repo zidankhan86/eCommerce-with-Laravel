@@ -66,10 +66,15 @@ class ProductController extends Controller
         }
 
         public function NewArrivalproductForm(){
+
             return view('backend.pages.product.newArrivalProductForm');
         }
 
           public function newProductStore(Request $request){
+
+         
+
+           // dd($request->all());
 
             $validator = Validator::make($request->all(), [
                 'name' => 'required|string',
@@ -114,6 +119,13 @@ class ProductController extends Controller
           return back()->with('success', 'New Arrival Added Successfully!');
 
     }
+
+    public function NewArrivalproductList(){
+        $products = NewArrival::all();
+        return view('backend.pages.product.newArrivalProductList',compact('products'));
+    }
+
+
         public function productList(){
 
             $products = Product::all();
