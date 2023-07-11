@@ -3,7 +3,7 @@
 @section('content')
 
  <br><a class="btn btn-success float-end ml-2" href="{{ route('category.form') }}"><i class="fa fa-plus" aria-hidden="true"></i> Add Category</a>
-
+ <br><h4 class="text-success text-center">Category List</h4><br>
 
 
 
