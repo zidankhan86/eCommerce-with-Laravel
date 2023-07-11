@@ -3,6 +3,7 @@
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -20,6 +21,12 @@ use App\Models\Product;
 */
 
 
+
+
+Route::get('/',[FrontendHomeController::class,'home'])->name('home');
+
+
+
 //Backend
 
 //middleware
@@ -30,7 +37,7 @@ use App\Models\Product;
 
 
 
-Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
+Route::get('/admin',[HomeController::class,'dashboard'])->name('dashboard');
 Route::get('/category-form',[CategoryController::class,'categoryForm'])->name('category.form');
 Route::post('/category-store',[CategoryController::class,'categoryStore'])->name('category.store');
 Route::get('/category-list',[CategoryController::class,'categoryList'])->name('category.list');
