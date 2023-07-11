@@ -3,7 +3,7 @@
 @section('content')
 
 <br><a class="btn btn-success float-end ml-2" href="{{ route('new.arrival.product.form') }}"><i class="fa fa-plus" aria-hidden="true"></i> Add New Arrival</a>
- <br><h4 class="text-success text-center">Products List</h4><br>
+ <br><h4 class="text-success text-center">New Products List</h4><br>
 
 
 
@@ -13,7 +13,7 @@
         <th scope="col">serial</th>
         <th scope="col">Image</th>
         <th scope="col"> Name</th>
-        <th scope="col">Category</th>
+
         <th scope="col">Weight</th>
         <th scope="col">Stock</th>
         <th scope="col">Product  Price</th>
@@ -32,7 +32,7 @@
         <th scope="row">{{ $key+1}}</th>
         <td><img height="100px" width="100px" src="{{url('/public/uploads/'.$item->image)}}" alt=""></td>
         <td>{{ $item->name}}</td>
-        <td>{{ $item->ProductCategory->type}}</td>
+
         <td>{{ $item->weight}} Kg</td>
         <td>{{ $item->stock}}</td>
         <td>{{ $item->price}} Tk.</td>

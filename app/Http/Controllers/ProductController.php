@@ -72,7 +72,7 @@ class ProductController extends Controller
 
           public function newProductStore(Request $request){
 
-         
+
 
            // dd($request->all());
 
@@ -121,7 +121,9 @@ class ProductController extends Controller
     }
 
     public function NewArrivalproductList(){
+
         $products = NewArrival::all();
+        
         return view('backend.pages.product.newArrivalProductList',compact('products'));
     }
 
