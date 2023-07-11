@@ -71,14 +71,14 @@
                 @enderror
                 </div>
 
-        <div class="mb-3 mx-sm-2">
-            <label for="exampleInputName1" class="form-label">Shipping time</label>
-            <input type="text" class="form-control" id="exampleInputName1" name="time" placeholder="3 days in Dhaka..">
+             <div class="mb-3 mx-sm-2">
+            <label for="exampleInputNumber3" class="form-label">Shipping time</label>
+            <input type="number" class="form-control" id="exampleInputNumber3" name="time" placeholder="3 days in Dhaka..">
              </div>
 
              <div class="mb-3 mx-sm-2">
                 <label for="exampleInputName1" class="form-label">Product Description</label>
-                <input type="text" class="form-control" id="exampleInputName1" name="description" placeholder="Write Product Description.." style="height: 100px;">
+                <input type="text" class="form-control" id="exampleInputName1" name="description" placeholder="Write product description here.." style="height: 100px;">
               </div>
 
 

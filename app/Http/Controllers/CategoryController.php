@@ -16,6 +16,7 @@ class CategoryController extends Controller
 
         $validate = Validator::make($request->all(),[
             'name'=>'required|unique',
+            'type'=>'required'
         ]);
 
         if($validate->fails()){

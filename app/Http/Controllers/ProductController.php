@@ -44,7 +44,7 @@ class ProductController extends Controller
         $file->storeAs('uploads', $imageName, 'public');
         }
         //dd($imageName);
-       // dd($request->all());
+        // dd($request->all());
 
 
           Product::create([
@@ -99,10 +99,10 @@ class ProductController extends Controller
           return back()->with('success', 'New Arrival Added Successfully!');
 
     }
-    public function productList(){
+        public function productList(){
 
-        $products = Product::all();
+            $products = Product::all();
 
-        return view('backend.pages.product.productList',compact('products'));
-    }
+            return view('backend.pages.product.productList',compact('products'));
+        }
 }
