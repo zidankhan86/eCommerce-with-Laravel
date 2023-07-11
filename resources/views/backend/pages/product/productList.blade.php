@@ -40,7 +40,7 @@
         <td>{{ $item->time}}</td>
 
         <td>
-            <a href="" class="btn btn-success">Edit</a>
+            <a href="{{route('product.edit',$item->id)}}" class="btn btn-success">Edit</a>
             <a href="" class="btn btn-danger" onclick="return confirm('Do you want to delete ?')">Delete</a>
         </td>
 

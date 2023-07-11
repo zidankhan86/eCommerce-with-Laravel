@@ -134,4 +134,12 @@ class ProductController extends Controller
 
             return view('backend.pages.product.productList',compact('products'));
         }
+
+        public function productEdit($id){
+
+            $categories = Category::all();
+
+            $edit = Product::find($id);
+            return view('backend.pages.product.edit',compact('edit','categories'));
+        }
 }
