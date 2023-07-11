@@ -16,16 +16,31 @@
         <div class="mb-3 mx-sm-2">
         <label for="exampleInputName1" class="form-label">Banner Tittle</label>
         <input type="text" class="form-control" id="exampleInputName1" name="tittle" placeholder="Dry Food..">
+        @error('tittle')
+
+        <strong class="text-danger">{{$message}}</strong>
+
+        @enderror
          </div>
 
         <div class="mb-3 mx-sm-2">
         <label for="exampleInputName2" class="form-label">Short Description</label>
         <input type="text" class="form-control" id="exampleInputName2" name="description" placeholder="100% Pure Juice..">
+        @error('description')
+
+        <strong class="text-danger">{{$message}}</strong>
+
+        @enderror
         </div>
 
             <div class="mb-3 mx-sm-2">
             <label for="exampleInputName2" class="form-label">Upload Image</label>
             <input type="file" class="form-control" id="exampleInputName2" name="image">
+            @error('image')
+
+            <strong class="text-danger">{{$message}}</strong>
+
+            @enderror
             </div>
 
 
