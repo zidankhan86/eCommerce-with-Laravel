@@ -71,6 +71,21 @@ class ProductController extends Controller
 
           public function newProductStore(Request $request){
 
+            $validator = Validator::make($request->all(), [
+                'name' => 'required|string',
+                'image' => 'nullable',
+                'weight' => 'required|numeric',
+                'stock' => 'required|integer',
+                'price' => 'required|numeric',
+                'discount' => 'nullable|numeric|max:100',
+                'time' => 'required',
+                'description' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
 
         //dd($request->all());
 
