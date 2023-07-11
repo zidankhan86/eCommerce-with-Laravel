@@ -23,7 +23,7 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
             'category_id' => 'required',
-            'image' => 'required',
+            'image' => 'nullable',
             'weight' => 'required|numeric',
             'stock' => 'required|integer',
             'price' => 'required|numeric',
@@ -123,7 +123,7 @@ class ProductController extends Controller
     public function NewArrivalproductList(){
 
         $products = NewArrival::all();
-        
+
         return view('backend.pages.product.newArrivalProductList',compact('products'));
     }
 
