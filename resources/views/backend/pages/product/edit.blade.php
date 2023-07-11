@@ -116,7 +116,7 @@
 
 
       <div class="text-center">
-        <button type="submit" class="btn btn-primary">Post</button>
+        <button type="submit" class="btn btn-primary">Submit Changes</button>
       </div>
 
   </form>
