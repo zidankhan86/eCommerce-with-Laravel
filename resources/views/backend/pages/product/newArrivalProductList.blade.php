@@ -13,7 +13,6 @@
         <th scope="col">serial</th>
         <th scope="col">Image</th>
         <th scope="col"> Name</th>
-
         <th scope="col">Weight</th>
         <th scope="col">Stock</th>
         <th scope="col">Product  Price</th>
@@ -32,7 +31,6 @@
         <th scope="row">{{ $key+1}}</th>
         <td><img height="100px" width="100px" src="{{url('/public/uploads/'.$item->image)}}" alt=""></td>
         <td>{{ $item->name}}</td>
-
         <td>{{ $item->weight}} Kg</td>
         <td>{{ $item->stock}}</td>
         <td>{{ $item->price}} Tk.</td>

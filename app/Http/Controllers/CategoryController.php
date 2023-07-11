@@ -13,14 +13,12 @@ class CategoryController extends Controller
     }
 
     public function categoryStore(Request $request){
-
-        $validate = Validator::make($request->all(),[
-            'name'=>'required|unique',
-            'type'=>'required'
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string',
+            'type' => 'required|string',
         ]);
-
-        if($validate->fails()){
-            return back();
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
         }
 
         //dd($request->all());
