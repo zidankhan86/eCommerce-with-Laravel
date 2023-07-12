@@ -124,7 +124,7 @@
                           <div class="product__details__quantity">
                               <div class="">
                                   <div class="pro-qty">
-                                      <a href="" class="primary-btn">ORDER</a>
+                                      <a href="{{route('product.checkout',$details->id)}}" class="primary-btn">ORDER</a>
                                   </div>
                               </div>
                           </div>

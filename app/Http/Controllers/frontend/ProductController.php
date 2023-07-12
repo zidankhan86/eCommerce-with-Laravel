@@ -19,4 +19,10 @@ class ProductController extends Controller
         $details = Product::find($id);
         return view('frontend.pages.product.details',compact('details'));
     }
+
+    public function productCheckout($id){
+
+        $products = Product::find($id);
+        return view('frontend.pages.product.checkout',compact('products'));
+    }
 }
