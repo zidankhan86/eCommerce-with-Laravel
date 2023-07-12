@@ -35,7 +35,7 @@
                     <div class="featured__item__pic">
                         <img src="{{ asset('/public/uploads/' . $item->image) }}" alt="Product Image">
                         <ul class="featured__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            {{-- <li><a href="#"><i class="fa fa-heart"></i></a></li> --}}
                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                         </ul>
@@ -44,6 +44,13 @@
                         <h6><a href="#">{{$item->name}}</a></h6>
                         <h5>{{$item->price}} Tk.</h5>
                     </div>
+
+
+                    <a href="" class="btn btn-info btn-lg" style="width: 150px;">Details</a>
+                    <a href="" class="btn btn-success btn-lg" style="width: 100px;">Order</a>
+
+
+
                 </div>
             </div>
 
