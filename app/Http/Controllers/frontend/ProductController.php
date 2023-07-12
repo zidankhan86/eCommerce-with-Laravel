@@ -30,6 +30,8 @@ class ProductController extends Controller
 
     public function order(Request $request){
 
+
+
        //dd($request->all());
 
         Order::create([

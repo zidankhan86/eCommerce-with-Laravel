@@ -15,7 +15,7 @@
       <section class="checkout spad">
           <div class="container">
 
-            <form action="{{route('product.order.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('product.order.store',$products->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
               <div class="row">
                   <div class="col-lg-12">

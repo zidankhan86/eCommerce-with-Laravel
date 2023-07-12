@@ -29,7 +29,7 @@ Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 Route::get('/product',[FrontendProductController::class,'product'])->name('product');
 Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails'])->name('product.details');
 Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
-Route::post('/product-order',[FrontendProductController::class,'order'])->name('product.order.store');
+Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
 //Backend
 
 //middleware
