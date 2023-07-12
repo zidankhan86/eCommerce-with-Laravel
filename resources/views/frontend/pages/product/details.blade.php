@@ -122,14 +122,14 @@
                           <div class="product__details__price">{{$details->price}}.00 Tk</div>
                           <p>{{$details->description}}</p>
                           <div class="product__details__quantity">
-                              <div class="quantity">
+                              <div class="">
                                   <div class="pro-qty">
-                                      <input type="text" value="1">
+                                      <a href="" class="primary-btn">ORDER</a>
                                   </div>
                               </div>
                           </div>
                           <a href="#" class="primary-btn">ADD TO CARD</a>
-                          <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                          {{-- <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a> --}}
                           <ul>
                               <li><b>Availability</b> <span>In Stock</span></li>
                               <li><b>Shipping</b> <span>{{$details->time}} Days inside Dhaka <samp>5 Days Outside</samp></span></li>
