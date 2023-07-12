@@ -27,7 +27,7 @@ use App\Models\Product;
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 
 Route::get('/product',[FrontendProductController::class,'product'])->name('product');
-
+Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails'])->name('product.details');
 //Backend
 
 //middleware
