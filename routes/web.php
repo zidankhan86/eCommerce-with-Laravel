@@ -4,6 +4,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
+use App\Http\Controllers\frontend\ProductController as FrontendProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -25,7 +26,7 @@ use App\Models\Product;
 
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 
-
+Route::get('/product',[FrontendProductController::class,'product'])->name('product');
 
 //Backend
 
