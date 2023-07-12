@@ -11,21 +11,22 @@
             <div class="col-lg-3">
                 <div class="hero__categories">
                     <div class="hero__categories__all">
-                        <i class="fa fa-bars"></i>
-                        <span>All departments</span>
+
+                        <span>All Categories</span>
                     </div>
                     <ul>
-                        <li><a href="#">Fresh Meat</a></li>
-                        <li><a href="#">Vegetables</a></li>
-                        <li><a href="#">Fruit & Nut Gifts</a></li>
-                        <li><a href="#">Fresh Berries</a></li>
-                        <li><a href="#">Ocean Foods</a></li>
-                        <li><a href="#">Butter & Eggs</a></li>
-                        <li><a href="#">Fastfood</a></li>
-                        <li><a href="#">Fresh Onion</a></li>
-                        <li><a href="#">Papayaya & Crisps</a></li>
-                        <li><a href="#">Oatmeal</a></li>
-                        <li><a href="#">Fresh Bananas</a></li>
+
+                @foreach ($categories as $item)
+
+                <li><a href="#">{{$item->type}}</a></li>
+
+                @endforeach
+
+
+
+
+
+
                     </ul>
                 </div>
             </div>
@@ -33,10 +34,7 @@
                 <div class="hero__search">
                     <div class="hero__search__form">
                         <form action="#">
-                            <div class="hero__search__categories">
-                                All Categories
-                                <span class="arrow_carrot-down"></span>
-                            </div>
+
                             <input type="text" placeholder="What do yo u need?">
                             <button type="submit" class="site-btn">SEARCH</button>
                         </form>
@@ -483,7 +481,7 @@
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="blog__item">
                     <div class="blog__item__pic">
-                        <img src="img/blog/blog-1.jpg" alt="">
+                        <img src="frontend/img/blog/blog-1.jpg" alt="">
                     </div>
                     <div class="blog__item__text">
                         <ul>
