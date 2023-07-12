@@ -43,7 +43,7 @@
                     <div class="featured__item__text">
                         <h6><a href="#">{{$item->name}}</a></h6>
                         <h5>{{$item->price}} Tk.</h5>
-                    </div>
+                    </div><br>
 
 
                     <a href="{{route('product.details',$item->id)}}" class="btn btn-info btn-lg" style="width: 150px;">Details</a>
