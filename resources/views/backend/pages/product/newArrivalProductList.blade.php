@@ -25,15 +25,15 @@
     <tbody>
 
         @php
-        $serial = 1;
+        $id = 1;
         @endphp
-        
-        @foreach ($products as $key=>$item)
+
+        @foreach ($products as $item)
       <tr>
 
 
 
-        <th scope="row">{{ $key+1}}</th>
+        <th scope="row">{{ $id++}}</th>
         <td><img height="100px" width="100px" src="{{url('/public/uploads/'.$item->image)}}" alt=""></td>
         <td>{{ $item->name}}</td>
         <td>{{ $item->weight}} Kg</td>

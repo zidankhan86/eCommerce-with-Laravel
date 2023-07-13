@@ -126,7 +126,7 @@ class ProductController extends Controller
 
     public function NewArrivalproductList(){
 
-        $products = NewArrival::all();
+        $products = NewArrival::latest()->get();
 
         return view('backend.pages.product.newArrivalProductList',compact('products'));
     }
