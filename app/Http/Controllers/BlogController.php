@@ -46,4 +46,9 @@ class BlogController extends Controller
       return back()->with('success','Blog Uploaded Successfully!');
 
     }
+    public function blog(){
+
+        $blogs = Blog::all();
+        return view('frontend.pages.blog.blog',compact('blogs'));
+    }
 }

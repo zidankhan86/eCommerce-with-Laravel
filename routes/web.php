@@ -31,15 +31,19 @@ Route::get('/product',[FrontendProductController::class,'product'])->name('produ
 Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails'])->name('product.details');
 Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
 Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
+
+
+
+Route::get('/blog',[BlogController::class,'blog'])->name('blog');
+
+
+
 //Backend
 
 //middleware
 //Route::group(['middleware' => 'admin'], function () {
     // Routes that require admin access
 //});
-
-
-
 
 Route::get('/admin',[HomeController::class,'dashboard'])->name('dashboard');
 Route::get('/category-form',[CategoryController::class,'categoryForm'])->name('category.form');
