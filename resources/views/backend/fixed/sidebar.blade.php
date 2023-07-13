@@ -43,7 +43,7 @@
 
                 </div>
 
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{route('order.list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Orders
                 </a>

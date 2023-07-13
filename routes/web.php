@@ -7,6 +7,7 @@ use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\ProductController as FrontendProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Models\Product;
 
@@ -63,4 +64,6 @@ Route::post('/bannder-store',[BannerController::class,'bannerStore'])->name('ban
 Route::get('/blog-form',[BlogController::class,'blogPost'])->name('blog.post');
 Route::post('/blog-store',[BlogController::class,'blogStore'])->name('blog.store');
 
+
+Route::get('/order-list',[OrderController::class,'orderList'])->name('order.list');
 
