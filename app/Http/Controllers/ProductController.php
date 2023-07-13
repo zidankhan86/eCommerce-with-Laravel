@@ -30,6 +30,7 @@ class ProductController extends Controller
             'discount' => 'nullable|numeric|max:100',
             'time' => 'required',
             'description' => 'required',
+            'product_information'=> 'required',
         ]);
 
         if ($validator->fails()) {
@@ -58,6 +59,7 @@ class ProductController extends Controller
              "discount"=>$request->discount,
              "time"=>$request->time,
              "description"=>$request->description,
+             'product_information' =>$request->product_information,
 
           ]);
 
@@ -85,6 +87,7 @@ class ProductController extends Controller
                 'discount' => 'nullable|numeric|max:100',
                 'time' => 'required',
                 'description' => 'required',
+
             ]);
 
             if ($validator->fails()) {
@@ -113,6 +116,7 @@ class ProductController extends Controller
              "discount"=>$request->discount,
              "time"=>$request->time,
              "description"=>$request->description,
+
 
           ]);
 

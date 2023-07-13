@@ -21,7 +21,8 @@ return new class extends Migration
             $table->string('price');
             $table->string('discount')->nullable();
             $table->string('time');
-            $table->string('description');
+            $table->longText('description');
+            $table->longText('product_information');
             $table->timestamps();
         });
     }
