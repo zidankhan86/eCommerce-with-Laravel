@@ -15,8 +15,7 @@
       <section class="checkout spad">
           <div class="container">
 
-            <form action="{{route('product.order.store',$products->id)}}" method="POST" enctype="multipart/form-data">
-                @csrf
+
               <div class="row">
                   <div class="col-lg-12">
                       {{-- <h6><span class="icon_tag_alt"></span> Have a coupon? <a href="#">Click here</a> to enter your code --}}
@@ -31,7 +30,9 @@
 
                 @endif
                   <h4>Billing Details</h4>
-                  <form action="#">
+
+                  <form action="{{route('product.order.store',$products->id)}}" method="POST" enctype="multipart/form-data">
+                    @csrf
                       <div class="row">
                           <div class="col-lg-8 col-md-6">
                               <div class="row">
@@ -123,7 +124,7 @@
                   </form>
               </div>
 
-            </form>
+
           </div>
       </section>
       <!-- Checkout Section End -->
