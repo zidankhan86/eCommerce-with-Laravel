@@ -11,6 +11,12 @@
         <p class="alert alert-success"> {{session('success')}}</p>
          @endif
 
+            @if ($errors->has('max_limit'))
+        <div class="alert alert-danger">
+            {{ $errors->first('max_limit') }}
+        </div>
+             @endif
+
 
          <div>
             <input type="hidden" name="comment_id" value="1">
