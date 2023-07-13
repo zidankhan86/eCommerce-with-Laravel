@@ -18,9 +18,9 @@
     </thead>
     <tbody>
 
+        @foreach ($category as $key=>$item)
       <tr>
 
-        @foreach ($category as $key=>$item)
 
         <th scope="row">{{ $key+1}}</th>
         <td>{{ $item->name}}</td>
