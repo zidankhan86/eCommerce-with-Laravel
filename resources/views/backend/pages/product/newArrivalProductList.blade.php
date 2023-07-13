@@ -23,6 +23,11 @@
       </tr>
     </thead>
     <tbody>
+
+        @php
+        $serial = 1;
+        @endphp
+        
         @foreach ($products as $key=>$item)
       <tr>
 
