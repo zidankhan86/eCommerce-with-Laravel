@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\frontend;
 
-use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -29,6 +30,22 @@ class ProductController extends Controller
 
 
     public function order(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'address' => 'required|string',
+            'optional_address' => 'nullable|string',
+            'city' => 'required|string',
+            'postcode' => 'required|string',
+            'phone' => 'required|string',
+            'email' => 'required|email',
+            'note' => 'nullable|string',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
 
 
 
