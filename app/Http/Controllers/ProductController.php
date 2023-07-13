@@ -134,7 +134,7 @@ class ProductController extends Controller
 
         public function productList(){
 
-            $products = Product::all();
+            $products = Product::latest()->get();
 
             return view('backend.pages.product.productList',compact('products'));
         }

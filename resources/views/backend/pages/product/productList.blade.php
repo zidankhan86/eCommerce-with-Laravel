@@ -24,20 +24,24 @@
       </tr>
     </thead>
     <tbody>
-        @foreach ($products as $key=>$item)
+
+        @php
+            $id = 1;
+        @endphp
+        @foreach ($products as $item)
 
       <tr>
 
 
 
-        <th scope="row">{{ $key+1}}</th>
+        <th scope="row">{{ $id++}}</th>
         <td><img height="100px" width="100px" src="{{url('/public/uploads/'.$item->image)}}" alt=""></td>
         <td>{{ $item->name}}</td>
         <td>{{ $item->ProductCategory->type}}</td>
         <td>{{ $item->weight}} Kg</td>
         <td>{{ $item->stock}}</td>
         <td>{{ $item->price}} Tk.</td>
-        <td>{{ $item->discount}}%</td>
+        <td>{{ $item->discount}}.00%</td>
         <td>{{ $item->time}}</td>
 
         <td>
