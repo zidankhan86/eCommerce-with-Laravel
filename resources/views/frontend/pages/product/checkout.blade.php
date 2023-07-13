@@ -42,41 +42,90 @@
                                       <div class="checkout__input">
                                           <p>Fist Name<span>*</span></p>
                                           <input type="text" name="first_name">
+
+                                        @error('first_name')
+
+                                        <small class="text-danger">{{$message}}</small>
+
+                                        @enderror
+
                                       </div>
                                   </div>
                                   <div class="col-lg-6">
                                       <div class="checkout__input">
                                           <p>Last Name<span>*</span></p>
                                           <input type="text" name="last_name">
+                                          @error('last_name')
+
+                                        <small class="text-danger">{{$message}}</small>
+
+                                        @enderror
                                       </div>
+
+
                                   </div>
                               </div>
 
                               <div class="checkout__input">
                                   <p>Address<span>*</span></p>
                                   <input type="text" placeholder="Street Address" class="checkout__input__add" name="address">
-                                  <input type="text" placeholder="Apartment, suite, unite ect (optinal)" name="optional_address">
+
+
+                                    @error('address')
+
+                                    <small class="text-danger">{{$message}}</small>
+
+                                    @enderror
+
+                                  <input type="text" placeholder="Apartment, suite, unite ect (optinal)" name="address">
+
+
+
                               </div>
                               <div class="checkout__input">
                                   <p>Town/City<span>*</span></p>
                                   <input type="text" name="city">
+
+                                  @error('city')
+
+                                  <small class="text-danger">{{$message}}</small>
+
+                                  @enderror
                               </div>
 
                               <div class="checkout__input">
                                   <p>Postcode / ZIP<span>*</span></p>
                                   <input type="text" name="postcode">
+
+                                  @error('postcode')
+
+                                  <small class="text-danger">{{$message}}</small>
+
+                                  @enderror
                               </div>
                               <div class="row">
                                   <div class="col-lg-6">
                                       <div class="checkout__input">
                                           <p>Phone<span>*</span></p>
                                           <input type="text" name="phone">
+
+                                          @error('phone')
+
+                                          <small class="text-danger">{{$message}}</small>
+
+                                          @enderror
                                       </div>
                                   </div>
                                   <div class="col-lg-6">
                                       <div class="checkout__input">
                                           <p>Email<span>*</span></p>
                                           <input type="text" name="email">
+
+                                          @error('email')
+
+                                          <small class="text-danger">{{$message}}</small>
+
+                                          @enderror
                                       </div>
                                   </div>
                               </div>
