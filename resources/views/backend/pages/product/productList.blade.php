@@ -24,10 +24,11 @@
       </tr>
     </thead>
     <tbody>
+        @foreach ($products as $key=>$item)
 
       <tr>
 
-        @foreach ($products as $key=>$item)
+
 
         <th scope="row">{{ $key+1}}</th>
         <td><img height="100px" width="100px" src="{{url('/public/uploads/'.$item->image)}}" alt=""></td>
