@@ -30,7 +30,7 @@ class CategoryController extends Controller
 
         Category::create([
 
-            
+
             "name"=>$request->name,
             "type"=>$request->type
 
@@ -40,7 +40,7 @@ class CategoryController extends Controller
 
     }
     public function categoryList(){
-        $category = Category::all();
+        $category = Category::latest()->get();
         return view('backend.pages.category.categoryList',compact('category'));
     }
 

@@ -17,12 +17,15 @@
       </tr>
     </thead>
     <tbody>
+        @php
+            $serial =1;
+        @endphp
 
-        @foreach ($category as $key=>$item)
+        @foreach ($category as $item)
       <tr>
 
 
-        <th scope="row">{{ $key+1}}</th>
+        <th scope="row">{{ $serial++}}</th>
         <td>{{ $item->name}}</td>
         <td>{{ $item->type}}</td>
 
