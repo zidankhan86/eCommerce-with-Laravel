@@ -3,6 +3,7 @@
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\ProductController as FrontendProductController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,7 @@ Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->n
 
 
 Route::get('/blog',[BlogController::class,'blog'])->name('blog');
+Route::post('/comment-store',[CommentController::class,'commentStore'])->name('commentStore');
 
 
 

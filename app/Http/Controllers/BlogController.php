@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -34,10 +35,10 @@ class BlogController extends Controller
         }
         //dd($imageName);
 
-        //dd($request->all());
+       // dd($request->all());
 
       Blog::create([
-
+        "comment_id"=>$request->comment_id,
         "tittle"=>$request->tittle,
         "description"=>$request->description,
         "image"=>$imageName,
@@ -48,7 +49,11 @@ class BlogController extends Controller
     }
     public function blog(){
 
+
         $blogs = Blog::all();
-        return view('frontend.pages.blog.blog',compact('blogs'));
+        $comment = Comment::all();
+        // $blogs = Blog::withCount('comments')->get();
+
+        return view('frontend.pages.blog.blog',compact('blogs','comment'));
     }
 }

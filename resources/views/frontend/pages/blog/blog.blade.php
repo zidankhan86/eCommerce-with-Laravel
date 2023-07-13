@@ -17,23 +17,35 @@
 
 
 
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="blog__item">
-                    <div class="blog__item__pic">
-                        <img src="frontend/img/blog/blog-1.jpg" alt="">
-                    </div>
-                    <div class="blog__item__text">
-                        <ul>
-                            <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                            <li><i class="fa fa-comment-o"></i> 5</li>
-                        </ul>
-                        <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                    </div>
-                </div>
-            </div>
+           <div class="col-lg-4 col-md-4 col-sm-6">
+    <div class="blog__item">
+        <div class="blog__item__pic">
+            <img src="{{asset('/public/uploads/'.$item->image)}}" alt="">
+        </div>
+        <div class="blog__item__text">
+            <ul>
+                <li><i class="fa fa-calendar-o"></i> {{$item->updated_at}}</li>
+                <li><i class="fa fa-comment-o"></i> 5</li>
+                <li><i class="fa fa-calendar-o"></i> {{$item->comment}}</li>
+                <li>
+                    <form action="{{route('commentStore')}}" method="POST" style="display: flex; align-items: center;">
+                        @csrf
 
-            
+                        <input type="hidden" name="blog_id" value="{{ $item->id }}">
+                        <input type="text" name="comment" placeholder="Write a comment" style="height: 40px; width: 180%;">
+                        <button type="submit" style="background-color: #1877f2; color: white; border: none; padding: 8px 16px; border-radius: 4px; font-size: 14px; font-weight: bold; margin-left: 8px;">Post</button>
+                    </form>
+
+                </li>
+            </ul>
+            <h5><a href="#">Cooking tips make cooking simple</a></h5>
+            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat</p>
+        </div>
+    </div>
+</div>
+
+
+
             @endforeach
 
 
