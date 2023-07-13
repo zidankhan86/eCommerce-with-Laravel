@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
     public function categoryForm(){
-        return view('backend.pages.category.categoryForm');
+
+        $products = Product::all();
+        return view('backend.pages.category.categoryForm',compact('products'));
     }
 
     public function categoryStore(Request $request){
@@ -23,10 +26,11 @@ class CategoryController extends Controller
         return redirect()->back()->withErrors($validator)->withInput();
     }
 
-        //dd($request->all());
+       // dd($request->all());
 
         Category::create([
 
+            
             "name"=>$request->name,
             "type"=>$request->type
 

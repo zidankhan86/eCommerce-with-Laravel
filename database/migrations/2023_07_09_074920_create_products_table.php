@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('name');
             $table->string('image')->nullable();
             $table->float('weight');
@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('time');
             $table->longText('description');
             $table->longText('product_information');
+
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
