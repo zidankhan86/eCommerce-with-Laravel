@@ -26,7 +26,7 @@
             <ul>
                 <li><i class="fa fa-calendar-o"></i> {{$item->updated_at}}</li>
                 <li><i class="fa fa-comment-o"></i> 5</li>
-                <li><i class="fa fa-calendar-o"></i> {{$item->comment}}</li>
+                {{-- <li><i class="fa fa-calendar-o"></i> {{$item->comment}}</li> --}}
                 <li>
                     <form action="{{route('commentStore')}}" method="POST" style="display: flex; align-items: center;">
                         @csrf
@@ -38,8 +38,8 @@
 
                 </li>
             </ul>
-            <h5><a href="#">Cooking tips make cooking simple</a></h5>
-            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat</p>
+            <h5><a href="#">{{$item->tittle}}</a></h5>
+            <p>{{$item->description}}</p>
         </div>
     </div>
 </div>
