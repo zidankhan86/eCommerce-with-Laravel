@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Comment;
+use App\Rules\MaxDataLimit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -16,10 +17,19 @@ class BlogController extends Controller
     public function blogStore(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'tittle' => 'required|string',
-            'description' => 'required|string',
-            'image' => 'nullable',
+            'tittle' => ['required', 'string'],
+            'description' => ['required', 'string'],
+            'image' => ['nullable'],
         ]);
+
+        $validator->after(function ($validator) {
+            $existingCount = Blog::count();
+            $maxLimit = 3;
+
+            if ($existingCount >= $maxLimit) {
+                $validator->errors()->add('max_limit', 'The maximum data limit has been reached.');
+            }
+        });
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
