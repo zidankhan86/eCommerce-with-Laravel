@@ -24,7 +24,7 @@
 
         <div class="mb-3 mx-sm-2">
         <label for="exampleInputName1" class="form-label">Blog Tittle</label>
-        <input type="text" class="form-control" id="exampleInputName1" name="tittle" placeholder="write tittle here..">
+        <input type="text" class="form-control" value="{{ old('tittle') }}" id="exampleInputName1" name="tittle" placeholder="write tittle here..">
 
         @error('tittle')
 
@@ -35,7 +35,7 @@
 
         <div class="mb-3 mx-sm-2">
         <label for="exampleInputName2" class="form-label"> Description</label>
-        <input type="text" class="form-control" id="exampleInputName2" name="description" placeholder="Description..">
+        <input type="text" class="form-control" value="{{ old('description') }}" id="exampleInputName2" name="description" placeholder="Description..">
 
         @error('description')
 
@@ -46,7 +46,7 @@
 
             <div class="mb-3 mx-sm-2">
             <label for="exampleInputName2" class="form-label">Upload Image</label>
-            <input type="file" class="form-control" id="exampleInputName2" name="image">
+            <input type="file" class="form-control" value="{{ old('image') }}" id="exampleInputName2" name="image">
 
             @error('image')
 
