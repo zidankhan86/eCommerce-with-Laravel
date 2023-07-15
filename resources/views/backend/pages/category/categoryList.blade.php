@@ -13,6 +13,7 @@
         <th scope="col">serial</th>
         <th scope="col">Category Name</th>
         <th scope="col">Type Name</th>
+        <th scope="col">Status</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -28,6 +29,7 @@
         <th scope="row">{{ $serial++}}</th>
         <td>{{ $item->name}}</td>
         <td>{{ $item->type}}</td>
+        <td>{{ $item->status ? 'Active' : 'Inactive' }}</td>
 
         <td>
             <a href="" class="btn btn-success">Edit</a>
