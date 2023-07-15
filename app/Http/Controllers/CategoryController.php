@@ -16,9 +16,12 @@ class CategoryController extends Controller
     }
 
     public function categoryStore(Request $request){
+
+        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
             'type' => 'required|string|unique:categories',
+            'status'=>'required'
         ]);
 
     if ($validator->fails()) {
@@ -32,7 +35,8 @@ class CategoryController extends Controller
 
 
             "name"=>$request->name,
-            "type"=>$request->type
+            "type"=>$request->type,
+            "status"=>$request->status
 
         ]);
 

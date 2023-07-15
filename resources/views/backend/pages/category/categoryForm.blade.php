@@ -34,6 +34,21 @@
         @enderror
         </div>
 
+        <div class="mb-3 mx-sm-2">
+            <label for="exampleInputName2" class="form-label">Status</label>
+
+
+            <select class="form-control" name="status" id="">
+                <option value="0">Inactive</option>
+                <option value="1">Active</option>
+            </select>
+            @error('type')
+
+            <strong class="text-danger">{{$message}}</strong>
+
+            @enderror
+            </div>
+
 
       <div class="text-center">
         <button type="submit" class="btn btn-primary">Post</button>
