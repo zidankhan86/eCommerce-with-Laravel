@@ -405,7 +405,7 @@
         </div>
         <div class="row featured__filter">
 
-            @foreach ($products as $item)
+            @foreach ($latestProducts as $item)
 
             <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                 <div class="featured__item">
