@@ -11,15 +11,21 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>Featured Product</h2>
+                    <h2>Featured Products</h2>
                 </div>
                 <div class="featured__controls">
                     <ul>
                         <li class="active" data-filter="*">All</li>
-                        <li data-filter=".oranges">Oranges</li>
-                        <li data-filter=".fresh-meat">Fresh Meat</li>
-                        <li data-filter=".vegetables">Vegetables</li>
-                        <li data-filter=".fastfood">Fastfood</li>
+                        @foreach ($latestCategories  as $item)
+
+
+                      <a href="{{ route('category.wize.products',$item->id) }}"><li >{{$item->type}}</li></a>
+
+
+                      @endforeach
+
+
+
                     </ul>
                 </div>
             </div>

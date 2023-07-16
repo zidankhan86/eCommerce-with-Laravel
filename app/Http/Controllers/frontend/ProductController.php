@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -13,7 +14,8 @@ class ProductController extends Controller
     public function product(){
 
         $products = Product::all();
-        return view('frontend.pages.product.product',compact('products'));
+        $latestCategories = Category::latest()->limit(5)->get();
+        return view('frontend.pages.product.product',compact('products','latestCategories'));
     }
 
     public function productDetails($id){
