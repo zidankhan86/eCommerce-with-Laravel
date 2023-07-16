@@ -47,11 +47,11 @@ class BlogController extends Controller
 
        // dd($request->all());
 
-      Blog::create([
-        "comment_id"=>$request->comment_id,
-        "tittle"=>$request->tittle,
-        "description"=>$request->description,
-        "image"=>$imageName,
+        Blog::create([
+            "comment_id"=>$request->comment_id,
+            "tittle"=>$request->tittle,
+            "description"=>$request->description,
+            "image"=>$imageName,
 
       ]);
       return back()->with('success','Blog Uploaded Successfully!');

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\frontend;
 
-use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Blog;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -18,6 +19,10 @@ class HomeController extends Controller
 
           $categoryWiseProducts = Product::where('status',1)->latest()->limit(12)->get();
 
-        return view('frontend.pages.home',compact('categories','products','latestProducts','categoryWiseProducts','latestCategories'));
+          $blogs = Blog::all();
+
+
+
+        return view('frontend.pages.home',compact('categories','products','latestProducts','categoryWiseProducts','latestCategories','blogs'));
     }
 }
