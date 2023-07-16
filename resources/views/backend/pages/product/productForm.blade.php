@@ -32,7 +32,7 @@
                 @foreach ($categories as $item)
 
 
-                <option value="{{$item->id}}">{{$item->name}}</option>
+                <option value="{{$item->id}}">{{$item->type}}</option>
 
                 @endforeach
 
