@@ -12,8 +12,8 @@ class HomeController extends Controller
     public function home(){
 
           $categories = Category::all();
-         $latestCategories = Category::latest()->limit(5)->get();
-          $products = Product::all();
+          $latestCategories = Category::latest()->limit(5)->get();
+          $products = Product::simplePaginate(12);
           $latestProducts = Product::where('status',1)->latest()->limit(12)->get();
 
           $categoryWiseProducts = Product::where('status',1)->latest()->limit(12)->get();

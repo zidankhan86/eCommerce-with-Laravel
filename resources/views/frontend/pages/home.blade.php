@@ -22,11 +22,6 @@
 
                 @endforeach
 
-
-
-
-
-
                     </ul>
                 </div>
             </div>
@@ -150,7 +145,12 @@
 
 
 
+        </div >
+
+        <div class="pagination justify-content-end">
+            {{ $products->links() }}
         </div>
+        
     </div>
 </section>
 <!-- Featured Section End -->
