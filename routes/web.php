@@ -4,6 +4,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\ProductController as FrontendProductController;
 use Illuminate\Support\Facades\Route;
@@ -40,7 +41,8 @@ Route::post('/comment-store',[CommentController::class,'commentStore'])->name('c
 
 Route::get('/category/{id}',[FrontendHomeController::class,'categoryWiseProduct'])->name('category.wize.products');
 
-
+Route::get('/contact',[ContactController::class,'contact'])->name('contact');
+Route::post('/contact-form',[ContactController::class,'contactForm'])->name('contact.form.store');
 //Backend
 
 //middleware
