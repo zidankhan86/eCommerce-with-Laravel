@@ -75,6 +75,14 @@
 
             <form action="{{route('contact.form.store')}}" method="POST">
                 @csrf
+
+                
+                @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+                  @endif
+
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <input type="text" name="name" placeholder="Your name">
