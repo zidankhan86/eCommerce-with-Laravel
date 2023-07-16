@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="zxx">
 
 
-<body>
+@extends('frontend.master')
 
-   
+  @section('content')
+
+
+
+
     <!-- Contact Section Begin -->
     <section class="contact spad">
         <div class="container">
@@ -89,6 +91,6 @@
     <!-- Contact Form End -->
 
 
-</body>
 
-</html>
+
+@endsection
