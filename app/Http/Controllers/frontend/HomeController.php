@@ -28,7 +28,6 @@ class HomeController extends Controller
 
     public function categoryWiseProduct($id){
 
-
         $category = Category::findOrFail($id);
 
         $products = Product::where('category_id', $id)
