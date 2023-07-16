@@ -13,7 +13,7 @@ class HomeController extends Controller
 
           $categories = Category::all();
           $latestCategories = Category::latest()->limit(5)->get();
-          $products = Product::simplePaginate(12);
+          $products = Product::simplePaginate(20);
           $latestProducts = Product::where('status',1)->latest()->limit(12)->get();
 
           $categoryWiseProducts = Product::where('status',1)->latest()->limit(12)->get();
