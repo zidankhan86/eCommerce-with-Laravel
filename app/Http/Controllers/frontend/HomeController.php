@@ -13,7 +13,8 @@ class HomeController extends Controller
 
           $categories = Category::all();
           $products = Product::all();
-          $latestProducts = Product::latest()->limit(12)->get();
+          $latestProducts = Product::where('status',1)->latest()->limit(12)->get();
+
           $categoryWiseProducts = Product::where('status',1)->latest()->limit(12)->get();
 
         return view('frontend.pages.home',compact('categories','products','latestProducts','categoryWiseProducts'));

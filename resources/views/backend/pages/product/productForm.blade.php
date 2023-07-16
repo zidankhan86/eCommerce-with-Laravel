@@ -126,6 +126,20 @@
                 @enderror
               </div>
 
+              <div class="mb-3 mx-sm-2" >
+                <label for="exampleInputNumber3" class="form-label">Status</label>
+
+                <select name="status" id="" class="form-control">
+                    <option value="0">Inactive</option>
+                    <option value="1">Active</option>
+                </select>
+
+                @error('time')
+
+                    <strong class="text-danger">{{$message}}</strong>
+
+                    @enderror
+                 </div> <br> <br>
 
 
 

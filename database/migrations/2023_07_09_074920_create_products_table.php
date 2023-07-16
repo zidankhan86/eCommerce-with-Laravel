@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('time');
             $table->longText('description');
             $table->longText('product_information');
+            $table->boolean('status')->default(0);
 
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();

@@ -31,6 +31,7 @@ class ProductController extends Controller
             'time' => 'required',
             'description' => 'required',
             'product_information'=> 'required',
+            'status'=> 'required',
         ]);
 
         if ($validator->fails()) {
@@ -60,6 +61,7 @@ class ProductController extends Controller
              "time"=>$request->time,
              "description"=>$request->description,
              'product_information' =>$request->product_information,
+             'status' =>$request->status,
 
           ]);
 
