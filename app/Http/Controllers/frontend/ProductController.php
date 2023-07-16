@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -18,8 +19,14 @@ class ProductController extends Controller
 
     public function productDetails($id){
 
+        $category = Category::findOrFail($id);
+
+        $products = Product::where('category_id', $id)
+        ->where('status', 1)->limit(4)
+        ->get();
+
         $details = Product::find($id);
-        return view('frontend.pages.product.details',compact('details'));
+        return view('frontend.pages.product.details',compact('details','category','products'));
     }
 
     public function productCheckout($id){
