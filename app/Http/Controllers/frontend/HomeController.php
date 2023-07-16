@@ -12,11 +12,12 @@ class HomeController extends Controller
     public function home(){
 
           $categories = Category::all();
+         $latestCategories = Category::latest()->limit(5)->get();
           $products = Product::all();
           $latestProducts = Product::where('status',1)->latest()->limit(12)->get();
 
           $categoryWiseProducts = Product::where('status',1)->latest()->limit(12)->get();
 
-        return view('frontend.pages.home',compact('categories','products','latestProducts','categoryWiseProducts'));
+        return view('frontend.pages.home',compact('categories','products','latestProducts','categoryWiseProducts','latestCategories'));
     }
 }
