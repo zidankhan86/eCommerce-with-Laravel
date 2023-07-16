@@ -38,6 +38,7 @@ Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->n
 Route::get('/blog',[BlogController::class,'blog'])->name('blog');
 Route::post('/comment-store',[CommentController::class,'commentStore'])->name('commentStore');
 
+Route::get('/category/{id}',[FrontendHomeController::class,'categoryWiseProduct'])->name('category.wize.products');
 
 
 //Backend

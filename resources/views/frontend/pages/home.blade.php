@@ -18,7 +18,7 @@
 
                 @foreach ($categories as $item)
 
-                <li><a href="#">{{$item->type}}</a></li>
+                <li><a href="{{ route('category.wize.products', $item->id) }}">{{ $item->type }}
 
                 @endforeach
 

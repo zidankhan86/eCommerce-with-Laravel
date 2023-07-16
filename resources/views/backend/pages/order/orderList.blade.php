@@ -38,7 +38,7 @@
             <td>{{ $item->phone }}</td>
             <td>{{ $item->email }}</td>
             <td>{{ $item->note }}</td>
-            <td></td>
+            <td class="text-danger">Processing</td>
             <td>
                 <a href="" class="btn btn-info">View</a>
             </td>

@@ -17,12 +17,26 @@ class HomeController extends Controller
           $products = Product::simplePaginate(20);
           $latestProducts = Product::where('status',1)->latest()->limit(12)->get();
 
-          $categoryWiseProducts = Product::where('status',1)->latest()->limit(12)->get();
+
 
           $blogs = Blog::all();
 
 
 
-        return view('frontend.pages.home',compact('categories','products','latestProducts','categoryWiseProducts','latestCategories','blogs'));
+        return view('frontend.pages.home',compact('categories','products','latestProducts','latestCategories','blogs'));
+    }
+
+    public function categoryWiseProduct($id){
+
+
+        $category = Category::findOrFail($id);
+
+        $products = Product::where('category_id', $id)
+        ->where('status', 1)->limit(20)
+        ->get();
+
+
+
+        return view('frontend.pages.catWizeProduct.categoryWizeProduct',compact('products','category'));
     }
 }
