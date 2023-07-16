@@ -174,12 +174,15 @@
 </div>
 <!-- Banner End -->
 
+
+<!-- latest Product -->
+
 <section class="featured spad">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>Latest Product</h2>
+                    <h2>Latest Products</h2>
                 </div>
                 <div class="featured__controls">
 
@@ -201,7 +204,7 @@
 
             @foreach ($latestProducts as $item)
 
-            <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+            <div class="col-lg-2 col-md-4 col-sm-6">
                 <div class="featured__item">
                     <div class="featured__item__pic">
                         <a href="{{route('product.details',$item->id)}}"> <img src="{{ asset('/public/uploads/' . $item->image) }}" alt="Product Image"></a>
