@@ -18,6 +18,6 @@ class Blog extends Model
      */
     public function commentRelation(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'comment_id', 'id');
+        return $this->belongsTo(Comment::class, 'comment_id', 'id');
     }
 }

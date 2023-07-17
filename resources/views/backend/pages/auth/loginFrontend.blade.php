@@ -97,7 +97,10 @@
 </head>
 <body>
 <div class="login-form">
+
     <form action="/examples/actions/confirmation.php" method="post">
+        @csrf
+        <a href="{{ route('home') }}" class=" btn-warning float-right" style="color: rgb(0, 0, 0)">HOME</a>
 		<div class="avatar"><i class="material-icons">&#xE7FF;</i></div>
     	<h4 class="modal-title">Login to Your Account</h4>
         <div class="form-group">

@@ -12,13 +12,5 @@ class Comment extends Model
 
     protected $guarded = [];
 
-    /**
-     * Get all of the comments for the Comment
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function comments(): HasMany
-    {
-        return $this->hasMany(Comment::class);
-    }
+    
 }
