@@ -51,6 +51,7 @@ Route::post('login', [LoginController::class, 'loginProcess'])->name('login.subm
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('registration', [LoginController::class, 'registration'])->name('registration');
+Route::post('registration', [LoginController::class, 'registrationStore'])->name('registration.submit');
 
 //middleware
 Route::group(['middleware' => 'auth','admin','prefix'=>'admin'], function () {

@@ -92,7 +92,7 @@ button:hover {
     <h1> REGISTER HERE</h1>
   <label>
     <p class="label-txt">ENTER YOUR EMAIL</p>
-    <input type="text" class="input">
+    <input type="text" class="input" value="{{old('email')}}" name="email">
     <div class="line-box">
       <div class="line"></div>
     </div>
@@ -100,7 +100,7 @@ button:hover {
 
   <label>
     <p class="label-txt">ENTER YOUR PHONE</p>
-    <input type="text" class="input">
+    <input type="text" class="input" value="{{old('phone')}}" name="phone">
     <div class="line-box">
       <div class="line"></div>
     </div>
@@ -108,7 +108,7 @@ button:hover {
 
   <label>
     <p class="label-txt">ENTER YOUR ADDRESS</p>
-    <input type="text" class="input">
+    <input type="text" class="input" value="{{old('address')}}" name="address">
     <div class="line-box">
       <div class="line"></div>
     </div>
@@ -116,14 +116,14 @@ button:hover {
 
   <label>
     <p class="label-txt">ENTER YOUR NAME</p>
-    <input type="text" class="input">
+    <input type="text" class="input" name="name" value="{{old('name')}}">
     <div class="line-box">
       <div class="line"></div>
     </div>
   </label><br>
   <label>
     <p class="label-txt">ENTER YOUR PASSWORD</p>
-    <input type="text" class="input">
+    <input type="password" class="input" value="{{old('password')}}" name="password">
     <div class="line-box">
       <div class="line"></div>
     </div>

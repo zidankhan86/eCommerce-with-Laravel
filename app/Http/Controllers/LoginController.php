@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -56,6 +57,30 @@ public function logout(){
 
 public function registration(){
     return view('backend.pages.auth.registration');
+}
+
+public function registrationStore(Request $request){
+
+    User::create([
+
+        "name"=>$request->name,
+        
+        "email"=>$request->email,
+
+        "phone"=>$request->phone,
+
+        "address"=>$request->address,
+
+        "phone"=>$request->phone,
+
+        "password"=>bcrypt($request->password),
+
+        "role"=>$request->customer,
+
+
+    ]);
+    return back();
+
 }
 
 }
