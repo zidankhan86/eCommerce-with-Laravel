@@ -11,10 +11,12 @@ class LoginController extends Controller
         return view('backend.pages.auth.loginForm');
     }
 
-    
+
 
     public function loginProcess(Request $request)
 {
+dd($request->all());
+
     $credentials = $request->only(['email', 'password']);
 
     if (Auth::attempt($credentials)) {
