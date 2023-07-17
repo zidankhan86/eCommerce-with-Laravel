@@ -4,7 +4,7 @@
 
 <br><h4 class=" text-success text-center">Hero Banner Form</h4>
 
-<form action="{{route('banner.store')}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('hero.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
 
         @if(session('success'))
