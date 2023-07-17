@@ -20,7 +20,7 @@
 
         <div class="mb-3 mx-sm-2">
         <label for="exampleInputName1" class="form-label">Banner Tittle</label>
-        <input type="text" class="form-control" value="{{ old('tittle') }}" id="exampleInputName1" name="tittle" placeholder="Dry Food..">
+        <input type="text" class="form-control" value="{{ old('tittle') }}" id="exampleInputName1" name="tittle" placeholder="Vegetable 100% Fresh..">
         @error('tittle')
 
         <strong class="text-danger">{{$message}}</strong>
@@ -30,7 +30,7 @@
 
         <div class="mb-3 mx-sm-2">
         <label for="exampleInputName2" class="form-label">Short Description</label>
-        <input type="text" class="form-control" value="{{ old('description') }}" id="exampleInputName2" name="description" placeholder="100% Pure Juice..">
+        <input type="text" class="form-control" value="{{ old('description') }}" id="exampleInputName2" name="description" placeholder="Free Pickup and Delivery Available..">
         @error('description')
 
         <strong class="text-danger">{{$message}}</strong>
