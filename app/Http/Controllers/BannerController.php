@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Banner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class BannerController extends Controller
@@ -23,12 +24,18 @@ class BannerController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $imageName = null;
-        if ($request->hasFile('image')) {
+        $existingBannersCount = Banner::count();
+    if ($existingBannersCount >= 2) {
+        return back()->with('error', 'Maximum number of banners reached');
+    }
+
+    $imageName = null;
+    if ($request->hasFile('image')) {
         $file = $request->file('image');
         $imageName = date('Ymdi').'.'.$file->extension();
         $file->storeAs('uploads', $imageName, 'public');
-        }
+    }
+
        // dd($imageName);
         //dd($request->all());
 

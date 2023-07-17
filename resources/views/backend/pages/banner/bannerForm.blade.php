@@ -9,7 +9,13 @@
 
         @if(session('success'))
         <p class="alert alert-success"> {{session('success')}}</p>
+
+        @else
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
          @endif
+
 
 
 
