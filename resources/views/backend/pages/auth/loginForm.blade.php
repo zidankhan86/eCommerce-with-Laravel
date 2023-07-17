@@ -24,6 +24,12 @@
 
                                             @csrf
 
+                                            @if(session('error'))
+                                            <div class="alert alert-danger">
+                                                {{ session('error') }}
+                                            </div>
+                                           @endif
+
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputEmail" name="email" type="email" placeholder="name@example.com" />
                                                 <label for="inputEmail">Email address</label>
