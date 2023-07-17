@@ -18,29 +18,39 @@ class LoginController extends Controller
 {
     //dd($request->all());
 
-    $validator = Validator::make($request->all(), [
-        'email' => 'required|email',
-        'password' => 'required',
-    ]);
+  // Validate the input fields
+  $validator = Validator::make($request->all(), [
+    'email' => 'required|email',
+    'password' => 'required',
+]);
 
-    if ($validator->fails()) {
-        return redirect()->back()->withErrors($validator)->withInput();
+if ($validator->fails()) {
+    return redirect()->back()->withErrors($validator)->withInput();
+}
+
+$credentials = $request->only(['email', 'password']);
+$remember = $request->has('remember'); // Check if the "Remember Me" checkbox is checked
+
+if (Auth::attempt($credentials, $remember)) {
+    $user = Auth::user();
+
+    if ($user->role == 'admin') {
+        return redirect()->route('dashboard');
+    } elseif ($user->role == 'customer') {
+        return redirect()->route('home');
     }
+}
 
-    $credentials = $request->only(['email', 'password']);
+// Authentication failed
+return redirect()->back()->withInput()->withErrors(['login' => 'Invalid credentials']);
 
-    if (Auth::attempt($credentials)) {
-        $user = Auth::user();
+}
 
-        if ($user->role == 'admin') {
-            return redirect()->route('dashboard');
-        } elseif ($user->role == 'customer') {
-            return redirect()->route('home');
-        }
-    }
+public function logout(){
 
-    // Authentication failed
-    return redirect()->back()->withInput()->withErrors(['login' => 'Invalid credentials']);
+    Auth::logout();
+    return redirect()->route('home');
+
 }
 
 }

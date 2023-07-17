@@ -36,8 +36,6 @@ Route::get('/product-details/{id}',[FrontendProductController::class,'productDet
 Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
 Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
 
-
-
 Route::get('/blog',[BlogController::class,'blog'])->name('blog');
 Route::post('/comment-store',[CommentController::class,'commentStore'])->name('commentStore');
 
@@ -48,16 +46,15 @@ Route::post('/contact-form',[ContactController::class,'contactForm'])->name('con
 //Backend
 
 //Login
-
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'loginProcess'])->name('login.submit');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 //middleware
-//Route::group(['middleware' => 'admin'], function () {
-    // Routes that require admin access
-//});
+Route::group(['middleware' => 'auth','prefix'=>'admin'], function () {
 
-Route::get('/admin',[HomeController::class,'dashboard'])->name('dashboard');
+
+Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
 Route::get('/category-form',[CategoryController::class,'categoryForm'])->name('category.form');
 Route::post('/category-store',[CategoryController::class,'categoryStore'])->name('category.store');
 Route::get('/category-list',[CategoryController::class,'categoryList'])->name('category.list');
@@ -85,3 +82,5 @@ Route::post('/hero-store',[HeroBannerController::class,'herostore'])->name('hero
 
 Route::get('/order-list',[OrderController::class,'orderList'])->name('order.list');
 
+
+});
