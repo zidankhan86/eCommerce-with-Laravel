@@ -10,6 +10,7 @@ use App\Http\Controllers\frontend\ProductController as FrontendProductController
 use App\Http\Controllers\HeroBannerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Models\Product;
@@ -45,6 +46,11 @@ Route::get('/category/{id}',[FrontendHomeController::class,'categoryWiseProduct'
 Route::get('/contact',[ContactController::class,'contact'])->name('contact');
 Route::post('/contact-form',[ContactController::class,'contactForm'])->name('contact.form.store');
 //Backend
+
+//Login
+
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [LoginController::class, 'loginProcess'])->name('login.submit');
 
 //middleware
 //Route::group(['middleware' => 'admin'], function () {
