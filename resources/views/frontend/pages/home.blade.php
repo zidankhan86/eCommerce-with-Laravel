@@ -156,7 +156,12 @@
 <!-- Featured Section End -->
 
 <!-- Banner Begin -->
-<h3>fbfbfb</h3>
+
+<div>
+    <h3 class="text-center font-weight-bold">Our Banners</h3>
+</div>
+<br><br><br>
+
 <div class="banner">
     <div class="container">
         <div class="row">
@@ -165,7 +170,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="banner__pic">
                         <img src="{{url('/public/uploads/'.$item->image)}}" alt="">
-                        
+
                     </div>
                 </div>
             @endforeach
