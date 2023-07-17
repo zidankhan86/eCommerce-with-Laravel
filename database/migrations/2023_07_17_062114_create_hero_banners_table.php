@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('hero_banners', function (Blueprint $table) {
             $table->id();
-            $table->string('tittle');
-            $table->string('description');
+            $table->tinyText('small_tittle',20);
+            $table->tinyText('tittle');
+            $table->tinyText('description');
             $table->string('image');
             $table->timestamps();
         });

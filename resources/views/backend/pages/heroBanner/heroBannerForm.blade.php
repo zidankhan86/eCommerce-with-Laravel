@@ -17,6 +17,16 @@
             @endif
 
 
+            <div class="mb-3 mx-sm-2">
+                <label for="exampleInputName1" class="form-label">Small Tittle</label>
+                <input type="text" class="form-control" value="{{ old('small_tittle') }}" id="exampleInputName1" name="small_tittle" placeholder="FRUIT FRESH..">
+                @error('tittle')
+
+                <strong class="text-danger">{{$message}}</strong>
+
+                @enderror
+                 </div>
+
 
         <div class="mb-3 mx-sm-2">
         <label for="exampleInputName1" class="form-label">Banner Tittle</label>

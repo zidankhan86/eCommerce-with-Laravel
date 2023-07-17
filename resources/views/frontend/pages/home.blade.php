@@ -49,10 +49,10 @@
                 <div class="hero__item set-bg" style="background-image: url('{{ url('/public/uploads/' . $item->image) }}');">
 
                     <div class="hero__text">
-                        <span>FRUIT FRESH</span>
-                        <h2>Vegetable <br>{{ $item->tittle }}</h2>
-                        <p>Free Pickup and Delivery Available</p>
-                        <a href="#" class="primary-btn">SHOP NOW</a>
+                        <span>{{ $item->small_tittle }}</span>
+                        <h2>{{ $item->tittle }}</h2>
+                        <p>{{ $item->description }}</p>
+                        <a href="{{route('product')}}" class="primary-btn">SHOP NOW</a>
                     </div>
                 </div>
             @endforeach

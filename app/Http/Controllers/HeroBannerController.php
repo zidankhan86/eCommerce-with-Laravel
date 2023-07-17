@@ -19,6 +19,7 @@ class HeroBannerController extends Controller
             'tittle' => 'required',
             'description' => 'required',
             'image' => 'required|max:2048',
+            'small_tittle' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -43,6 +44,7 @@ class HeroBannerController extends Controller
         HeroBanner::create([
 
         "tittle"=>$request->tittle,
+        "small_tittle"=>$request->small_tittle,
         "description"=>$request->description,
         "image"=>$imageName
 
