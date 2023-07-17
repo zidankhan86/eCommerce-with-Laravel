@@ -61,22 +61,22 @@ public function registration(){
 
 public function registrationStore(Request $request){
 
+   // dd($request->all());
+
     User::create([
 
-        "name"=>$request->name,
-        
         "email"=>$request->email,
 
         "phone"=>$request->phone,
 
         "address"=>$request->address,
 
-        "phone"=>$request->phone,
+        "name"=>$request->name,
+
 
         "password"=>bcrypt($request->password),
 
-        "role"=>$request->customer,
-
+        "role"=>'customer',
 
     ]);
     return back();

@@ -88,7 +88,10 @@ button:hover {
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<form>
+<form action="{{route('registration.submit')}}" method="POST" enctype="multipart/form-data">
+    @csrf
+
+
     <h1> REGISTER HERE</h1>
   <label>
     <p class="label-txt">ENTER YOUR EMAIL</p>
@@ -121,6 +124,12 @@ button:hover {
       <div class="line"></div>
     </div>
   </label><br>
+
+  <div>
+ <input type="hidden" name="role">
+  </div>
+
+
   <label>
     <p class="label-txt">ENTER YOUR PASSWORD</p>
     <input type="password" class="input" value="{{old('password')}}" name="password">
