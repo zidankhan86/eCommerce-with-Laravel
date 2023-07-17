@@ -43,6 +43,8 @@ Route::get('/category/{id}',[FrontendHomeController::class,'categoryWiseProduct'
 
 Route::get('/contact',[ContactController::class,'contact'])->name('contact');
 Route::post('/contact-form',[ContactController::class,'contactForm'])->name('contact.form.store');
+
+Route::get('/login-frontend', [LoginController::class, 'showLoginFormFrontend'])->name('login.frontend');
 //Backend
 
 //Login

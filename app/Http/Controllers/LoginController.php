@@ -83,4 +83,8 @@ public function registrationStore(Request $request){
 
 }
 
+public function showLoginFormFrontend(){
+    return view('backend.pages.auth.loginFrontend');
+}
+
 }
