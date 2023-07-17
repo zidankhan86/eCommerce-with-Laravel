@@ -88,8 +88,11 @@ button:hover {
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
+
+
 <form action="{{route('registration.submit')}}" method="POST" enctype="multipart/form-data">
     @csrf
+    <a href="{{ route('home') }}" class="btn btn-success float-right">HOME</a>
 
 
     <h1> REGISTER HERE</h1>
