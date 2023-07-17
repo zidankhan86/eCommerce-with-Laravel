@@ -26,7 +26,7 @@ class HeroBannerController extends Controller
         }
 
         $existingBannersCount = HeroBanner::count();
-    if ($existingBannersCount >= 2) {
+    if ($existingBannersCount >= 1) {
         return back()->with('error', 'Maximum number of banners reached');
     }
 

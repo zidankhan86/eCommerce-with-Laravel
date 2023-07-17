@@ -44,14 +44,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
+
+                @foreach ($heroBanners as $item)
+                <div class="hero__item set-bg" style="background-image: url('{{ url('/public/uploads/' . $item->image) }}');">
+
                     <div class="hero__text">
                         <span>FRUIT FRESH</span>
-                        <h2>Vegetable <br />100% Organic</h2>
+                        <h2>Vegetable <br>{{ $item->tittle }}</h2>
                         <p>Free Pickup and Delivery Available</p>
                         <a href="#" class="primary-btn">SHOP NOW</a>
                     </div>
                 </div>
+            @endforeach
+
+
+
+
             </div>
         </div>
     </div>
