@@ -26,7 +26,7 @@ class HomeController extends Controller
         return view('frontend.pages.home',compact('categories','products','latestProducts','latestCategories','blogs'));
     }
 
-    public function categoryWiseProduct($id){
+       public function categoryWiseProduct($id){
 
         $category = Category::findOrFail($id);
 
