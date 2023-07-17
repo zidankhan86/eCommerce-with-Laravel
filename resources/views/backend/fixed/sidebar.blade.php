@@ -17,7 +17,7 @@
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{route('category.list')}}">Add Category</a>
-                        
+
                     </nav>
                 </div>
 
@@ -46,6 +46,11 @@
                 <a class="nav-link" href="{{route('order.list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Orders
+                </a>
+
+                <a class="nav-link" href="{{route('hero.post')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                    Hero Banner
                 </a>
 
                 <a class="nav-link" href="{{route('banner.form')}}">

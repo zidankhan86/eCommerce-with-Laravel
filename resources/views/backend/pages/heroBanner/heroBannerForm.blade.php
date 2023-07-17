@@ -2,16 +2,17 @@
 
 @section('content')
 
-<br><h4 class=" text-success text-center">Banner Form</h4>
+<br><h4 class=" text-success text-center">Hero Banner Form</h4>
 
 <form action="{{route('banner.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
 
         @if(session('success'))
         <p class="alert alert-success"> {{session('success')}}</p>
-
         @endif
-           @if(session('error'))
+
+
+        @if(session('error'))
         <p class="alert alert-danger"> {{ session('error') }}
             @endif
 
@@ -38,7 +39,7 @@
         </div>
 
             <div class="mb-3 mx-sm-2">
-            <label for="exampleInputName2" class="form-label">Upload Image</label>
+            <label for="exampleInputName2" class="form-label">Chose Banner</label>
             <input type="file" class="form-control" value="{{ old('image') }}" id="exampleInputName2" name="image">
             @error('image')
 
