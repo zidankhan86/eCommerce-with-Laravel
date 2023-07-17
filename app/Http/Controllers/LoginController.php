@@ -15,7 +15,7 @@ class LoginController extends Controller
 
     public function loginProcess(Request $request)
 {
-dd($request->all());
+    //dd($request->all());
 
     $credentials = $request->only(['email', 'password']);
 
