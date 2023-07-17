@@ -76,7 +76,6 @@
             <form action="{{route('contact.form.store')}}" method="POST">
                 @csrf
 
-                
                 @if (session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}
@@ -85,13 +84,13 @@
 
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <input type="text" name="name" placeholder="Your name">
+                        <input type="text" name="name" value="{{old('name')}}" placeholder="Your name">
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <input type="text" name="email" placeholder="Your Email">
+                        <input type="text" name="email" value="{{old('email')}}" placeholder="Your Email">
                     </div>
                     <div class="col-lg-12 text-center">
-                        <textarea placeholder="Your message" name="message"></textarea>
+                        <textarea placeholder="Your message" name="message">{{old('message')}}</textarea>
                         <button type="submit" class="site-btn">SEND MESSAGE</button>
                     </div>
                 </div>
