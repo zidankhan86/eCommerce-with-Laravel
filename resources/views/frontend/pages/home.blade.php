@@ -156,22 +156,24 @@
 <!-- Featured Section End -->
 
 <!-- Banner Begin -->
+<h3>fbfbfb</h3>
 <div class="banner">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <div class="banner__pic">
-                    <img src="{{url('frontend/img/banner/banner-1.jpg')}}" alt="">
+
+            @foreach ($banners as $item)
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="banner__pic">
+                        <img src="{{url('/public/uploads/'.$item->image)}}" alt="">
+                        
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <div class="banner__pic">
-                    <img src="{{url('frontend/img/banner/banner-2.jpg')}}" alt="">
-                </div>
-            </div>
+            @endforeach
+
         </div>
     </div>
 </div>
+
 <!-- Banner End -->
 
 
