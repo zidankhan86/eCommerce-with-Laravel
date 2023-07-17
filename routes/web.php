@@ -50,6 +50,8 @@ Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'loginProcess'])->name('login.submit');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
+Route::get('registration', [LoginController::class, 'registration'])->name('registration');
+
 //middleware
 Route::group(['middleware' => 'auth','admin','prefix'=>'admin'], function () {
 

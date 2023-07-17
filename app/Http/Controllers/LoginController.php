@@ -53,4 +53,9 @@ public function logout(){
 
 }
 
+
+public function registration(){
+    return view('backend.pages.auth.registration');
+}
+
 }
