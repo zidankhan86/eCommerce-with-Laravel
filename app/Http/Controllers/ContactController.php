@@ -42,4 +42,8 @@ class ContactController extends Controller
         $feedback = Contact::all();
         return view('backend.pages.feedback.feedback',compact('feedback'));
     }
+
+    public function contactview(){
+        return view('backend.pages.feedback.feedbackView');
+    }
 }
