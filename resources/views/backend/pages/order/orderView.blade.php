@@ -21,8 +21,8 @@
         <div class="container">
           <div class="col-md-12">
             <div class="text-center">
-              <i class="fab fa-mdb fa-4x ms-0" style="color:#5d9fc5 ;"></i>
-              <p class="pt-0">MDBootstrap.com</p>
+
+              <p class="pt-0">nongorfood.com</p>
             </div>
 
           </div>
@@ -31,9 +31,9 @@
           <div class="row">
             <div class="col-xl-8">
               <ul class="list-unstyled">
-                <li class="text-muted">To: <span style="color:#5d9fc5 ;">John Lorem</span></li>
-                <li class="text-muted">Street, City</li>
-                <li class="text-muted">State, Country</li>
+                <li class="text-muted">To: <span style="color:#5d9fc5 ;">{{$invoice->first_name}}</span></li>
+                <li class="text-muted">Address :{{$invoice->address}}</li>
+                <li class="text-muted">City :{{$invoice->city}}</li>
                 <li class="text-muted"><i class="fas fa-phone"></i> 123-456-789</li>
               </ul>
             </div>
@@ -43,7 +43,7 @@
                 <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
                     class="fw-bold">ID:</span>#123-456</li>
                 <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
-                    class="fw-bold">Creation Date: </span>Jun 23,2021</li>
+                    class="fw-bold">Order Date: </span>{{$invoice->updated_at}}</li>
                 <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
                     class="me-1 fw-bold">Status:</span><span class="badge bg-warning text-black fw-bold">
                     Unpaid</span></li>

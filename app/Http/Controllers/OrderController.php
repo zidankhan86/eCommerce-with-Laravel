@@ -13,7 +13,9 @@ class OrderController extends Controller
         return view('backend.pages.order.orderList',compact('orders'));
     }
 
-    public function orderinvoice(){
-        return view('backend.pages.order.orderView');
+    public function orderinvoice($id){
+
+        $invoice = Order::find($id);
+        return view('backend.pages.order.orderView',compact('invoice'));
     }
 }

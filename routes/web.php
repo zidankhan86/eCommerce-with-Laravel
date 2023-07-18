@@ -89,7 +89,7 @@ Route::get('/hero-form',[HeroBannerController::class,'heroPost'])->name('hero.po
 Route::post('/hero-store',[HeroBannerController::class,'herostore'])->name('hero.store');
 
 Route::get('/order-list',[OrderController::class,'orderList'])->name('order.list');
-Route::get('/order-invoice',[OrderController::class,'orderinvoice'])->name('order.invoice');
+Route::get('/order-invoice/{id}',[OrderController::class,'orderinvoice'])->name('order.invoice');
 
 Route::get('/contact-list',[ContactController::class,'contactlist'])->name('contact.list');
 Route::get('/contact-view/{id}',[ContactController::class,'contactview'])->name('contact.view');
