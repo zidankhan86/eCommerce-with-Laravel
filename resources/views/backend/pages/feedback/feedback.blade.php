@@ -28,11 +28,16 @@
 
         <th scope="row">{{ $serial++}}</th>
         <td>{{ $item->name}}</td>
-        <td>{{ $item->type}}</td>
+        <td>{{ $item->email}}</td>
 
 
         <td>
             <a href="" class="btn btn-info">View</a>
+
+
+        </td>
+        <td>
+            <a href="" class="btn btn-success">Action</a>
         </td>
 
       </tr>
