@@ -19,7 +19,7 @@
             <th scope="col">Email</th>
             <th scope="col">Note</th>
             <th scope="col">Status</th>
-            <th scope="col">Action</th>
+            <th scope="col">Invoice</th>
         </tr>
     </thead>
     <tbody>
