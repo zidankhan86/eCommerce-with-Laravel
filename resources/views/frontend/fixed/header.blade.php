@@ -6,8 +6,8 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__left">
                         <ul>
-                            <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                            <li>Free Shipping for all Order of $99</li>
+                            <li><i class="fa fa-envelope"></i> nongorfood01@gmail.com</li>
+                            <li>ORDER NOW</li>
                         </ul>
                     </div>
                 </div>
