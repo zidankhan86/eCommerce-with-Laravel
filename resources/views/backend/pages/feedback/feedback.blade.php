@@ -37,7 +37,7 @@
 
         </td>
         <td>
-            <a href="" class="btn btn-success">Action</a>
+            <a href="" class="btn btn-success"> <i class="fas fa-check"></i></a>
         </td>
 
       </tr>
