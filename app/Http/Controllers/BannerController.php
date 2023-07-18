@@ -51,6 +51,11 @@ class BannerController extends Controller
 
     }
 
+    public function bannerdelete($id){
+        $delete = Banner::find($id);
+        $delete->delete();
+    }
+
 
 
 }

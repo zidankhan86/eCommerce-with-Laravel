@@ -80,6 +80,7 @@ Route::post('/new-product-store',[ProductController::class,'newProductStore'])->
 
 Route::get('/bannder-form',[BannerController::class,'bannerForm'])->name('banner.form');
 Route::post('/bannder-store',[BannerController::class,'bannerStore'])->name('banner.store');
+Route::get('/bannder-delete/{id}',[BannerController::class,'bannerdelete'])->name('banner.delete');
 
 
 Route::get('/blog-form',[BlogController::class,'blogPost'])->name('blog.post');
