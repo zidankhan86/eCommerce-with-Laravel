@@ -16,7 +16,7 @@
         <th scope="col">Action</th>
       </tr>
     </thead>
-    {{-- <tbody>
+    <tbody>
         @php
             $serial =1;
         @endphp
@@ -26,19 +26,18 @@
 
 
         <th scope="row">{{ $serial++}}</th>
-        <td>{{ $item->name}}</td>
-        <td>{{ $item->type}}</td>
-        <td>{{ $item->status ? 'Active' : 'Inactive' }}</td>
+        <td><img height="100px" width="100px" src="{{url('/public/uploads/'.$item->image)}}" alt=""></td>
+        <td>{{ $item->tittle}}</td>
 
         <td>
             <a href="" class="btn btn-success"> <i class="fas fa-edit"></i></a>
-            <a href="" class="btn btn-danger" onclick="return confirm('Do you want to delete ?')">  <i class="fas fa-trash"></i></a>
+            <a href="{{route('banner.delete',$item->id)}}" class="btn btn-danger" onclick="return confirm('Do you want to delete ?')">  <i class="fas fa-trash"></i></a>
         </td>
 
       </tr>
       @endforeach
 
-    </tbody> --}}
+    </tbody>
   </table>
 
 

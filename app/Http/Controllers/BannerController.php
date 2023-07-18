@@ -52,12 +52,21 @@ class BannerController extends Controller
     }
 
     public function bannerdelete($id){
-        $delete = Banner::find($id);
-        $delete->delete();
+        $banner = Banner::find($id);
+
+    if ($banner) {
+        $banner->delete();
+        return redirect()->back()->with('success', 'Banner deleted successfully!');
     }
 
+    return redirect()->back()->with('error', 'Banner not found.');
+
+    }
+
+
 public function bannerlist(){
-    return view('backend.pages.banner.bannerList');
+    $banners = Banner::all();
+    return view('backend.pages.banner.bannerList',compact('banners'));
 }
 
 }
