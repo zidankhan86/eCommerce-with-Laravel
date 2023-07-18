@@ -53,7 +53,7 @@
                     Hero Banner
                 </a>
 
-                <a class="nav-link" href="{{route('banner.form')}}">
+                <a class="nav-link" href="{{route('banner.list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Banner
                 </a>

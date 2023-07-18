@@ -56,6 +56,8 @@ class BannerController extends Controller
         $delete->delete();
     }
 
-
+public function bannerlist(){
+    return view('backend.pages.banner.bannerList');
+}
 
 }
