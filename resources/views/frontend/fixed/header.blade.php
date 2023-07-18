@@ -21,12 +21,37 @@
                         </div>
                         <div class="header__top__right__language">
 
+
+                            @guest
                            <a href="{{route('registration')}}"> <div>Registration</div></a>
+                            @endguest
+
+                            @auth
+                            @if (auth()->user()->role == 'customer')
+
+                            <a href="{{route('registration')}}"> <div>Profile</div></a>
+                            @endif
+                            @endauth
+
 
                         </div>
+
+
                         <div class="header__top__right__auth">
+                            @auth
+                            @if (auth()->user()->role == 'customer')
+                            <a href="{{ route('logout') }}"><i class="fa fa-user"></i> Logout</a>
+                            @endif
+                            @endauth
+
+
+                             @auth
+                             @else
                             <a href="{{ route('login.frontend') }}"><i class="fa fa-user"></i> Login</a>
+                             @endauth
                         </div>
+
+
                     </div>
                 </div>
             </div>
