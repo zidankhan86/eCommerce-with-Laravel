@@ -11,26 +11,21 @@
             <div class="col-lg-3">
                 <div class="hero__categories">
                     <div class="hero__categories__all">
-
                         <span>All Categories</span>
                     </div>
                     <ul>
-
-                @foreach ($categories as $item)
-
-                <li><a href="{{ route('category.wize.products',$item->id) }}">{{ $item->type }}
-
-                @endforeach
-
+                        @foreach ($categories as $item)
+                            <li><a href="{{ route('category.wize.products',$item->id) }}">{{ $item->type }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
             <div class="col-lg-9">
                 <div class="hero__search">
                     <div class="hero__search__form">
-                        <form action="#">
-
-                            <input type="text" placeholder="What do yo u need?">
+                        <form action="{{ route('user.search') }}">
+                            @csrf
+                            <input type="text" name="search_key"  placeholder="What do you need?">
                             <button type="submit" class="site-btn">SEARCH</button>
                         </form>
                     </div>
@@ -44,22 +39,16 @@
                         </div>
                     </div>
                 </div>
-
                 @foreach ($heroBanners as $item)
-                <div class="hero__item set-bg" style="background-image: url('{{ url('/public/uploads/' . $item->image) }}');">
-
-                    <div class="hero__text">
-                        <span>{{ $item->small_tittle }}</span>
-                        <h2>{{ $item->tittle }}</h2>
-                        <p>{{ $item->description }}</p>
-                        <a href="{{route('product')}}" class="primary-btn">SHOP NOW</a>
+                    <div class="hero__item set-bg" style="background-image: url('{{ url('/public/uploads/' . $item->image) }}');">
+                        <div class="hero__text">
+                            <span>{{ $item->small_tittle }}</span>
+                            <h2>{{ $item->tittle }}</h2>
+                            <p>{{ $item->description }}</p>
+                            <a href="{{ route('product') }}" class="primary-btn">SHOP NOW</a>
+                        </div>
                     </div>
-                </div>
-            @endforeach
-
-
-
-
+                @endforeach
             </div>
         </div>
     </div>

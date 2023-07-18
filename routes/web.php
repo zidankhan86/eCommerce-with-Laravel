@@ -13,6 +13,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SearchController;
 use App\Models\Product;
 
 /*
@@ -45,6 +46,8 @@ Route::get('/contact',[ContactController::class,'contact'])->name('contact');
 Route::post('/contact-form',[ContactController::class,'contactForm'])->name('contact.form.store');
 
 Route::get('/login-frontend', [LoginController::class, 'showLoginFormFrontend'])->name('login.frontend');
+
+Route::get('/search',[SearchController::class,'search'])->name('user.search');
 //Backend
 
 //Login
