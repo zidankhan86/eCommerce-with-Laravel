@@ -90,5 +90,7 @@ Route::post('/hero-store',[HeroBannerController::class,'herostore'])->name('hero
 
 Route::get('/order-list',[OrderController::class,'orderList'])->name('order.list');
 
+Route::get('/contact-list',[ContactController::class,'contactlist'])->name('contact.list');
+
 
 });

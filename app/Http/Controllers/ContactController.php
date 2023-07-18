@@ -36,4 +36,10 @@ class ContactController extends Controller
         return redirect()->back()->with('success', 'Thank you for your feedback');
 
     }
+
+    public function contactlist(){
+
+        $feedback = Contact::all();
+        return view('backend.pages.feedback.feedback',compact('feedback'));
+    }
 }

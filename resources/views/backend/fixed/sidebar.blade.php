@@ -63,7 +63,7 @@
                     Blogs
                 </a>
 
-                <a class="nav-link" href="{{route('blog.post')}}">
+                <a class="nav-link" href="{{route('contact.list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     User Feedback
                 </a>
