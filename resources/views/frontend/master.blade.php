@@ -32,7 +32,7 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="{{url('frontend/img/logo.png')}}" alt=""></a>
+            <a href="{{ route('home') }}"><img src="{{url('frontend/img/logo.png')}}" alt=""></a>
         </div>
         <div class="humberger__menu__cart">
             <ul>
