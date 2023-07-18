@@ -32,7 +32,7 @@
 
 
         <td>
-            <a href="{{route('contact.view')}}" class="btn btn-info">View</a>
+            <a href="{{route('contact.view' ,$item->id)}}" class="btn btn-info">View</a>
 
 
         </td>

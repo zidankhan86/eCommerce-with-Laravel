@@ -43,7 +43,9 @@ class ContactController extends Controller
         return view('backend.pages.feedback.feedback',compact('feedback'));
     }
 
-    public function contactview(){
-        return view('backend.pages.feedback.feedbackView');
+    public function contactview($id){
+
+        $messages = Contact::find($id);
+        return view('backend.pages.feedback.feedbackView',compact('messages'));
     }
 }
