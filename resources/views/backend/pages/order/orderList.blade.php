@@ -40,7 +40,7 @@
             <td>{{ $item->note }}</td>
             <td class="text-danger">Processing</td>
             <td>
-                <a href="" class="btn btn-info">View</a>
+                <a href="{{route('order.invoice')}}" class="btn btn-info">View</a>
             </td>
         </tr>
         @endforeach

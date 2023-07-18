@@ -12,4 +12,8 @@ class OrderController extends Controller
         $orders = Order::latest()->get();
         return view('backend.pages.order.orderList',compact('orders'));
     }
+
+    public function orderinvoice(){
+        return view('backend.pages.order.orderView');
+    }
 }
