@@ -17,7 +17,7 @@ class LoginController extends Controller
 
     public function loginProcess(Request $request)
 {
-    //dd($request->all());
+   // dd($request->all());
 
   // Validate the input fields
   $validator = Validator::make($request->all(), [
