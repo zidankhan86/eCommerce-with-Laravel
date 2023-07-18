@@ -63,6 +63,11 @@
                     Blogs
                 </a>
 
+                <a class="nav-link" href="{{route('blog.post')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    User Feedback
+                </a>
+
                 <a class="nav-link" href="charts.html">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Print Report

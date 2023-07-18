@@ -43,14 +43,17 @@
                                                 <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="password.html">Forgot Password?</a>
+                                                {{-- <a class="small" href="password.html">Forgot Password?</a> --}}
                                                 <button class="btn btn-primary" type="submit" >Login</button>
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+
+                                    <div class="card-footer  py-3">
+                                        <div class="small text-center">NOTE: <p>(Contact authority to collect your email & password )</p></div>
+                                        <div class="small text-right" >Click <a href="{{route('home')}}"> here</a> to go home</div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
