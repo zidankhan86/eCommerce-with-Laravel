@@ -79,7 +79,7 @@ public function registrationStore(Request $request){
         "role"=>'customer',
 
     ]);
-    return back();
+    return redirect('/');
 
 }
 
