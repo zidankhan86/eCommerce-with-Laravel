@@ -34,8 +34,6 @@ Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 
 Route::get('/product',[FrontendProductController::class,'product'])->name('product');
 Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails'])->name('product.details');
-Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
-Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
 
 Route::get('/blog',[BlogController::class,'blog'])->name('blog');
 Route::post('/comment-store',[CommentController::class,'commentStore'])->name('commentStore');
@@ -58,9 +56,16 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('registration', [LoginController::class, 'registration'])->name('registration');
 Route::post('registration', [LoginController::class, 'registrationStore'])->name('registration.submit');
 
-//middleware
-Route::group(['middleware' => 'auth','admin','prefix'=>'admin'], function () {
 
+Route::group(['middleware' => 'customerAuth'], function () {
+
+    Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
+    Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
+
+});
+
+//middleware auth and admin
+Route::group(['middleware' => 'auth','admin','prefix'=>'admin'], function () {
 
 Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
 Route::get('/category-form',[CategoryController::class,'categoryForm'])->name('category.form');
