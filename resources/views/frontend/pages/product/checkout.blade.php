@@ -144,31 +144,61 @@
                                       placeholder="Notes about your order, e.g. special notes for delivery.">
                               </div>
                           </div>
-                          <div class="col-lg-4 col-md-6">
-                              <div class="checkout__order">
-                                  <h4>Your Order</h4>
-                                  <div class="checkout__order__products">Products <span>Total</span></div>
-                                  <ul>
-                                      <li>Vegetable’s Package <span>$75.99</span></li>
-                                      <li>Fresh Vegetable <span>$151.99</span></li>
-                                      <li>Organic Bananas <span>$53.99</span></li>
-                                  </ul>
-                                  <div class="checkout__order__subtotal">Subtotal <span>$750.99</span></div>
-                                  <div class="checkout__order__total">Total <span>$750.99</span></div>
-                                  <div class="checkout__input__checkbox">
-                                      <label for="acc-or">
-                                          Create an account?
-                                          <input type="checkbox" id="acc-or">
-                                          <span class="checkmark"></span>
-                                      </label>
-                                  </div>
-                                  <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt
-                                      ut labore et dolore magna aliqua.</p>
 
 
-                                  <button type="submit" class="site-btn">PLACE ORDER</button>
-                              </div>
-                          </div>
+                          {{-- <div class="col-lg-4 col-md-6">
+                            <div class="checkout__order">
+                                <h4>Your Order</h4>
+                                <div class="checkout__order__products">Products <span>Total</span></div>
+                                <ul>
+                                    @foreach(session()->get('cart') as $data)
+                                    <li>{{$data['name']}} <span>{{$data['subtotal']}} Tk.</span></li>
+                                    @endforeach
+                                </ul>
+                                <div class="checkout__order__subtotal">Subtotal <span>{{ $subtotal }} Tk.</span></div>
+                                <div class="checkout__order__total">Total <span>{{ $subtotal }} Tk.</span></div>
+                                <div class="checkout__input__checkbox">
+                                    <label for="acc-or">
+                                        Create an account?
+                                        <input type="checkbox" id="acc-or">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt
+                                    ut labore et dolore magna aliqua.</p>
+                                <button type="submit" class="site-btn">PLACE ORDER</button>
+                            </div>
+                        </div> --}}
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="checkout__order">
+                                <h4>Your Order</h4>
+                                <div class="checkout__order__products">Products <span>Total</span></div>
+                                <ul>
+                                    @if(session()->has('cart') && is_array(session()->get('cart')))
+                                        @foreach(session()->get('cart') as $data)
+                                            <li>{{$data['name']}} <span>{{$data['subtotal']}} Tk.</span></li>
+                                        @endforeach
+                                    @endif
+                                </ul>
+                                <div class="checkout__order__subtotal">Subtotal <span>{{ $subtotal ?? 0 }} Tk.</span></div>
+                                <div class="checkout__order__total">Total <span>{{ $subtotal ?? 0 }} Tk.</span></div>
+                                <div class="checkout__input__checkbox">
+                                    <label for="acc-or">
+                                        Create an account?
+                                        <input type="checkbox" id="acc-or">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt
+                                    ut labore et dolore magna aliqua.</p>
+                                <button type="submit" class="site-btn">PLACE ORDER</button>
+                            </div>
+                        </div>
+
+
+
+
                       </div>
                   </form>
               </div>

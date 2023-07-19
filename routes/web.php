@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddToCartController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
@@ -46,6 +47,13 @@ Route::post('/contact-form',[ContactController::class,'contactForm'])->name('con
 Route::get('/login-frontend', [LoginController::class, 'showLoginFormFrontend'])->name('login.frontend');
 
 Route::get('/search',[SearchController::class,'search'])->name('user.search');
+
+//AddToCard
+Route::get('add-to-cart/{id}',[AddToCartController::class,'addToCart'])->name('add.to.cart');
+Route::get('/view-cart',[AddToCartController::class,'viewCart'])->name('cart.view');
+Route::get('/clear-cart',[AddToCartController::class,'clearCart'])->name('cart.clear');
+
+
 //Backend
 
 //Login

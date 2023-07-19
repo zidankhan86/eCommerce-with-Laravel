@@ -8,6 +8,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProductController extends Controller
 {
@@ -25,9 +26,18 @@ class ProductController extends Controller
     }
 
     public function productCheckout($id){
-
         $products = Product::find($id);
-        return view('frontend.pages.product.checkout',compact('products'));
+        $cartItems = session()->get('cart', []);
+        $subtotal = 0;
+
+        if ($cartItems !== null) {
+            foreach ($cartItems as $item) {
+                $subtotal += $item['subtotal'];
+            }
+        }
+
+        return view('frontend.pages.product.checkout', compact('products', 'cartItems', 'subtotal'));
+
     }
 
 
@@ -64,6 +74,11 @@ class ProductController extends Controller
             "email"=>$request->email,
             "note"=>$request->note,
         ]);
-        return back()->with('success','Order Confirmed');
+        session()->forget('cart');
+
+        Alert::toast('Order Confirmed!');
+
+        return redirect()->route('home');
+        // return back()->with('success','Order Confirmed');
     }
 }
