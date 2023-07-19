@@ -100,6 +100,9 @@ button:hover {
     <p class="label-txt">ENTER YOUR EMAIL</p>
     <input type="text" class="input" value="{{old('email')}}" name="email">
     <div class="line-box">
+        @error('email')
+      <p class="text-danger">{{$message}}</p>
+      @enderror
       <div class="line"></div>
     </div>
   </label><br>
@@ -108,6 +111,9 @@ button:hover {
     <p class="label-txt">ENTER YOUR PHONE</p>
     <input type="text" class="input" value="{{old('phone')}}" name="phone">
     <div class="line-box">
+        @error('phone')
+        <p class="alert alert-danger">{{$message}}</p>
+        @enderror
       <div class="line"></div>
     </div>
   </label><br>
@@ -116,6 +122,9 @@ button:hover {
     <p class="label-txt">ENTER YOUR ADDRESS</p>
     <input type="text" class="input" value="{{old('address')}}" name="address">
     <div class="line-box">
+        @error('address')
+        <p class="text-danger">{{$message}}</p>
+        @enderror
       <div class="line"></div>
     </div>
   </label><br>
@@ -124,6 +133,9 @@ button:hover {
     <p class="label-txt">ENTER YOUR NAME</p>
     <input type="text" class="input" name="name" value="{{old('name')}}">
     <div class="line-box">
+        @error('name')
+        <p class="text-danger">{{$message}}</p>
+        @enderror
       <div class="line"></div>
     </div>
   </label><br>
@@ -137,9 +149,12 @@ button:hover {
     <p class="label-txt">ENTER YOUR PASSWORD</p>
     <input type="password" class="input" value="{{old('password')}}" name="password">
     <div class="line-box">
+        @error('password')
+        <p class=" text-danger">{{$message}}</p>
+        @enderror
       <div class="line"></div>
     </div>
-  </label><br>
+  </label><br><br><br><br>
   <button type="submit" class="btn btn-info">submit</button>
 </form>
 

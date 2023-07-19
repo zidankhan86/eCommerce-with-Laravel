@@ -76,7 +76,6 @@ public function registrationStore(Request $request){
     ]);
 
     if ($validator->fails()) {
-        Alert::toast('Validation failed.', 'error');
         return redirect()->back()->withErrors($validator)->withInput();
     }
    // dd($request->all());
