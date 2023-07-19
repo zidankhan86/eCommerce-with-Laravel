@@ -42,7 +42,7 @@
                      <a href="{{route('product.details',$item->id)}}">   <img src="{{ asset('/public/uploads/' . $item->image) }}" alt="Product Image"></a>
                         <ul class="featured__item__pic__hover">
                             {{-- <li><a href="#"><i class="fa fa-heart"></i></a></li> --}}
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                            {{-- <li><a href="#"><i class="fa fa-retweet"></i></a></li> --}}
                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                         </ul>
                     </div>
