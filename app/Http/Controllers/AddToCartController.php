@@ -74,7 +74,8 @@ class AddToCartController extends Controller
     public function clearCart()
     {
         session()->forget('cart');
-        // notify()->success('Cart Clear success.');
+
+        Alert::toast()->success('Cart Clear Success.');
         return redirect()->back();
     }
 
