@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LoginController extends Controller
 {
@@ -75,9 +76,9 @@ public function registrationStore(Request $request){
     ]);
 
     if ($validator->fails()) {
+        Alert::toast('Validation failed.', 'error');
         return redirect()->back()->withErrors($validator)->withInput();
     }
-
    // dd($request->all());
 
     User::create([
@@ -96,6 +97,7 @@ public function registrationStore(Request $request){
         "role"=>'customer',
 
     ]);
+    Alert::toast('Registration successful!', 'success');
     return redirect('/');
 
 }
