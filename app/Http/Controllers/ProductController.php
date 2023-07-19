@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\NewArrival;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
@@ -153,6 +154,9 @@ class ProductController extends Controller
 
             $delete =  Product::find($id);
             $delete->delete();
+
+
+            Alert::toast('Deleted! Product Deleted');
 
             return redirect()->back();
         }
