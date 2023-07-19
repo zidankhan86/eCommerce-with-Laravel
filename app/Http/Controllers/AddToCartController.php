@@ -28,7 +28,7 @@ class AddToCartController extends Controller
                     ];
 
                   session()->put('cart',$myCart);
-                //  notify()->success('Product added to cart.');
+                Alert::toast()->success('Product added to cart.');
                   return redirect()->back();
             }
 
@@ -45,7 +45,7 @@ class AddToCartController extends Controller
                 ];
 
                 session()->put('cart',$cart);
-              //  notify()->success('New product added.');
+              Alert::toast()->success('New product added.');
                 return redirect()->back();
 
             }
@@ -59,7 +59,8 @@ class AddToCartController extends Controller
           //  notify()->success('Cart updated.');
             return redirect()->back();
         }
-       // notify()->error('No Product Found.');
+
+       Alert::toast()->success('No Product Found.');
         return redirect()->back();
 
 
