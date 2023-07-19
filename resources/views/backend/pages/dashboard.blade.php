@@ -23,7 +23,7 @@
             <div class="card bg-warning text-white mb-4">
                 <div class="card-body">TOTAL NUMBER OF PRODUCTS</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="#">{{$totalProducts}}</a>
+                    <a class="small text-white stretched-link" href="{{route('product.list')}}">{{$totalProducts}}</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
