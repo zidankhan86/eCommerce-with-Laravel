@@ -52,7 +52,7 @@ Route::get('/search',[SearchController::class,'search'])->name('user.search');
 Route::get('add-to-cart/{id}',[AddToCartController::class,'addToCart'])->name('add.to.cart');
 Route::get('/view-cart',[AddToCartController::class,'viewCart'])->name('cart.view');
 Route::get('/clear-cart',[AddToCartController::class,'clearCart'])->name('cart.clear');
-
+Route::get('/cart-item/delete/{id}',[AddToCartController::class,'cartItemDelete'])->name('cart.item.delete');
 
 //Backend
 

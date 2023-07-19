@@ -46,7 +46,7 @@
                                     {{$data['subtotal']}} Tk.
                                 </td>
                                 <td class="shoping__cart__item__close">
-                                    <a href="{{route('cart.clear')}}"><i class="icon_close" style="color: black"></i></a>
+                                    <a href="{{route('cart.item.delete',$key)}}"><i class="icon_close" style="color: black"></i></a>
                                 </td>
                             </tr>
                             @endforeach

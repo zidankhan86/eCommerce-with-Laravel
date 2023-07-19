@@ -76,4 +76,15 @@ class AddToCartController extends Controller
         // notify()->success('Cart Clear success.');
         return redirect()->back();
     }
+
+    public function cartItemDelete($id)
+    {
+      $cart=session()->get('cart');
+//      dd($cart);
+      unset($cart[$id]);
+//      dd($cart);
+        session()->put('cart',$cart);
+    //   notify()->success('Item removed.');
+      return redirect()->back();
+    }
 }
