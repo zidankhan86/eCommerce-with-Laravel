@@ -67,6 +67,15 @@ class BlogController extends Controller
 
         return view('frontend.pages.blog.blog',compact('blogs','comment'));
     }
+
+
+    public function bloglist(){
+
+        $blogs = Blog::all();
+        return view('frontend.pages.blog.blogList',compact('blogs'));
+    }
+
+
     public function blogdelete($id){
         $delete = Blog::find($id);
         $delete->delete();
