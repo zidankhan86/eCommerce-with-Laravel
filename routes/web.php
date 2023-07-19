@@ -105,6 +105,7 @@ Route::get('/blog-delete/{id}',[BlogController::class,'blogdelete'])->name('blog
 
 Route::get('/hero-form',[HeroBannerController::class,'heroPost'])->name('hero.post');
 Route::post('/hero-store',[HeroBannerController::class,'herostore'])->name('hero.store');
+Route::get('/hero-list',[HeroBannerController::class,'herolist'])->name('hero.list');
 
 Route::get('/order-list',[OrderController::class,'orderList'])->name('order.list');
 Route::get('/order-invoice/{id}',[OrderController::class,'orderinvoice'])->name('order.invoice');

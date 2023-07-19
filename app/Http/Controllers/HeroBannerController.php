@@ -52,4 +52,10 @@ class HeroBannerController extends Controller
 
         return back()->with('success','Banner Uploaded Succesfully!');
     }
+
+    public function herolist(){
+
+        $banners = HeroBanner::all();
+        return view('backend.pages.heroBanner.heroList',compact('banners'));
+    }
 }
