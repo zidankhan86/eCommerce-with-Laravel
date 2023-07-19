@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AddToCartController extends Controller
 {
@@ -84,7 +85,8 @@ class AddToCartController extends Controller
       unset($cart[$id]);
 //      dd($cart);
         session()->put('cart',$cart);
-    //   notify()->success('Item removed.');
+
+    Alert::toast()->success('Item removed.');
       return redirect()->back();
     }
 }
