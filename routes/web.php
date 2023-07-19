@@ -77,6 +77,7 @@ Route::get('/product-form',[ProductController::class,'productForm'])->name('prod
 Route::post('/product-store',[ProductController::class,'productStore'])->name('product.store');
 Route::get('/product-list',[ProductController::class,'productList'])->name('product.list');
 Route::get('/product-edit/{id}',[ProductController::class,'productEdit'])->name('product.edit');
+Route::get('/product-delete/{id}',[ProductController::class,'productDelete'])->name('product.delete');
 
 Route::get('/new-arrival-product-form',[ProductController::class,'NewArrivalproductForm'])->name('new.arrival.product.form');
 Route::get('/new-arrival-product-list',[ProductController::class,'NewArrivalproductList'])->name('new.arrival.product.list');

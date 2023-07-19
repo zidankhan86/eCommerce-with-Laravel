@@ -148,4 +148,12 @@ class ProductController extends Controller
             $edit = Product::find($id);
             return view('backend.pages.product.edit',compact('edit','categories'));
         }
+
+        public function productDelete($id){
+
+            $delete =  Product::find($id);
+            $delete->delete();
+
+            return redirect()->back();
+        }
 }
