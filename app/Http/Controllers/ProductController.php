@@ -40,11 +40,11 @@ class ProductController extends Controller
         }
 
 
-        $imageName = null;
+        $images = null;
         if ($request->hasFile('image')) {
         $file = $request->file('image');
-        $imageName = date('Ymdi').'.'.$file->extension();
-        $file->storeAs('uploads', $imageName, 'public');
+        $images = date('Ymdi').'.'.$file->extension();
+        $file->storeAs('uploads', $images, 'public');
         }
         //dd($imageName);
         // dd($request->all());
@@ -54,7 +54,7 @@ class ProductController extends Controller
 
             "name"=>$request->name,
             "category_id"=>$request->category_id,
-            "image"=>$imageName,
+            "image"=>$images,
             "weight"=>$request->weight,
              "stock"=>$request->stock,
              "price"=>$request->price,

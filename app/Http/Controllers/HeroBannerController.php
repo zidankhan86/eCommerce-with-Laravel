@@ -50,7 +50,7 @@ class HeroBannerController extends Controller
 
         ]);
 
-        return back()->with('success','Banner Uploaded Succesfully!');
+        return back()->with('success','Banner Uploaded Successfully!');
     }
 
     public function herolist(){

@@ -27,7 +27,7 @@
          <div class="mb-3 mx-sm-2">
             <label for="exampleInputName1" class="form-label">Select Category</label>
 
-            <select name="category_id" id="" class="form-control">#
+            <select name="category_id" id="" class="form-control">
 
                 @foreach ($categories as $item)
 
