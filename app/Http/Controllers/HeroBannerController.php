@@ -58,4 +58,11 @@ class HeroBannerController extends Controller
         $banners = HeroBanner::all();
         return view('backend.pages.heroBanner.heroList',compact('banners'));
     }
+
+    public function herodelete($id){
+        $delete = HeroBanner::find($id);
+        $delete->delete();
+
+        return redirect()->back();
+    }
 }
