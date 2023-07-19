@@ -92,6 +92,7 @@ Route::get('/bannder-delete/{id}',[BannerController::class,'bannerdelete'])->nam
 
 Route::get('/blog-form',[BlogController::class,'blogPost'])->name('blog.post');
 Route::post('/blog-store',[BlogController::class,'blogStore'])->name('blog.store');
+Route::get('/blog-delete/{id}',[BlogController::class,'blogdelete'])->name('blog.delete');
 
 Route::get('/hero-form',[HeroBannerController::class,'heroPost'])->name('hero.post');
 Route::post('/hero-store',[HeroBannerController::class,'herostore'])->name('hero.store');

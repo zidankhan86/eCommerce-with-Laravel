@@ -6,6 +6,7 @@ use App\Models\Blog;
 use App\Models\Comment;
 use App\Rules\MaxDataLimit;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 
 class BlogController extends Controller
@@ -65,5 +66,11 @@ class BlogController extends Controller
         // $blogs = Blog::withCount('comments')->get();
 
         return view('frontend.pages.blog.blog',compact('blogs','comment'));
+    }
+    public function blogdelete($id){
+        $delete = Blog::find($id);
+        $delete->delete();
+        Alert::toast('Deleted! Product Deleted');
+        return redirect()->back();
     }
 }
