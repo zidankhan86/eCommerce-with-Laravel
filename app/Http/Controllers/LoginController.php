@@ -61,6 +61,23 @@ public function registration(){
 
 public function registrationStore(Request $request){
 
+    $validator = Validator::make($request->all(), [
+        'email' => 'required|email|unique:users',
+        'phone' => [
+            'required',
+            'regex:/^(?:\+?88|0088)?01[13-9]\d{8}$/'
+        ],
+        'address' => 'required',
+        'name' => 'required',
+        'password' => 'required|min:5',
+    ], [
+        'phone.regex' => 'The phone number should be a valid number.'
+    ]);
+
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+
    // dd($request->all());
 
     User::create([

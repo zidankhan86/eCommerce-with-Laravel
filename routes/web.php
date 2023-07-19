@@ -56,7 +56,7 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('registration', [LoginController::class, 'registration'])->name('registration');
 Route::post('registration', [LoginController::class, 'registrationStore'])->name('registration.submit');
 
-
+//Middleware for check valid user
 Route::group(['middleware' => 'customerAuth'], function () {
 
     Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
