@@ -7,6 +7,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class BannerController extends Controller
 {
@@ -72,7 +73,7 @@ public function bannerlist(){
 
 public function banneredit($id){
 
-    $edit = Product::find($id);
+    $edit = Banner::find($id);
     return view('backend.pages.banner.edit',compact('edit'));
 }
 
@@ -87,11 +88,6 @@ public function bannerupdate(Request $request,$id){
     if ($validator->fails()) {
         return redirect()->back()->withErrors($validator)->withInput();
     }
-
-    $existingBannersCount = Banner::count();
-if ($existingBannersCount >= 2) {
-    return back()->with('error', 'Maximum number of banners reached');
-}
 
 $imageName = null;
 if ($request->hasFile('image')) {
@@ -113,7 +109,7 @@ if ($request->hasFile('image')) {
         "image"=>$imageName
     ]);
 
-
+Alert::toast()->success('Bannder Updated');
     return redirect()->route('banner.list');
 
 }
