@@ -58,37 +58,37 @@ class AddToCartController extends Controller
 
           //  notify()->success('Cart updated.');
             return redirect()->back();
+          }
+
+          Alert::toast()->success('No Product Found.');
+          return redirect()->back();
+
+
+
+            }
+
+            public function viewCart()
+            {
+              return view('frontend.pages.addToCart.viewCard');
+            }
+
+            public function clearCart()
+            {
+                session()->forget('cart');
+
+                Alert::toast()->success('Cart Clear Success.');
+                return redirect()->back();
+            }
+
+            public function cartItemDelete($id)
+            {
+              $cart=session()->get('cart');
+        //      dd($cart);
+              unset($cart[$id]);
+        //      dd($cart);
+                session()->put('cart',$cart);
+
+            Alert::toast()->success('Item removed.');
+              return redirect()->back();
+            }
         }
-
-       Alert::toast()->success('No Product Found.');
-        return redirect()->back();
-
-
-
-    }
-
-    public function viewCart()
-    {
-       return view('frontend.pages.addToCart.viewCard');
-    }
-
-    public function clearCart()
-    {
-        session()->forget('cart');
-
-        Alert::toast()->success('Cart Clear Success.');
-        return redirect()->back();
-    }
-
-    public function cartItemDelete($id)
-    {
-      $cart=session()->get('cart');
-//      dd($cart);
-      unset($cart[$id]);
-//      dd($cart);
-        session()->put('cart',$cart);
-
-    Alert::toast()->success('Item removed.');
-      return redirect()->back();
-    }
-}

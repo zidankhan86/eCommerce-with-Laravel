@@ -79,7 +79,7 @@ class BlogController extends Controller
     public function blogdelete($id){
         $delete = Blog::find($id);
         $delete->delete();
-        Alert::toast('Deleted! Product Deleted');
+        Alert::toast()->success('Deleted! Product Deleted');
         return redirect()->back();
     }
 }
