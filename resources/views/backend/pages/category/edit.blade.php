@@ -4,7 +4,7 @@
 
 <br><h4 class=" text-success text-center">Category Form</h4>
 
-<form action="{{route('category.store')}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('category.update',$edit->id)}}" method="POST" enctype="multipart/form-data">
     @csrf
 
         @if(session('success'))
@@ -51,7 +51,7 @@
 
 
       <div class="text-center">
-        <button type="submit" class="btn btn-primary">Post</button>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
       </div>
 
   </form>
