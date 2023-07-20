@@ -19,7 +19,7 @@
         <th scope="col">Product  Price</th>
         <th scope="col">Dicount Price</th>
         <th scope="col">Shipping time</th>
-
+        <th scope="col">Status</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -43,6 +43,7 @@
         <td>{{ $item->price}} Tk.</td>
         <td>{{ $item->discount}}.00%</td>
         <td>{{ $item->time}}</td>
+        <td>{{ $item->status ? 'Active':'Inactive'}}</td>
 
         <td>
             <a href="{{route('product.edit',$item->id)}}" class="btn btn-success"><i class="fas fa-edit"></i></a>
