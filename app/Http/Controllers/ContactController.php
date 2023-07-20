@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ContactController extends Controller
 {
@@ -33,7 +34,8 @@ class ContactController extends Controller
             "message"=>$request->message,
 
         ]);
-        return redirect()->back()->with('success', 'Thank you for your feedback');
+        Alert::alert()->success('Thank you for your feedback.');
+        return back();
 
     }
 
