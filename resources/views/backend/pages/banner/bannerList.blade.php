@@ -30,7 +30,7 @@
         <td>{{ $item->tittle}}</td>
 
         <td>
-            <a href="" class="btn btn-success"> <i class="fas fa-edit"></i></a>
+            <a href="{{route('banner.edit',$item->id)}}" class="btn btn-success"> <i class="fas fa-edit"></i></a>
             <a href="{{route('banner.delete',$item->id)}}" class="btn btn-danger" onclick="return confirm('Do you want to delete ?')">  <i class="fas fa-trash"></i></a>
         </td>
 

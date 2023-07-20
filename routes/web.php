@@ -101,7 +101,9 @@ Route::post('/new-product-store',[ProductController::class,'newProductStore'])->
 Route::get('/bannder-form',[BannerController::class,'bannerForm'])->name('banner.form');
 Route::post('/bannder-store',[BannerController::class,'bannerStore'])->name('banner.store');
 Route::get('/bannder-list',[BannerController::class,'bannerlist'])->name('banner.list');
+Route::post('/bannder-update/{id}',[BannerController::class,'bannerupdate'])->name('banner.update');
 Route::get('/bannder-delete/{id}',[BannerController::class,'bannerdelete'])->name('banner.delete');
+Route::get('/bannder-edit/{id}',[BannerController::class,'banneredit'])->name('banner.edit');
 
 
 Route::get('/blog-form',[BlogController::class,'blogPost'])->name('blog.post');
