@@ -90,6 +90,7 @@ Route::get('/product-form',[ProductController::class,'productForm'])->name('prod
 Route::post('/product-store',[ProductController::class,'productStore'])->name('product.store');
 Route::get('/product-list',[ProductController::class,'productList'])->name('product.list');
 Route::get('/product-edit/{id}',[ProductController::class,'productEdit'])->name('product.edit');
+Route::post('/product-update/{id}',[ProductController::class,'productupdate'])->name('product.update');
 Route::get('/product-delete/{id}',[ProductController::class,'productDelete'])->name('product.delete');
 
 Route::get('/new-arrival-product-form',[ProductController::class,'NewArrivalproductForm'])->name('new.arrival.product.form');

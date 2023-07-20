@@ -150,6 +150,57 @@ class ProductController extends Controller
             return view('backend.pages.product.edit',compact('edit','categories'));
         }
 
+        public function productupdate( Request $request ,$id){
+
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string',
+            'category_id' => 'required',
+            'image' => 'nullable',
+            'weight' => 'required|numeric',
+            'stock' => 'required|integer',
+            'price' => 'required|numeric',
+            'discount' => 'nullable|numeric|max:100',
+            'time' => 'required',
+            'description' => 'required',
+            'product_information'=> 'required',
+            'status'=> 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+
+        $images = null;
+        if ($request->hasFile('image')) {
+        $file = $request->file('image');
+        $images = date('Ymdi').'.'.$file->extension();
+        $file->storeAs('uploads', $images, 'public');
+        }
+            //dd($imageName);
+           // dd($request->all());
+
+            $update=Product::find($id);
+
+            $update->update([
+                "name"=>$request->name,
+                "category_id"=>$request->category_id,
+                "image"=>$images,
+                "weight"=>$request->weight,
+                 "stock"=>$request->stock,
+                 "price"=>$request->price,
+                 "discount"=>$request->discount,
+                 "time"=>$request->time,
+                 "description"=>$request->description,
+                 'product_information' =>$request->product_information,
+                 'status' =>$request->status,
+            ]);
+            Alert::toast()->success('Your post has been edited');
+            return redirect()->route('product.list');
+
+        }
+
         public function productDelete($id){
 
             $delete =  Product::find($id);
