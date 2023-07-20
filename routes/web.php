@@ -54,6 +54,11 @@ Route::get('/view-cart',[AddToCartController::class,'viewCart'])->name('cart.vie
 Route::get('/clear-cart',[AddToCartController::class,'clearCart'])->name('cart.clear');
 Route::get('/cart-item/delete/{id}',[AddToCartController::class,'cartItemDelete'])->name('cart.item.delete');
 
+//Wishlist
+// Route::get('/wishlist', [WishlistController::class, 'wishlist'])->name('wishlist.index');
+// Route::post('/wishlist', [WishlistController::class, 'addToWishlist'])->name('wishlist.add');
+// Route::delete('/wishlist/{id}', [WishlistController::class, 'removeFromWishlist'])->name('wishlist.remove');
+
 //Backend
 
 //Login

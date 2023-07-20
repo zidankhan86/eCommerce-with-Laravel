@@ -28,10 +28,12 @@ class HomeController extends Controller
           $products = Product::simplePaginate(20);
 
           //Hero Banner
-         $heroBanners = HeroBanner::all();
+          $heroBanners = HeroBanner::all();
 
           //Latest Category
           $latestCategories = Category::latest()->limit(5)->get();
+
+          //Latest Products
           $latestProducts = Product::where('status',1)->latest()->limit(12)->get();
 
 
@@ -43,6 +45,7 @@ class HomeController extends Controller
 
         $category = Category::findOrFail($id);
 
+        //Feature Products
         $products = Product::where('category_id', $id)
         ->where('status', 1)->limit(20)
         ->get();
