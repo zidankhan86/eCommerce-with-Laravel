@@ -116,8 +116,13 @@
                             {{-- <li><a href="#"><i class="fa fa-heart"></i></a></li> --}}
                             {{-- <li><a href="#"><i class="fa fa-retweet"></i></a></li> --}}
                             <li><a href="{{route('add.to.cart',$item->id)}}"><i class="fa fa-shopping-cart"></i></a></li>
+
                         </ul>
-                    </div>
+                             </div>
+                        <div>
+                            <a href="{{route('add.to.cart',$item->id)}}" class="primary-btn">ADD TO CARD</a>
+                        </div>
+
                     <div class="featured__item__text">
                         <h6><a href="#">{{$item->name}}</a></h6>
                         <h5>{{$item->price}} Tk.</h5>
@@ -217,6 +222,9 @@
                             {{-- <li><a href="#"><i class="fa fa-retweet"></i></a></li> --}}
                             <li><a href="{{route('add.to.cart',$item->id)}}"><i class="fa fa-shopping-cart"></i></a></li>
                         </ul>
+                    </div>
+                    <div>
+                        <a href="{{route('add.to.cart',$item->id)}}" class="primary-btn">ADD TO CARD</a>
                     </div>
                     <div class="featured__item__text">
                         <h6><a href="#">{{$item->name}}</a></h6>
