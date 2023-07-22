@@ -80,6 +80,8 @@ class ProductController extends Controller
             "name"=> $request->name,
         ]);
 
+        session()->forget('cart');
+        
         Alert::toast()->success('Success, Order Confirmed!');
 
         return redirect()->route('home');
