@@ -77,6 +77,9 @@
                                 @enderror
                             </div>
 
+
+                            <input type="hidden" name="total_price" value="{{ $product->price }}">
+
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
@@ -99,6 +102,8 @@
                                     </div>
                                 </div>
                             </div>
+
+
 
                             <div class="checkout__input__checkbox">
                                 <label for="acc">

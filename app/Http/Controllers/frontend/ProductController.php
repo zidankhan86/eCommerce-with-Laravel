@@ -54,6 +54,7 @@ class ProductController extends Controller
             'phone' => 'required|string',
             'email' => 'required|email',
             'note' => 'nullable|string',
+            'total_price' => 'required|numeric|min:0',
         ]);
 
         if ($validator->fails()) {
@@ -74,6 +75,7 @@ class ProductController extends Controller
             "phone"=>$request->phone,
             "email"=>$request->email,
             "note"=>$request->note,
+            "total_price" => $request->total_price,
         ]);
         session()->forget('cart');
 
@@ -86,7 +88,7 @@ class ProductController extends Controller
 
     public function singleProductCheckout($id){
 
-        
+
         $product = Product::findOrFail($id);
         return view('frontend.pages.product.checkoutSigleProduct',compact('product'));
     }
