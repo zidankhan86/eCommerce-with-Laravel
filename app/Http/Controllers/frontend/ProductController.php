@@ -54,8 +54,8 @@ class ProductController extends Controller
             'phone' => 'required|string',
             'email' => 'required|email',
             'note' => 'nullable|string',
-            'total_price' => 'required|numeric|min:0',
-            'name' => 'required|string',
+            'total_price' => 'nullable|numeric|min:0',
+            'name' => 'nullable|string',
         ]);
 
         if ($validator->fails()) {
