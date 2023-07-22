@@ -44,16 +44,7 @@
 
 
                           </div>
-                          <div class="product__details__pic__slider owl-carousel">
-                              <img data-imgbigurl="img/product/details/product-details-2.jpg"
-                                  src="img/product/details/thumb-1.jpg" alt="">
-                              <img data-imgbigurl="img/product/details/product-details-3.jpg"
-                                  src="img/product/details/thumb-2.jpg" alt="">
-                              <img data-imgbigurl="img/product/details/product-details-5.jpg"
-                                  src="img/product/details/thumb-3.jpg" alt="">
-                              <img data-imgbigurl="img/product/details/product-details-4.jpg"
-                                  src="img/product/details/thumb-4.jpg" alt="">
-                          </div>
+
                       </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
@@ -72,7 +63,7 @@
                           <div class="product__details__quantity">
                               <div class="">
                                   <div class="pro-qty">
-                                      <a href="{{route('product.checkout',$details->id)}}" class="primary-btn">ORDER</a>
+                                      <a href="{{route('single.product.checkout',$details->id)}}" class="primary-btn">ORDER</a>
                                   </div>
                               </div>
                           </div>
@@ -133,17 +124,7 @@
                               <div class="tab-pane" id="tabs-3" role="tabpanel">
                                   <div class="product__details__tab__desc">
                                       <h6>Products Infomation</h6>
-                                      <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
-                                          Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus.
-                                          Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam
-                                          sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo
-                                          eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.
-                                          Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent
-                                          sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac
-                                          diam sit amet quam vehicula elementum sed sit amet dui. Vestibulum ante
-                                          ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                                          Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
-                                          Proin eget tortor risus.</p>
+                                      <p>Product Information Link here</p>
                                   </div>
                               </div>
                           </div>

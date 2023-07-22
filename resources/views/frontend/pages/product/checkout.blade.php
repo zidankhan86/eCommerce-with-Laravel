@@ -146,29 +146,7 @@
                           </div>
 
 
-                          {{-- <div class="col-lg-4 col-md-6">
-                            <div class="checkout__order">
-                                <h4>Your Order</h4>
-                                <div class="checkout__order__products">Products <span>Total</span></div>
-                                <ul>
-                                    @foreach(session()->get('cart') as $data)
-                                    <li>{{$data['name']}} <span>{{$data['subtotal']}} Tk.</span></li>
-                                    @endforeach
-                                </ul>
-                                <div class="checkout__order__subtotal">Subtotal <span>{{ $subtotal }} Tk.</span></div>
-                                <div class="checkout__order__total">Total <span>{{ $subtotal }} Tk.</span></div>
-                                <div class="checkout__input__checkbox">
-                                    <label for="acc-or">
-                                        Create an account?
-                                        <input type="checkbox" id="acc-or">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore magna aliqua.</p>
-                                <button type="submit" class="site-btn">PLACE ORDER</button>
-                            </div>
-                        </div> --}}
+
 
                         <div class="col-lg-4 col-md-6">
                             <div class="checkout__order">
@@ -190,8 +168,7 @@
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore magna aliqua.</p>
+                                <p>Thank you for choosing us.Happy shopping.</p>
                                 <button type="submit" class="site-btn">PLACE ORDER</button>
                             </div>
                         </div>

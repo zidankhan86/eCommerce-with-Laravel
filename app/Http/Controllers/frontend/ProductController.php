@@ -27,6 +27,7 @@ class ProductController extends Controller
 
     public function productCheckout($id){
         $products = Product::find($id);
+
         $cartItems = session()->get('cart', []);
         $subtotal = 0;
 
@@ -79,6 +80,14 @@ class ProductController extends Controller
         Alert::toast()->success('Success, Order Confirmed!');
 
         return redirect()->route('home');
+
+    }
+
+
+    public function singleProductCheckout($id){
+
         
+        $product = Product::findOrFail($id);
+        return view('frontend.pages.product.checkoutSigleProduct',compact('product'));
     }
 }

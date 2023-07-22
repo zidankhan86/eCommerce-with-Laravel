@@ -73,6 +73,11 @@ Route::post('registration', [LoginController::class, 'registrationStore'])->name
 Route::group(['middleware' => 'customerAuth'], function () {
 
     Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
+
+
+    Route::get('/product-checkout-single/product/{id}',[FrontendProductController::class,'singleProductCheckout'])->name('single.product.checkout');
+
+
     Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
 
 });
