@@ -33,7 +33,7 @@
 
         <td>
             <a href="{{route('category.edit',$item->id)}}" class="btn btn-success"> <i class="fas fa-edit"></i></a>
-            <a href="" class="btn btn-danger" onclick="return confirm('Do you want to delete ?')">  <i class="fas fa-trash"></i></a>
+            <a href="{{route('category.delete',$item->id)}}" class="btn btn-danger" onclick="return confirm('Do you want to delete ?')">  <i class="fas fa-trash"></i></a>
         </td>
 
       </tr>

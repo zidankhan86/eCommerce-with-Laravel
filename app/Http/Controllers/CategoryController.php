@@ -83,5 +83,12 @@ class CategoryController extends Controller
         return redirect()->route('category.list');
     }
 
+    public function categordelete($id){
+        $delete = Category::find($id);
+        $delete->delete();
+
+        return back();
+    }
+
 
 }

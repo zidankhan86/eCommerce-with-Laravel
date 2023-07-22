@@ -86,6 +86,7 @@ Route::post('/category-store',[CategoryController::class,'categoryStore'])->name
 Route::get('/category-list',[CategoryController::class,'categoryList'])->name('category.list');
 Route::get('/category-edit/{id}',[CategoryController::class,'categoryedit'])->name('category.edit');
 Route::post('/category-update/{id}',[CategoryController::class,'categorupdate'])->name('category.update');
+Route::get('/category-delete/{id}',[CategoryController::class,'categordelete'])->name('category.delete');
 
 Route::get('/product-form',[ProductController::class,'productForm'])->name('product.form');
 Route::post('/product-store',[ProductController::class,'productStore'])->name('product.store');
