@@ -71,13 +71,13 @@ Route::post('registration', [LoginController::class, 'registrationStore'])->name
 
 //Middleware for check valid user
 Route::group(['middleware' => 'customerAuth'], function () {
-
+    //Cart Product Order
     Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
 
-
+    //Sigle Product Order
     Route::get('/product-checkout-single/product/{id}',[FrontendProductController::class,'singleProductCheckout'])->name('single.product.checkout');
 
-
+    //Order Create for both
     Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
 
 });
