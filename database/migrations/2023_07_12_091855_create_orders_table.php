@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('note')->nullable();
             $table->decimal('total_price')->default(0.00)->nullable();
+            $table->string('name')->nullable();
             $table->timestamps();
         });
     }

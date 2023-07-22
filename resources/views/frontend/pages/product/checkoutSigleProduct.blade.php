@@ -80,6 +80,8 @@
 
                             <input type="hidden" name="total_price" value="{{ $product->price }}">
 
+                            <input type="hidden" name="name" value="{{ $product->name }}">
+
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">

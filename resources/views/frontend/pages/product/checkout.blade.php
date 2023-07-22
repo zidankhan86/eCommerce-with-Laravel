@@ -143,7 +143,7 @@
                                   <input type="text" name="note"
                                       placeholder="Notes about your order, e.g. special notes for delivery.">
                               </div>
-                          </div>
+                              </div>
 
 
 

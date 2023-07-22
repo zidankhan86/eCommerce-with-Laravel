@@ -55,6 +55,7 @@ class ProductController extends Controller
             'email' => 'required|email',
             'note' => 'nullable|string',
             'total_price' => 'required|numeric|min:0',
+            'name' => 'required|string',
         ]);
 
         if ($validator->fails()) {
@@ -76,8 +77,8 @@ class ProductController extends Controller
             "email"=>$request->email,
             "note"=>$request->note,
             "total_price" => $request->total_price,
+            "name"=> $request->name,
         ]);
-        session()->forget('cart');
 
         Alert::toast()->success('Success, Order Confirmed!');
 
