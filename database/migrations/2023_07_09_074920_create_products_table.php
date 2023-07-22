@@ -25,7 +25,8 @@ return new class extends Migration
             $table->longText('product_information');
             $table->boolean('status')->default(0);
 
-            $table->foreign('category_id')->references('id')->on('categories');
+
+            $table->foreign('category_id')->references('id')->on('categories') ->restrictOnDelete();
             $table->timestamps();
         });
     }
