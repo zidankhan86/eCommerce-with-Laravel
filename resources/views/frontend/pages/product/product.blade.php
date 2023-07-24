@@ -47,7 +47,7 @@
                         </ul>
                     </div>
                     <div>
-                        <a href="{{route('add.to.cart',$item->id)}}" class="primary-btn">ADD TO CARD</a>
+                        <a href="{{route('add.to.cart',$item->id)}}" class="primary-btn">ADD TO CART</a>
                     </div>
                     <div class="featured__item__text">
                         <h6><a href="#">{{$item->name}}</a></h6>
