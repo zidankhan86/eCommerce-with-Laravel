@@ -63,6 +63,7 @@ class ProductController extends Controller
         }
 
 
+        $subtotal = $request->input('total_price');
 
        //dd($request->all());
 
@@ -77,6 +78,7 @@ class ProductController extends Controller
             "email"=>$request->email,
             "note"=>$request->note,
             "total_price" => $request->total_price,
+            "total_price" => $subtotal,
             "name"=> $request->name,
         ]);
 

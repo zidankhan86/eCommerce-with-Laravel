@@ -82,6 +82,12 @@
 
 
                               </div>
+
+                              
+
+
+                              <input type="hidden" name="total_price" value="{{ $subtotal }}">
+
                               <div class="checkout__input">
                                   <p>Town/City<span>*</span></p>
                                   <input type="text" name="city">
