@@ -24,7 +24,7 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
             'category_id' => 'required',
-            'image' => 'nullable',
+            'image' => 'nullable|image|max:200',
             'weight' => 'required|numeric',
             'stock' => 'required|integer',
             'price' => 'required|numeric',
@@ -156,7 +156,7 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
             'category_id' => 'required',
-            'image' => 'nullable',
+            'image' => 'nullable|image|max:200',
             'weight' => 'required|numeric',
             'stock' => 'required|integer',
             'price' => 'required|numeric',
