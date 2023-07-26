@@ -120,11 +120,18 @@
 
               <div class="mb-3 mx-sm-2">
                 <label for="exampleInputName1" class="form-label">Product Information</label>
-                <textarea class="form-control" id="exampleInputName1" name="product_information"  placeholder="Write more details about your product  here.." style="height: 150px;"></textarea>
+                <textarea class="form-control" id="exampleInputName1" name="product_information" placeholder="Write more details about your product here.." style="height: 150px;">{{ old('product_information') }}</textarea>
                 @error('product_information')
                 <strong class="text-danger">{{$message}}</strong>
                 @enderror
-              </div>
+            </div>
+
+            @if (isset($product) && !empty($product->product_information))
+            <div class="mb-3 mx-sm-2">
+                <label for="exampleInputName1" class="form-label">Formatted Product Information</label>
+                <div>{!! nl2br(e($product->product_information)) !!}</div>
+            </div>
+            @endif
 
               <div class="mb-3 mx-sm-2" >
                 <label for="exampleInputNumber3" class="form-label">Status</label>

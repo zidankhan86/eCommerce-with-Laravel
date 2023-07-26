@@ -102,24 +102,16 @@
                           </ul>
                           <div class="tab-content">
                               <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                                  <div class="product__details__tab__desc">
-                                      <h6>Products Infomation</h6>
 
 
-
-                                      <p> <p>{{$details->product_information}}</p></p>
-
-
-
-
-                                  </div>
-                              </div>
                               <div class="tab-pane" id="tabs-2" role="tabpanel">
-                                  <div class="product__details__tab__desc">
-                                      <h6>Products Infomation</h6>
-                                      <p>{{$details->product_information}}</p>
+                                <div class="product__details__tab__desc">
+                                    <h6>Products Information</h6>
+                                    <p>{!! nl2br(e($details->product_information)) !!}</p>
+                                </div>
+                            </div>
 
-                                  </div>
+
                               </div>
                               <div class="tab-pane" id="tabs-3" role="tabpanel">
                                   <div class="product__details__tab__desc">
