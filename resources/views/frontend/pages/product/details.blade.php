@@ -50,14 +50,14 @@
                   <div class="col-lg-6 col-md-6">
                       <div class="product__details__text">
                           <h3>{{$details->name}}</h3>
-                          <div class="product__details__rating">
+                          {{-- <div class="product__details__rating">
                               <i class="fa fa-star"></i>
                               <i class="fa fa-star"></i>
                               <i class="fa fa-star"></i>
                               <i class="fa fa-star"></i>
                               <i class="fa fa-star-half-o"></i>
                               <span>(18 reviews)</span>
-                          </div>
+                          </div> --}}
                           <div class="product__details__price">{{$details->price}}.00 Tk</div>
                           <p>{{$details->description}}</p>
                           <div class="product__details__quantity">
