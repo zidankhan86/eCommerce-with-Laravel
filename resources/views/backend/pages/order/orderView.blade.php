@@ -7,7 +7,7 @@
       <div class="container mb-5 mt-3">
         <div class="row d-flex align-items-baseline">
           <div class="col-xl-9">
-            <p style="color: #7e8d9f;font-size: 20px;">Invoice >> <strong>ID: #123-123</strong></p>
+            <p style="color: #7e8d9f;font-size: 20px;">Invoice >> <strong>INV{{$invoice->total_price}}{{$invoice->id}}</strong></p>
           </div>
           <div class="col-xl-3 float-end">
             <a class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark"><i
@@ -34,19 +34,19 @@
                 <li class="text-muted">To: <span style="color:#5d9fc5 ;">{{$invoice->first_name}}</span></li>
                 <li class="text-muted">Address :{{$invoice->address}}</li>
                 <li class="text-muted">City :{{$invoice->city}}</li>
-                <li class="text-muted"><i class="fas fa-phone"></i> 123-456-789</li>
+                <li class="text-muted"><i class="fas fa-phone"></i> {{$invoice->phone}}</</li>
               </ul>
             </div>
             <div class="col-xl-4">
               <p class="text-muted">Invoice</p>
               <ul class="list-unstyled">
                 <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
-                    class="fw-bold">ID:</span>#123-456</li>
+                    class="fw-bold">ID:</span>NF{{$invoice->total_price}}{{$invoice->id}}</li>
                 <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
                     class="fw-bold">Order Date: </span>{{$invoice->updated_at}}</li>
                 <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
                     class="me-1 fw-bold">Status:</span><span class="badge bg-warning text-black fw-bold">
-                    Unpaid</span></li>
+                    Paid</span></li>
               </ul>
             </div>
           </div>
@@ -56,7 +56,7 @@
               <thead style="background-color:#84B0CA ;" class="text-white">
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Description</th>
+                  <th scope="col">Products</th>
                   <th scope="col">Qty</th>
                   <th scope="col">Unit Price</th>
                   <th scope="col">Amount</th>
@@ -65,25 +65,13 @@
               <tbody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>Pro Package</td>
+                  <td>{{$invoice->id}}</td>
                   <td>4</td>
-                  <td>$200</td>
-                  <td>$800</td>
+                  <td>{{$invoice->total_price}} Tk.</td>
+                  <td>{{$invoice->total_price}} Tk.</td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Web hosting</td>
-                  <td>1</td>
-                  <td>$10</td>
-                  <td>$10</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Consulting</td>
-                  <td>1 year</td>
-                  <td>$300</td>
-                  <td>$300</td>
-                </tr>
+
+
               </tbody>
 
             </table>
@@ -95,11 +83,11 @@
             </div>
             <div class="col-xl-3">
               <ul class="list-unstyled">
-                <li class="text-muted ms-3"><span class="text-black me-4">SubTotal</span>$1110</li>
-                <li class="text-muted ms-3 mt-2"><span class="text-black me-4">Tax(15%)</span>$111</li>
+                <li class="text-muted ms-3"><span class="text-black me-4">SubTotal</span>{{$invoice->total_price}} Tk.</li>
+
               </ul>
               <p class="text-black float-start"><span class="text-black me-3"> Total Amount</span><span
-                  style="font-size: 25px;">$1221</span></p>
+                  style="font-size: 25px;">{{$invoice->total_price}} Tk.</span></p>
             </div>
           </div>
           <hr>
