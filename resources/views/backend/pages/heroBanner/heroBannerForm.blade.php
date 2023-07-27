@@ -49,7 +49,7 @@
         </div>
 
             <div class="mb-3 mx-sm-2">
-            <label for="exampleInputName2" class="form-label">Chose Banner</label>
+            <label for="exampleInputName2" class="form-label">Chose Banner <strong>*(MAX IMAGE SIZE 200kb)*</strong></label>
             <input type="file" class="form-control" value="{{ old('image') }}" id="exampleInputName2" name="image">
             @error('image')
 
