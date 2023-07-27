@@ -65,7 +65,10 @@ class ProductController extends Controller
 
         $subtotal = $request->input('total_price');
 
-       //dd($request->all());
+         // Convert array of product names to a single comma-separated string
+        $productNames = implode(', ', $request->input('product_names', []));
+
+        //dd($request->all());
 
         Order::create([
             "first_name"=>$request->first_name,
@@ -80,6 +83,7 @@ class ProductController extends Controller
             "total_price" => $request->total_price,
             "total_price" => $subtotal,
             "name"=> $request->name,
+            "name" => $productNames,
         ]);
 
         session()->forget('cart');
