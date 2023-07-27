@@ -28,7 +28,7 @@
     <table class="table table-striped">
         <thead>
         <tr>
-          
+
             <th scope="col">Serial</th>
             <th scope="col">Product Name</th>
             <th scope="col">Total</th>
@@ -41,7 +41,7 @@
             <th scope="col">Email</th>
             <th scope="col">Note</th>
             <th scope="col">Status</th>
-            <th scope="col">Invoice</th>
+          
 
         </tr>
         </thead>
