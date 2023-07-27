@@ -2,6 +2,12 @@
 
 @section('content')
 
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
 <div class="card">
     <div class="card-body">
       <div class="container mb-5 mt-3">
@@ -10,10 +16,14 @@
             <p style="color: #7e8d9f;font-size: 20px;">Invoice >> <strong>INV{{$invoice->total_price}}{{$invoice->id}}</strong></p>
           </div>
           <div class="col-xl-3 float-end">
-            <a class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark"><i
-                class="fas fa-print text-primary"></i> Print</a>
-            <a class="btn btn-light text-capitalize" data-mdb-ripple-color="dark"><i
-                class="far fa-file-pdf text-danger"></i> Export</a>
+
+            {{-- <button class="btn btn-light text-capitalize border-0 no-print" data-mdb-ripple-color="dark" onclick="printInvoice()">
+                <i class="fas fa-print text-primary"></i> Print
+            </button> --}}
+
+
+            {{-- <a class="btn btn-light text-capitalize" data-mdb-ripple-color="dark"><i
+                class="far fa-file-pdf text-danger"></i> Export</a> --}}
           </div>
           <hr>
         </div>
@@ -96,8 +106,9 @@
               <p>Thank you for your purchase</p>
             </div>
             <div class="col-xl-2">
-              <button type="button" class="btn btn-primary text-capitalize"
-                style="background-color:#60bdf3 ;">Pay Now</button>
+                <button class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark" onclick="printInvoice()">
+                    <i class="fas fa-print text-primary"></i> Print
+                </button>
             </div>
           </div>
 
@@ -105,5 +116,25 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function printInvoice() {
+        window.print();
+    }
+
+    function generatePDF() {
+        const doc = new jsPDF();
+        const element = document.getElementById("invoice");
+
+        // Use html2canvas to capture the content of the "invoice" element
+        html2canvas(element).then((canvas) => {
+            const imgData = canvas.toDataURL("image/png");
+            doc.addImage(imgData, "PNG", 10, 10, 190, 250);
+            doc.save("invoice.pdf");
+        });
+    }
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
 @endsection
