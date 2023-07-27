@@ -68,7 +68,7 @@
                     User Feedback
                 </a>
 
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{route('report')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Print Report
                 </a>
