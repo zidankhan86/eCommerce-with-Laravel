@@ -57,16 +57,16 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Products</th>
-                  <th scope="col">Qty</th>
+                  {{-- <th scope="col">Qty</th> --}}
                   <th scope="col">Unit Price</th>
                   <th scope="col">Amount</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>{{$invoice->id}}</td>
-                  <td>4</td>
+                  <th scope="row">{{$invoice->id}}</th>
+                  <td>{{$invoice->name}}</td>
+                  {{-- <td>4</td> --}}
                   <td>{{$invoice->total_price}} Tk.</td>
                   <td>{{$invoice->total_price}} Tk.</td>
                 </tr>
