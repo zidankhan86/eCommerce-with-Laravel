@@ -20,7 +20,7 @@ class BlogController extends Controller
         $validator = Validator::make($request->all(), [
             'tittle' => ['required', 'string'],
             'description' => ['required', 'string'],
-            'image' => ['nullable'],
+            'image' => ['nullable', 'max:150'],
         ]);
 
         $validator->after(function ($validator) {

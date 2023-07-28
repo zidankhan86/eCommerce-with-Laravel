@@ -82,6 +82,12 @@
 
 
                               </div>
+
+
+
+
+                              <input type="hidden" name="total_price" value="{{ $subtotal }}">
+
                               <div class="checkout__input">
                                   <p>Town/City<span>*</span></p>
                                   <input type="text" name="city">
@@ -116,6 +122,23 @@
                                           @enderror
                                       </div>
                                   </div>
+
+
+
+                                  <ul>
+                                    @if(session()->has('cart') && is_array(session()->get('cart')))
+                                        @foreach(session()->get('cart') as $data)
+                                            <li>
+                                                {{$data['name']}} <span>{{$data['subtotal']}} Tk.</span>
+                                                <input type="hidden" name="product_names[]" value="{{$data['name']}}">
+                                            </li>
+                                        @endforeach
+                                    @endif
+                                  </ul>
+
+
+
+
                                   <div class="col-lg-6">
                                       <div class="checkout__input">
                                           <p>Email<span>*</span></p>

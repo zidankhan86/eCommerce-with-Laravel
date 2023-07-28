@@ -10,6 +10,8 @@
     <thead>
         <tr>
             <th scope="col">Serial</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Total</th>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
             <th scope="col">City</th>
@@ -30,6 +32,8 @@
         @foreach ($orders as $item)
         <tr>
             <th scope="row">{{ $id++ }}</th>
+            <td>{{ $item->name }}</td>
+            <td>{{ $item->total_price }} Tk.</td>
             <td>{{ $item->first_name }}</td>
             <td>{{ $item->last_name }}</td>
             <td>{{ $item->address }}</td>

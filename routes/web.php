@@ -14,6 +14,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SearchController;
 use App\Models\Product;
 
@@ -125,6 +126,9 @@ Route::get('/hero-delete/{id}',[HeroBannerController::class,'herodelete'])->name
 
 Route::get('/order-list',[OrderController::class,'orderList'])->name('order.list');
 Route::get('/order-invoice/{id}',[OrderController::class,'orderinvoice'])->name('order.invoice');
+
+Route::get('/report',[ReportController::class,'report'])->name('report');
+Route::get('/report/search',[ReportController::class,'reportSearch'])->name('order.report.search');
 
 Route::get('/contact-list',[ContactController::class,'contactlist'])->name('contact.list');
 Route::get('/contact-view/{id}',[ContactController::class,'contactview'])->name('contact.view');
