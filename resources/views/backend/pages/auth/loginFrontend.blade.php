@@ -111,7 +111,7 @@
         </div>
         <div class="form-group small clearfix">
             <label class="checkbox-inline"><input type="checkbox"> Remember me</label>
-            <a href="#" class="forgot-link">Forgot Password?</a>
+            <a href="{{ route('password.request') }}" class="forgot-link">Forgot Password?</a>
         </div>
 
         <button type="submit" class="btn btn-primary btn-block btn-lg">Login</button>

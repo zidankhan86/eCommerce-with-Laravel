@@ -1,22 +1,24 @@
 <?php
 
-use App\Http\Controllers\AddToCartController;
-use App\Http\Controllers\BannerController;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
-use App\Http\Controllers\frontend\ProductController as FrontendProductController;
-use App\Http\Controllers\HeroBannerController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SearchController;
-use App\Models\Product;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AddToCartController;
+use App\Http\Controllers\HeroBannerController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
+use App\Http\Controllers\frontend\ProductController as FrontendProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,12 +72,18 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('registration', [LoginController::class, 'registration'])->name('registration');
 Route::post('registration', [LoginController::class, 'registrationStore'])->name('registration.submit');
 
+//Forget password
+Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+
 //Middleware for check valid user
 Route::group(['middleware' => 'customerAuth'], function () {
     //Cart Product Order
     Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
 
-    //Sigle Product Order
+    //Single Product Order
     Route::get('/product-checkout-single/product/{id}',[FrontendProductController::class,'singleProductCheckout'])->name('single.product.checkout');
 
     //Order Create for both
