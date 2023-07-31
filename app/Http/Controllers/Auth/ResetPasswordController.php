@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Hash;
 
 class ResetPasswordController extends Controller
 {
-
-
-
     public function showResetForm(Request $request, $token = null)
     {
         return view('frontend.pages.resetPassword.reset')->with(
@@ -18,15 +16,26 @@ class ResetPasswordController extends Controller
         );
     }
 
-    protected function resetPassword($user, $password)
+    public function resetPassword(Request $request)
     {
-        $user->password = bcrypt($password);
-        $user->save();
-    }
+        // Validate the input fields
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:5|confirmed',
+        ]);
 
-    // Get the broker to be used during password reset.
-    public function broker()
-    {
-        return Password::broker();
+        // Find the user by email
+        $user = User::where('email', $request->email)->first();
+
+        // Check if the user exists
+        if (!$user) {
+            return redirect()->back()->withErrors(['email' => 'User with this email not found.']);
+        }
+
+        // Update the user's password
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        return redirect()->route('home')->with('success', 'Password updated successfully!');
     }
 }
