@@ -39,11 +39,6 @@
                     </div><br>
 
 
-                    {{-- <a href="{{route('product.details',$item->id)}}" class="btn btn-info btn-lg" style="width: 150px;">Details</a>
-                    <a href="" class="btn btn-success btn-lg" style="width: 100px;">Order</a> --}}
-
-
-
                 </div>
 
 
