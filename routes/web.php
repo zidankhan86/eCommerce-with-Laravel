@@ -19,6 +19,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\ProductController as FrontendProductController;
+use App\Http\Controllers\NotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,6 +94,9 @@ Route::group(['middleware' => 'customerAuth'], function () {
 
 //middleware auth and admin
 Route::group(['middleware' => 'auth','admin','prefix'=>'admin'], function () {
+
+Route::get('/admin/notifications', [NotificationController::class, 'notifications'])->name('admin.notifications');
+
 
 Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
 Route::get('/category-form',[CategoryController::class,'categoryForm'])->name('category.form');

@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\frontend;
 
+use App\Models\User;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\OrderReceivedNotification;
 
 class ProductController extends Controller
 {
@@ -70,7 +73,7 @@ class ProductController extends Controller
 
         //dd($request->all());
 
-        Order::create([
+        $order = Order::create([
             "first_name"=>$request->first_name,
             "last_name"=>$request->last_name,
             "address"=>$request->address,
@@ -85,6 +88,13 @@ class ProductController extends Controller
             "name"=> $request->name,
             "name" => $productNames,
         ]);
+
+
+
+        $admins = User::where('role', 'admin')->get(); // Assuming 'User' is your admin model
+         Notification::send($admins, new OrderReceivedNotification($order));
+
+    $order->save();
 
         session()->forget('cart');
 
