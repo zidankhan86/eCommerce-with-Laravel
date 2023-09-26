@@ -1,16 +1,14 @@
 <!-- latest Product -->
 
-<section class="featured spad">
+<section class="">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="section-title">
-                    <h2>Latest Products</h2>
-                </div>
+
                 <div class="featured__controls">
 
                     <ul>
-                        <li class="active" data-filter="*">All</li>
+                        <li class="active" data-filter="*">New Arrival</li>
 
                         @foreach ($latestCategories as $item)
 
