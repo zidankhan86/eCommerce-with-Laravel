@@ -8,6 +8,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
+use App\Models\BannerTwo;
 use App\Models\HeroBanner;
 
 class HomeController extends Controller
@@ -20,6 +21,8 @@ class HomeController extends Controller
 
           //Banner
           $banners = Banner::all();
+
+          $bannersTwo = BannerTwo::all();
 
           //Category
           $categories = Category::all();
@@ -38,7 +41,8 @@ class HomeController extends Controller
 
 
         return view('frontend.pages.home',
-        compact('categories','products','latestProducts','latestCategories','blogs','banners','heroBanners'));
+        compact('categories','products','latestProducts',
+        'latestCategories','blogs','banners','heroBanners','bannersTwo'));
     }
 
        public function categoryWiseProduct($id){

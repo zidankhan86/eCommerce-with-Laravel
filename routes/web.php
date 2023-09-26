@@ -126,6 +126,7 @@ Route::get('/bannder-form',[BannerController::class,'bannerForm'])->name('banner
 Route::get('/banner-form-two',[BannerController::class,'bannerFormTwo'])->name('banner.form.two');
 Route::get('/banner-list-two',[BannerController::class,'bannerListTwo'])->name('banner.list.two');
 Route::post('/banner-store-two',[BannerController::class,'bannerStoreTwo'])->name('banner.store.two');
+Route::get('/bannder-two-delete/{id}',[BannerController::class,'bannerTwoDelete'])->name('banner.two.delete');
 Route::post('/bannder-store',[BannerController::class,'bannerStore'])->name('banner.store');
 Route::get('/bannder-list',[BannerController::class,'bannerlist'])->name('banner.list');
 Route::post('/bannder-update/{id}',[BannerController::class,'bannerupdate'])->name('banner.update');

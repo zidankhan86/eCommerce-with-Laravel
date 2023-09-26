@@ -110,7 +110,7 @@ if ($request->hasFile('image')) {
         "image"=>$imageName
     ]);
 
-Alert::toast()->success('Bannder Updated');
+Alert::toast()->success('Banner Updated');
     return redirect()->route('banner.list');
 
 }
@@ -129,7 +129,7 @@ public function bannerStoreTwo(Request $request){
     $validator = Validator::make($request->all(), [
         'tittle' => 'required',
         'description' => 'required',
-        'image' => 'required|max:200',
+        'image' => 'required|max:400',
     ]);
 
     if ($validator->fails()) {
@@ -160,6 +160,18 @@ if ($request->hasFile('image')) {
     ]);
 
     return back()->with('success','Banner Uploaded Successfully!');
+
+}
+public function bannerTwoDelete($id){
+
+    $banner = BannerTwo::find($id);
+
+    if ($banner) {
+        $banner->delete();
+        return redirect()->back()->with('success', 'Banner deleted successfully!');
+    }
+
+    return redirect()->back()->with('error', 'Banner not found.');
 
 }
 

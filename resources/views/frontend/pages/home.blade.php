@@ -5,6 +5,7 @@
  @include('frontend.components.navLayer')
  @include('frontend.components.hero')
  @include('frontend.components.product')
+ @include('frontend.components.bannerTwo')
  @include('frontend.components.latestProduct')
  @include('frontend.components.banner')
  @include('frontend.components.blog')
