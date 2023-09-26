@@ -21,66 +21,52 @@
     <link rel="stylesheet" href="{{url('frontend/css/owl.carousel.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('frontend/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('frontend/css/style.css')}}" type="text/css">
+
+
 </head>
 
 
 <body>
     <!-- Page Preloder -->
+<!-- Preloader Styles -->
+<style>
+    /* Preloader Styles */
+    .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
 
+    .loader {
+        border: 4px solid #3498db;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 2s linear infinite;
+    }
 
-    <!-- Humberger Begin -->
-    <div class="humberger__menu__overlay"></div>
-    <div class="humberger__menu__wrapper">
-        <div class="humberger__menu__logo">
-            <a href="{{ route('home') }}"><img src="{{url('frontend/img/logo.png')}}" alt=""></a>
-        </div>
-        <div class="humberger__menu__cart">
-            <ul>
-                {{-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> --}}
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-            </ul>
-            {{-- <div class="header__cart__price">item: <span>$150.00</span></div> --}}
-        </div>
-        <div class="humberger__menu__widget">
-            <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
-            </div>
-        </div>
-        <nav class="humberger__menu__nav mobile-menu">
-            <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./shop-grid.html">Shop</a></li>
-                <li><a href="#">Pages</a>
-                    <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
-                    </ul>
-                </li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div id="mobile-menu-wrap"></div>
-        <div class="header__top__right__social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-pinterest-p"></i></a>
-        </div>
-        <div class="humberger__menu__contact">
-            <ul>
-                <li><i class="fa fa-envelope"></i> nongor.food@gmail.com</li>
-                <li>Free Shipping for all Order of 10000 Tk</li>
-            </ul>
-        </div>
-    </div>
-    <!-- Humberger End -->
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+<div class="preloader d-none">
+    <div class="loader d-none"></div>
+</div>
 
 
 
-    @include('frontend.fixed.header')
+
+
+    @include('frontend.components.header')
 
 
 
@@ -92,7 +78,7 @@
 
 
 
-    @include('frontend.fixed.footer')
+    @include('frontend.components.footer')
 
 
 

@@ -82,4 +82,10 @@ class BlogController extends Controller
         Alert::toast()->success('Deleted! Product Deleted');
         return redirect()->back();
     }
+
+    public function blogPage(){
+        //Blog
+        $blogs = Blog::all();
+        return view('frontend.pages.blog.blog',compact('blogs'));
+    }
 }

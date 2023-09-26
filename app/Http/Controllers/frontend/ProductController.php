@@ -17,9 +17,11 @@ class ProductController extends Controller
 {
     public function product(){
 
-        $products = Product::all();
+        $products = Product::simplePaginate();
         $latestCategories = Category::latest()->limit(5)->get();
-        return view('frontend.pages.product.product',compact('products','latestCategories'));
+        //Latest Products
+        $latestProducts = Product::where('status',1)->latest()->limit(12)->get();
+        return view('frontend.pages.product.product',compact('products','latestCategories','latestProducts'));
     }
 
     public function productDetails($id){

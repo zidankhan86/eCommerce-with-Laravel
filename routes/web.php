@@ -37,15 +37,17 @@ use App\Http\Controllers\NotificationController;
 
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 
-Route::get('/product',[FrontendProductController::class,'product'])->name('product');
+Route::get('/hero',[HeroBannerController::class,'hero']);
+Route::get('/product',[FrontendProductController::class,'product']);
 Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails'])->name('product.details');
 
 Route::get('/blog',[BlogController::class,'blog'])->name('blog');
+Route::get('/blog-page',[BlogController::class,'blogPage']);
 Route::post('/comment-store',[CommentController::class,'commentStore'])->name('commentStore');
 
 Route::get('/category/{id}',[FrontendHomeController::class,'categoryWiseProduct'])->name('category.wize.products');
 
-Route::get('/contact',[ContactController::class,'contact'])->name('contact');
+Route::get('/contact',[ContactController::class,'contact']);
 Route::post('/contact-form',[ContactController::class,'contactForm'])->name('contact.form.store');
 
 Route::get('/login-frontend', [LoginController::class, 'showLoginFormFrontend'])->name('login.frontend');

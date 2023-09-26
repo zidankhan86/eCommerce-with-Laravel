@@ -65,4 +65,9 @@ class HeroBannerController extends Controller
 
         return redirect()->back();
     }
+
+
+    public function hero(){
+        return view('frontend.pages.hero');
+    }
 }

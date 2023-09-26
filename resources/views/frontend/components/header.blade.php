@@ -62,7 +62,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="{{ url('/') }}"><img src="{{url('frontend/img/logo.png')}}" alt=""></a>
+                    <a href="{{ route('home') }}"><img src="{{url('frontend/img/logo.png')}}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -70,8 +70,8 @@
                     <ul>
                         <li class="active"><a href="{{url('/')}}">Home</a></li>
                         <li><a href="{{url('/product')}}">Shop</a></li>
-                        <li><a href="{{route('blog')}}">Blog</a></li>
-                        <li><a href="{{route('contact')}}">Contact</a></li>
+                        <li><a href="{{url('/blog-page')}}">Blog</a></li>
+                        <li><a href="{{url('/contact')}}">Contact</a></li>
                     </ul>
                 </nav>
             </div>
