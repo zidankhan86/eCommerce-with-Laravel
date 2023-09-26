@@ -8,6 +8,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
+use App\Models\BannerOne;
 use App\Models\BannerTwo;
 use App\Models\HeroBanner;
 
@@ -21,7 +22,7 @@ class HomeController extends Controller
 
           //Banner
           $banners = Banner::all();
-
+          $bannersOne = BannerOne   ::all();
           $bannersTwo = BannerTwo::all();
 
           //Category
@@ -40,9 +41,9 @@ class HomeController extends Controller
           $latestProducts = Product::where('status',1)->latest()->limit(6)->get();
 
 
-        return view('frontend.pages.home',
-        compact('categories','products','latestProducts',
-        'latestCategories','blogs','banners','heroBanners','bannersTwo'));
+         return view('frontend.pages.home',
+         compact('categories','products','latestProducts',
+        'latestCategories','blogs','banners','heroBanners','bannersTwo','bannersOne'));
     }
 
        public function categoryWiseProduct($id){

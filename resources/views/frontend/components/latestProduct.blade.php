@@ -1,6 +1,6 @@
 <!-- latest Product -->
 
-<section class="">
+<br><section >
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -8,7 +8,7 @@
                 <div class="featured__controls">
 
                     <ul>
-                        <li class="active" data-filter="*">New Arrival</li>
+                        <li class="active" data-filter="*"><strong>New Arrival</strong></li>
 
                         @foreach ($latestCategories as $item)
 

@@ -4,6 +4,7 @@
 
  @include('frontend.components.navLayer')
  @include('frontend.components.hero')
+ @include('frontend.components.bannerOne')
  @include('frontend.components.latestProduct')
  @include('frontend.components.bannerTwo')
  @include('frontend.components.product')

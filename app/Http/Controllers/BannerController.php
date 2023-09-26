@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
+use App\Models\BannerOne;
 use App\Models\BannerTwo;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -50,7 +51,7 @@ class BannerController extends Controller
 
         ]);
 
-        return back()->with('success','Banner Uploaded Succesfully!');
+        return back()->with('success','Banner Uploaded Successfully!');
 
     }
 
@@ -173,6 +174,61 @@ public function bannerTwoDelete($id){
 
     return redirect()->back()->with('error', 'Banner not found.');
 
+}
+public function bannerFormOne(){
+
+    return view('backend.pages.banner.bannerForm1');
+
+}
+public function bannerListOne(){
+
+    $bannerOne = BannerOne::all();
+
+    return view('backend.pages.banner.bannerList1',compact('bannerOne'));
+
+}
+public function bannerStoreOne( Request $request){
+    $validator = Validator::make($request->all(), [
+        'tittle' => 'required',
+        'description' => 'required',
+        'image' => 'required|max:400',
+    ]);
+
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+
+    $existingBannersCount = BannerOne::count();
+    if ($existingBannersCount >= 2) {
+        return back()->with('error', 'Maximum number of banners reached');
+    }
+
+    $imageName = null;
+    if ($request->hasFile('image')) {
+        $file = $request->file('image');
+        $imageName = date('YmdiY').'.'.$file->extension();
+        $file->storeAs('uploads', $imageName, 'public');
+    }
+
+   // dd($imageName);
+    //dd($request->all());
+
+    BannerOne::create([
+
+    "tittle"=>$request->tittle,
+    "description"=>$request->description,
+    "image"=>$imageName
+
+    ]);
+
+    return back()->with('success','Banner Uploaded Successfully!');
+
+
+}
+public function bannerOneDelete($id){
+    $delete = BannerOne::find($id);
+    $delete->delete();
+    return back();
 }
 
 }

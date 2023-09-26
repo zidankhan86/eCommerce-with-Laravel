@@ -87,20 +87,16 @@ Route::post('reset-password', [ResetPasswordController::class, 'resetPassword'])
 Route::group(['middleware' => 'customerAuth'], function () {
  //Cart Product Order
 Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
-
 //Single Product Order
 Route::get('/product-checkout-single/product/{id}',[FrontendProductController::class,'singleProductCheckout'])->name('single.product.checkout');
-
 //Order Create for both
 Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
-
 });
 
 //middleware auth and admin
 Route::group(['middleware' => 'auth','admin','prefix'=>'admin'], function () {
-
+//Notification
 Route::get('/admin/notifications', [NotificationController::class, 'notifications'])->name('admin.notifications');
-
 //Category
 Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
 Route::get('/category-form',[CategoryController::class,'categoryForm'])->name('category.form');
@@ -122,16 +118,24 @@ Route::get('/new-arrival-product-list',[ProductController::class,'NewArrivalprod
 Route::post('/new-product-store',[ProductController::class,'newProductStore'])->name('new.product.store');
 
 //Banner
-Route::get('/bannder-form',[BannerController::class,'bannerForm'])->name('banner.form');
+
+Route::get('/banner-form-one',[BannerController::class,'bannerFormOne'])->name('banner.form.one');
+Route::get('/banner-list-one',[BannerController::class,'bannerListOne'])->name('banner.list.one');
+Route::post('/banner-store-one',[BannerController::class,'bannerStoreOne'])->name('banner.store.one');
+Route::get('/bander-one-delete/{id}',[BannerController::class,'bannerOneDelete'])->name('banner.one.delete');
+
+
 Route::get('/banner-form-two',[BannerController::class,'bannerFormTwo'])->name('banner.form.two');
 Route::get('/banner-list-two',[BannerController::class,'bannerListTwo'])->name('banner.list.two');
 Route::post('/banner-store-two',[BannerController::class,'bannerStoreTwo'])->name('banner.store.two');
-Route::get('/bannder-two-delete/{id}',[BannerController::class,'bannerTwoDelete'])->name('banner.two.delete');
-Route::post('/bannder-store',[BannerController::class,'bannerStore'])->name('banner.store');
-Route::get('/bannder-list',[BannerController::class,'bannerlist'])->name('banner.list');
-Route::post('/bannder-update/{id}',[BannerController::class,'bannerupdate'])->name('banner.update');
-Route::get('/bannder-delete/{id}',[BannerController::class,'bannerdelete'])->name('banner.delete');
-Route::get('/bannder-edit/{id}',[BannerController::class,'banneredit'])->name('banner.edit');
+Route::get('/bander-two-delete/{id}',[BannerController::class,'bannerTwoDelete'])->name('banner.two.delete');
+
+Route::get('/banner-form',[BannerController::class,'bannerForm'])->name('banner.form');
+Route::post('/banner-store',[BannerController::class,'bannerStore'])->name('banner.store');
+Route::get('/banner-list',[BannerController::class,'bannerlist'])->name('banner.list');
+Route::post('/banner-update/{id}',[BannerController::class,'bannerupdate'])->name('banner.update');
+Route::get('/banner-delete/{id}',[BannerController::class,'bannerdelete'])->name('banner.delete');
+Route::get('/banner-edit/{id}',[BannerController::class,'banneredit'])->name('banner.edit');
 
 
 Route::get('/blog-form',[BlogController::class,'blogPost'])->name('blog.post');

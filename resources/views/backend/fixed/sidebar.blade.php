@@ -61,13 +61,16 @@
                 </a>
                 <div class="collapse" id="collapseBanners" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{route('banner.list')}}">Add Banner 1</a>
-
+                        <a class="nav-link" href="{{route('banner.list.one')}}">Banner-1(Top)</a>
                     </nav>
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{route('banner.list.two')}}">Add Banner 2</a>
+                        <a class="nav-link" href="{{route('banner.list.two')}}">Banner-2(Middle)</a>
+                    </nav>
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{route('banner.list')}}">Banner-3</a>
 
                     </nav>
+
                 </div>
 
                 <a class="nav-link" href="{{route('blog.list')}}">
