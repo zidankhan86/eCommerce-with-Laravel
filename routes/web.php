@@ -36,23 +36,24 @@ use App\Http\Controllers\NotificationController;
 
 
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
-
+//hero
 Route::get('/hero',[HeroBannerController::class,'hero']);
+//product
 Route::get('/product',[FrontendProductController::class,'product']);
 Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails'])->name('product.details');
-
+Route::get('/search',[SearchController::class,'search'])->name('user.search');
+//Blog
 Route::get('/blog',[BlogController::class,'blog'])->name('blog');
 Route::get('/blog-page',[BlogController::class,'blogPage']);
 Route::post('/comment-store',[CommentController::class,'commentStore'])->name('commentStore');
-
+//CategoryWiseProduct
 Route::get('/category/{id}',[FrontendHomeController::class,'categoryWiseProduct'])->name('category.wize.products');
 
+//ContactUs
 Route::get('/contact',[ContactController::class,'contact']);
 Route::post('/contact-form',[ContactController::class,'contactForm'])->name('contact.form.store');
 
 Route::get('/login-frontend', [LoginController::class, 'showLoginFormFrontend'])->name('login.frontend');
-
-Route::get('/search',[SearchController::class,'search'])->name('user.search');
 
 //AddToCard
 Route::get('add-to-cart/{id}',[AddToCartController::class,'addToCart'])->name('add.to.cart');
@@ -72,6 +73,7 @@ Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'loginProcess'])->name('login.submit');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
+//Registration
 Route::get('registration', [LoginController::class, 'registration'])->name('registration');
 Route::post('registration', [LoginController::class, 'registrationStore'])->name('registration.submit');
 
@@ -83,14 +85,14 @@ Route::post('reset-password', [ResetPasswordController::class, 'resetPassword'])
 
 //Middleware for check valid user
 Route::group(['middleware' => 'customerAuth'], function () {
-    //Cart Product Order
-    Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
+ //Cart Product Order
+Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
 
-    //Single Product Order
-    Route::get('/product-checkout-single/product/{id}',[FrontendProductController::class,'singleProductCheckout'])->name('single.product.checkout');
+//Single Product Order
+Route::get('/product-checkout-single/product/{id}',[FrontendProductController::class,'singleProductCheckout'])->name('single.product.checkout');
 
-    //Order Create for both
-    Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
+//Order Create for both
+Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
 
 });
 
@@ -99,7 +101,7 @@ Route::group(['middleware' => 'auth','admin','prefix'=>'admin'], function () {
 
 Route::get('/admin/notifications', [NotificationController::class, 'notifications'])->name('admin.notifications');
 
-
+//Category
 Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
 Route::get('/category-form',[CategoryController::class,'categoryForm'])->name('category.form');
 Route::post('/category-store',[CategoryController::class,'categoryStore'])->name('category.store');
@@ -108,19 +110,22 @@ Route::get('/category-edit/{id}',[CategoryController::class,'categoryedit'])->na
 Route::post('/category-update/{id}',[CategoryController::class,'categorupdate'])->name('category.update');
 Route::get('/category-delete/{id}',[CategoryController::class,'categordelete'])->name('category.delete');
 
+//Product
 Route::get('/product-form',[ProductController::class,'productForm'])->name('product.form');
 Route::post('/product-store',[ProductController::class,'productStore'])->name('product.store');
 Route::get('/product-list',[ProductController::class,'productList'])->name('product.list');
 Route::get('/product-edit/{id}',[ProductController::class,'productEdit'])->name('product.edit');
 Route::post('/product-update/{id}',[ProductController::class,'productupdate'])->name('product.update');
 Route::get('/product-delete/{id}',[ProductController::class,'productDelete'])->name('product.delete');
-
 Route::get('/new-arrival-product-form',[ProductController::class,'NewArrivalproductForm'])->name('new.arrival.product.form');
 Route::get('/new-arrival-product-list',[ProductController::class,'NewArrivalproductList'])->name('new.arrival.product.list');
 Route::post('/new-product-store',[ProductController::class,'newProductStore'])->name('new.product.store');
 
-
+//Banner
 Route::get('/bannder-form',[BannerController::class,'bannerForm'])->name('banner.form');
+Route::get('/banner-form-two',[BannerController::class,'bannerFormTwo'])->name('banner.form.two');
+Route::get('/banner-list-two',[BannerController::class,'bannerListTwo'])->name('banner.list.two');
+Route::post('/banner-store-two',[BannerController::class,'bannerStoreTwo'])->name('banner.store.two');
 Route::post('/bannder-store',[BannerController::class,'bannerStore'])->name('banner.store');
 Route::get('/bannder-list',[BannerController::class,'bannerlist'])->name('banner.list');
 Route::post('/bannder-update/{id}',[BannerController::class,'bannerupdate'])->name('banner.update');

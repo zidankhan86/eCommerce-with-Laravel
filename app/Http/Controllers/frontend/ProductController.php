@@ -17,7 +17,7 @@ class ProductController extends Controller
 {
     public function product(){
 
-        $products = Product::simplePaginate();
+        $products = Product::simplePaginate(12);
         $latestCategories = Category::latest()->limit(5)->get();
         //Latest Products
         $latestProducts = Product::where('status',1)->latest()->limit(12)->get();

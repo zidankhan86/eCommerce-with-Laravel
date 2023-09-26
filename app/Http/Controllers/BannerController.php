@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
+use App\Models\BannerTwo;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -111,6 +112,54 @@ if ($request->hasFile('image')) {
 
 Alert::toast()->success('Bannder Updated');
     return redirect()->route('banner.list');
+
+}
+
+public function bannerFormTwo(){
+    return view('backend.pages.banner.bannarForm2');
+}
+
+public function bannerListTwo(){
+    $banners = BannerTwo::all();
+    return view('backend.pages.banner.bannerlist2',compact('banners'));
+}
+
+public function bannerStoreTwo(Request $request){
+
+    $validator = Validator::make($request->all(), [
+        'tittle' => 'required',
+        'description' => 'required',
+        'image' => 'required|max:200',
+    ]);
+
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+
+    $existingBannersCount = BannerTwo::count();
+if ($existingBannersCount >= 2) {
+    return back()->with('error', 'Maximum number of banners reached');
+}
+
+$imageName = null;
+if ($request->hasFile('image')) {
+    $file = $request->file('image');
+    $imageName = date('Ymdii').'.'.$file->extension();
+    $file->storeAs('uploads', $imageName, 'public');
+}
+
+   // dd($imageName);
+    //dd($request->all());
+
+    BannerTwo::create([
+
+    "tittle"=>$request->tittle,
+    "description"=>$request->description,
+    "image"=>$imageName
+
+    ]);
+
+    return back()->with('success','Banner Uploaded Successfully!');
 
 }
 

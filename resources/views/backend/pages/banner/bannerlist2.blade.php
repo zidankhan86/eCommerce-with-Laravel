@@ -2,7 +2,7 @@
 
 @section('content')
 
-<br><a class="btn btn-success float-end ml-2" href="{{ route('banner.form') }}"><i class="fa fa-plus" aria-hidden="true"></i> Add Banner-1</a>
+<br><a class="btn btn-success float-end ml-2" href="{{ route('banner.form.two') }}"><i class="fa fa-plus" aria-hidden="true"></i> Add Banner-2</a>
  <br><h4 class="text-success text-center">Banner List</h4><br>
 
 
