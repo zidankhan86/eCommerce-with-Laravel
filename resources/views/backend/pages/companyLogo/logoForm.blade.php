@@ -2,9 +2,9 @@
 
 @section('content')
 
-<br><h4 class=" text-success text-center">Banner Form-2</h4>
+<br><h4 class=" text-success text-center">Comany Logo</h4>
 
-<form action="{{route('banner.store.two')}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('logo.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
 
         @if(session('success'))

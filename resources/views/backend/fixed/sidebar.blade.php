@@ -47,6 +47,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Orders
                 </a>
+                <a class="nav-link" href="{{route('logo.list')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                   Company Logo
+                </a>
 
                 <a class="nav-link" href="{{route('hero.list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
@@ -67,7 +71,7 @@
                         <a class="nav-link" href="{{route('banner.list.two')}}">Banner-2(Middle)</a>
                     </nav>
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{route('banner.list')}}">Banner-3</a>
+                        <a class="nav-link" href="{{route('banner.list')}}">Banner-3(bottom)</a>
 
                     </nav>
 

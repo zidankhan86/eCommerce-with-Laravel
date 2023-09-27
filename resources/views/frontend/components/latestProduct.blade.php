@@ -30,18 +30,24 @@
                     <div class="featured__item__pic">
                         <a href="{{route('product.details',$item->id)}}"> <img src="{{ asset('/public/uploads/' . $item->image) }}" alt="Product Image"></a>
                         <ul class="featured__item__pic__hover">
-                            {{-- <li><a href="#"><i class="fa fa-heart"></i></a></li> --}}
-                            {{-- <li><a href="#"><i class="fa fa-retweet"></i></a></li> --}}
+                            <li><a href="#"><i class="fa fa-eye"></i></a></li>
                             <li><a href="{{route('add.to.cart',$item->id)}}"><i class="fa fa-shopping-cart"></i></a></li>
                         </ul>
                     </div>
-                    <div>
+                    {{-- <div>
                         <a href="{{route('add.to.cart',$item->id)}}" class="primary-btn">ADD TO CART</a>
-                    </div>
+                    </div> --}}
 
                     <div class="featured__item__text">
                         <h6><a href="#">{{$item->name}}</a></h6>
-                        <h5>{{$item->price}} Tk.</h5>
+                        <div class="star-rating">
+                            <span class="star" style="font-size: 24px; color: gold;">&#9733;</span>
+                            <span class="star" style="font-size: 24px; color: gold;">&#9733;</span>
+                            <span class="star" style="font-size: 24px; color: gold;">&#9733;</span>
+                            <span class="star" style="font-size: 24px; color: gold;">&#9733;</span>
+                            <span class="star half" style="font-size: 24px; color: gold;">&#9733;</span>
+                          </div>
+                        <h5 style="color: orangered">{{$item->price}} Tk.</h5>
                     </div><br>
 
 

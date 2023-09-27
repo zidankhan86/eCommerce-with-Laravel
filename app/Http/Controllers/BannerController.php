@@ -19,8 +19,7 @@ class BannerController extends Controller
 
     public function bannerStore(Request $request){
         $validator = Validator::make($request->all(), [
-            'tittle' => 'required',
-            'description' => 'required',
+            'tittle' => 'nullable',
             'image' => 'required|max:200',
         ]);
 
@@ -46,7 +45,6 @@ class BannerController extends Controller
         Banner::create([
 
         "tittle"=>$request->tittle,
-        "description"=>$request->description,
         "image"=>$imageName
 
         ]);
@@ -80,23 +78,22 @@ public function banneredit($id){
 }
 
 
-public function bannerupdate(Request $request,$id){
-    $validator = Validator::make($request->all(), [
-        'tittle' => 'required',
-        'description' => 'required',
-        'image' => 'required|max:200',
-    ]);
+    public function bannerupdate(Request $request,$id){
+        $validator = Validator::make($request->all(), [
+            'tittle' => 'nullable',
+            'image' => 'required|max:200',
+        ]);
 
     if ($validator->fails()) {
         return redirect()->back()->withErrors($validator)->withInput();
     }
 
-$imageName = null;
-if ($request->hasFile('image')) {
-    $file = $request->file('image');
-    $imageName = date('Ymdi').'.'.$file->extension();
-    $file->storeAs('uploads', $imageName, 'public');
-}
+    $imageName = null;
+    if ($request->hasFile('image')) {
+        $file = $request->file('image');
+        $imageName = date('Ymdi').'.'.$file->extension();
+        $file->storeAs('uploads', $imageName, 'public');
+    }
 
    // dd($imageName);
     //dd($request->all());
@@ -107,7 +104,6 @@ if ($request->hasFile('image')) {
     $update->update([
 
         "tittle"=>$request->tittle,
-        "description"=>$request->description,
         "image"=>$imageName
     ]);
 
@@ -129,7 +125,6 @@ public function bannerStoreTwo(Request $request){
 
     $validator = Validator::make($request->all(), [
         'tittle' => 'required',
-        'description' => 'required',
         'image' => 'required|max:400',
     ]);
 
@@ -137,17 +132,17 @@ public function bannerStoreTwo(Request $request){
         return redirect()->back()->withErrors($validator)->withInput();
     }
 
-    $existingBannersCount = BannerTwo::count();
-if ($existingBannersCount >= 2) {
-    return back()->with('error', 'Maximum number of banners reached');
-}
+        $existingBannersCount = BannerTwo::count();
+    if ($existingBannersCount >= 2) {
+        return back()->with('error', 'Maximum number of banners reached');
+    }
 
-$imageName = null;
-if ($request->hasFile('image')) {
-    $file = $request->file('image');
-    $imageName = date('Ymdii').'.'.$file->extension();
-    $file->storeAs('uploads', $imageName, 'public');
-}
+    $imageName = null;
+    if ($request->hasFile('image')) {
+        $file = $request->file('image');
+        $imageName = date('Ymdii').'.'.$file->extension();
+        $file->storeAs('uploads', $imageName, 'public');
+    }
 
    // dd($imageName);
     //dd($request->all());
@@ -155,7 +150,6 @@ if ($request->hasFile('image')) {
     BannerTwo::create([
 
     "tittle"=>$request->tittle,
-    "description"=>$request->description,
     "image"=>$imageName
 
     ]);
@@ -172,27 +166,26 @@ public function bannerTwoDelete($id){
         return redirect()->back()->with('success', 'Banner deleted successfully!');
     }
 
-    return redirect()->back()->with('error', 'Banner not found.');
+        return redirect()->back()->with('error', 'Banner not found.');
 
-}
-public function bannerFormOne(){
+    }
+    public function bannerFormOne(){
 
-    return view('backend.pages.banner.bannerForm1');
+        return view('backend.pages.banner.bannerForm1');
 
-}
-public function bannerListOne(){
+    }
+    public function bannerListOne(){
 
-    $bannerOne = BannerOne::all();
+        $bannerOne = BannerOne::all();
 
-    return view('backend.pages.banner.bannerList1',compact('bannerOne'));
+        return view('backend.pages.banner.bannerList1',compact('bannerOne'));
 
-}
-public function bannerStoreOne( Request $request){
-    $validator = Validator::make($request->all(), [
-        'tittle' => 'required',
-        'description' => 'required',
-        'image' => 'required|max:400',
-    ]);
+    }
+    public function bannerStoreOne( Request $request){
+        $validator = Validator::make($request->all(), [
+            'tittle' => 'nullable',
+            'image' => 'required|max:400',
+        ]);
 
     if ($validator->fails()) {
         return redirect()->back()->withErrors($validator)->withInput();
@@ -213,22 +206,21 @@ public function bannerStoreOne( Request $request){
    // dd($imageName);
     //dd($request->all());
 
-    BannerOne::create([
+        BannerOne::create([
 
-    "tittle"=>$request->tittle,
-    "description"=>$request->description,
-    "image"=>$imageName
+        "tittle"=>$request->tittle,
+        "image"=>$imageName
 
-    ]);
+        ]);
 
-    return back()->with('success','Banner Uploaded Successfully!');
+        return back()->with('success','Banner Uploaded Successfully!');
 
 
-}
-public function bannerOneDelete($id){
-    $delete = BannerOne::find($id);
-    $delete->delete();
-    return back();
-}
+        }
+        public function bannerOneDelete($id){
+            $delete = BannerOne::find($id);
+            $delete->delete();
+            return back();
+        }
 
 }
