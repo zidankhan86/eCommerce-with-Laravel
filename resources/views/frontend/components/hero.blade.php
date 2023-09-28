@@ -9,7 +9,7 @@
                     </div>
                     <ul>
                         @foreach ($categories as $item)
-                            <li><a href="{{ route('category.wize.products',$item->id) }}">{{ $item->type }}</a></li>
+                            <li><a href="{{ url('/category',$item->id) }}">{{ $item->type }}</a></li>
                         @endforeach
                     </ul>
                 </div>

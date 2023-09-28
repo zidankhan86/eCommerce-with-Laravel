@@ -48,7 +48,7 @@ Route::get('/blog',[BlogController::class,'blog'])->name('blog');
 Route::get('/blog-page',[BlogController::class,'blogPage']);
 Route::post('/comment-store',[CommentController::class,'commentStore'])->name('commentStore');
 //CategoryWiseProduct
-Route::get('/category/{id}',[FrontendHomeController::class,'categoryWiseProduct'])->name('category.wize.products');
+Route::get('/category/{id}',[FrontendHomeController::class,'categoryWiseProduct']);
 
 //ContactUs
 Route::get('/contact',[ContactController::class,'contact']);

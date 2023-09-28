@@ -12,7 +12,7 @@
 
                         @foreach ($latestCategories as $item)
 
-                       <a href="{{ route('category.wize.products',$item->id) }}"> <li>{{$item->type}}</li> </a>
+                       <a href="{{ url('/category',$item->id) }}"> <li>{{$item->type}}</li> </a>
 
                         @endforeach
                     </ul>
