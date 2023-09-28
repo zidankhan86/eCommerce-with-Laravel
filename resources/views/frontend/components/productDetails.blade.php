@@ -7,24 +7,7 @@
 
 
 
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>Vegetable’s Package</h2>
-                        <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
-                            <a href="./index.html">Vegetables</a>
-                            <span>Vegetable’s Package</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Section End -->
+
 
     <!-- Product Details Section Begin -->
     <section class="product-details spad">
@@ -46,20 +29,25 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="product__details__text">
                         <h3>{{$details->name}}</h3>
-                        {{-- <div class="product__details__rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-o"></i>
-                            <span>(18 reviews)</span>
-                        </div> --}}
+                        <form action="{{ route('product.rate',$details->id) }}" method="POST">
+                            @csrf
+                            <div class="rating-css">
+                                <div class="star-icon">
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        <input type="radio" value="{{ $i }}" name="rating" id="rating{{ $i }}">
+                                        <label for="rating{{ $i }}" class="fa fa-star"></label>
+                                    @endfor
+                                </div>
+                                <button type="submit">Submit Rating</button>
+                            </div>
+
+                        </form>
                         <div class="product__details__price">{{$details->price}}.00 Tk</div>
                         <p>{{$details->description}}</p>
                         <div class="product__details__quantity">
                             <div class="">
                                 <div class="pro-qty">
-                                    <a href="{{route('single.product.checkout',$details->id)}}" class="primary-btn">ORDER</a>
+                                    <a href="{{url('/product-checkout-single/product',$details->id)}}" class="primary-btn">ORDER</a>
                                 </div>
                             </div>
                         </div>
@@ -122,6 +110,35 @@
         </div>
     </section>
     <!-- Product Details Section End -->
+    <style>
+        /* rating */
+    .rating-css div {
+        color: #ffe400;
+        font-size: 5px;
+        font-family: sans-serif;
+        font-weight: 300;
+        text-align: ;
+        text-transform: uppercase;
+        padding: 10px 0;
+      }
+      .rating-css input {
+        display: none;
+      }
+      .rating-css input + label {
+        font-size: 25px;
+        text-shadow: 1px 1px 0 #8f8420;
+        cursor: pointer;
+      }
+      .rating-css input:checked + label ~ label {
+        color: #b4afaf;
+      }
+      .rating-css label:active {
+        transform: scale(0.8);
+        transition: 0.3s ease;
+      }
+
+    /* End of Star Rating */
+    </style>
 
 
 

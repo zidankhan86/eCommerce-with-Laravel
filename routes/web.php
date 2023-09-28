@@ -21,6 +21,7 @@ use App\Http\Controllers\CompanyLogoController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\ProductController as FrontendProductController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,7 +90,7 @@ Route::group(['middleware' => 'customerAuth'], function () {
  //Cart Product Order
 Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
 //Single Product Order
-Route::get('/product-checkout-single/product/{id}',[FrontendProductController::class,'singleProductCheckout'])->name('single.product.checkout');
+Route::get('/product-checkout-single/product/{id}',[FrontendProductController::class,'singleProductCheckout']);
 //Order Create for both
 Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
 });
@@ -117,6 +118,7 @@ Route::get('/product-delete/{id}',[ProductController::class,'productDelete'])->n
 Route::get('/new-arrival-product-form',[ProductController::class,'NewArrivalproductForm'])->name('new.arrival.product.form');
 Route::get('/new-arrival-product-list',[ProductController::class,'NewArrivalproductList'])->name('new.arrival.product.list');
 Route::post('/new-product-store',[ProductController::class,'newProductStore'])->name('new.product.store');
+Route::post('/product/rate/{id}', [ProductController::class,'storeRating'])->name('product.rate');
 
 //Banner
 Route::get('/banner-form-one',[BannerController::class,'bannerFormOne'])->name('banner.form.one');
@@ -161,6 +163,10 @@ Route::get('/report/search',[ReportController::class,'reportSearch'])->name('ord
 
 Route::get('/contact-list',[ContactController::class,'contactlist'])->name('contact.list');
 Route::get('/contact-view/{id}',[ContactController::class,'contactview'])->name('contact.view');
+
+//Shop
+Route::get('/shopForm',[ShopController::class,'shopForm'])->name('shop.form');
+Route::post('/shopStore',[ShopController::class,'shopStore'])->name('shop.store');
 
 
 });

@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\NewArrival;
 use Illuminate\Http\Request;
+use App\Models\ProductRating;
 use Illuminate\Support\Facades\Redis;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
@@ -212,4 +213,18 @@ class ProductController extends Controller
 
             return redirect()->back();
         }
+
+        public function storeRating(Request $request, $id)
+        {
+            $product = Product::find($id);
+
+            $rating = new ProductRating();
+            $rating->product_id = $product->id;
+            $rating->rating = $request->input('rating');
+            $rating->save();
+
+            // Redirect back to the product details page
+            //return redirect()->route('product-details', ['id' => $productId]);
+            return back();
+}
 }
