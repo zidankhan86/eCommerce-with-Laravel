@@ -58,7 +58,7 @@ Route::get('/login-frontend', [LoginController::class, 'showLoginFormFrontend'])
 
 //AddToCard
 Route::get('add-to-cart/{id}',[AddToCartController::class,'addToCart'])->name('add.to.cart');
-Route::get('/view-cart',[AddToCartController::class,'viewCart'])->name('cart.view');
+Route::get('/view-cart',[AddToCartController::class,'viewCart']);
 Route::get('/clear-cart',[AddToCartController::class,'clearCart'])->name('cart.clear');
 Route::get('/cart-item/delete/{id}',[AddToCartController::class,'cartItemDelete'])->name('cart.item.delete');
 
@@ -70,19 +70,19 @@ Route::get('/cart-item/delete/{id}',[AddToCartController::class,'cartItemDelete'
 //Backend
 
 //Login
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('login', [LoginController::class, 'loginProcess'])->name('login.submit');
-Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'loginProcess'])->name('login.submit');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //Registration
-Route::get('registration', [LoginController::class, 'registration'])->name('registration');
-Route::post('registration', [LoginController::class, 'registrationStore'])->name('registration.submit');
+Route::get('/registration', [LoginController::class, 'registration'])->name('registration');
+Route::post('/registration', [LoginController::class, 'registrationStore'])->name('registration.submit');
 
 //Forget password
-Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
-Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-Route::get('reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-Route::post('reset-password', [ResetPasswordController::class, 'resetPassword'])->name('password.update');
+Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword'])->name('password.update');
 
 //Middleware for check valid user
 Route::group(['middleware' => 'customerAuth'], function () {
