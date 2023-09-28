@@ -41,7 +41,7 @@ Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 Route::get('/hero',[HeroBannerController::class,'hero']);
 //product
 Route::get('/product',[FrontendProductController::class,'product']);
-Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails'])->name('product.details');
+Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails']);
 Route::get('/search',[SearchController::class,'search'])->name('user.search');
 //Blog
 Route::get('/blog',[BlogController::class,'blog'])->name('blog');
