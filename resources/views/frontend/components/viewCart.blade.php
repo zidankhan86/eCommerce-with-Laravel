@@ -77,7 +77,7 @@
                         <li>Subtotal <span id="subtotal">{{$subtotal}} Tk.</span></li>
                         <li>Total <span id="total">{{$subtotal}} Tk.</span></li>
                     </ul>
-                    <a href="{{ route('product.checkout', $key) }}" class="primary-btn">PROCEED TO CHECKOUT</a>
+                    <a href="{{ url('/product-checkout', $key) }}" class="primary-btn">PROCEED TO CHECKOUT</a>
                 </div>
             </div>
         </div>
