@@ -2,6 +2,11 @@
 
   @section('content')
 
+  <!-- Page Preloder -->
+  {{-- <div id="preloder">
+    <div class="loader"></div>
+</div> --}}
+
  @include('frontend.components.navLayer')
  @include('frontend.components.hero')
  @include('frontend.components.bannerOne')
@@ -10,6 +15,5 @@
  @include('frontend.components.product')
  @include('frontend.components.banner')
  @include('frontend.components.blog')
- @include('frontend.components.contactus')
 
 @endsection

@@ -7,7 +7,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>nonngorfood.com</title>
+    <title>eCommerce.com</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -27,10 +27,7 @@
 
 
 <body>
-    <!-- Page Preloder -->
-    {{-- <div id="preloder">
-        <div class="loader"></div>
-    </div> --}}
+
 
 
 
@@ -56,14 +53,14 @@
 
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{{asset ('frontend/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{asset ('frontend/js/bootstrap.min.js') }}"></script>
+    <script src="{{asset ('frontend/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{asset ('frontend/js/jquery-ui.min.js') }}"></script>
+    <script src="{{asset ('frontend/js/jquery.slicknav.js') }}"></script>
+    <script src="{{asset ('frontend/js/mixitup.min.js') }}"></script>
+    <script src="{{asset ('frontend/js/owl.carousel.min.js') }}"></script>
+    <script src="{{asset ('frontend/js/main.js') }}"></script>
 
 
 
