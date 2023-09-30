@@ -216,6 +216,15 @@ class ProductController extends Controller
 
         public function storeRating(Request $request, $id)
         {
+            $validator = Validator::make($request->all(), [
+                'product_id' => 'required',
+                'rating' => 'required',
+
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
             $product = Product::find($id);
 
             $rating = new ProductRating();

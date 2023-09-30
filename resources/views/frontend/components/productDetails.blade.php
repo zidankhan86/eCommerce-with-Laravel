@@ -29,18 +29,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="product__details__text">
                         <h3>{{$details->name}}</h3>
-                        <form action="{{ route('product.rate',$details->id) }}" method="POST">
-                            @csrf
-                            <div class="rating-css">
-                                <div class="star-icon">
-                                    @for ($i = 1; $i <= 5; $i++)
-                                        <input type="radio" value="{{ $i }}" name="rating" id="rating{{ $i }}">
-                                        <label for="rating{{ $i }}" class="fa fa-star"></label>
-                                    @endfor
-                                </div>
-                                <button type="submit">Submit</button>
-                            </div>
-                        </form>
+
                         <div class="product__details__price">{{$details->price}}.00 Tk</div>
                         <p>{{$details->description}}</p>
                         <div class="product__details__quantity">
@@ -100,6 +89,92 @@
                                 <div class="product__details__tab__desc">
                                     <h6>Products Infomation</h6>
                                     <p>Product Information Link here</p>
+
+
+
+    <!-- Product Details Section Begin -->
+    <section class="product-details spad">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__text">
+                        <h3>{{$details->name}}</h3>
+                        <form action="{{ route('product.rate',$details->id) }}" method="POST">
+                            @csrf
+                            <div class="rating-css">
+                                <div class="star-icon">
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        <input type="radio" value="{{ $i }}" name="rating" id="rating{{ $i }}">
+                                        <label for="rating{{ $i }}" class="fa fa-star"></label>
+                                    @endfor
+                                </div>
+                                <button type="submit">Rate This Product</button>
+                            </div>
+                        </form>
+                        
+                        <p>{{$details->description}}</p>
+                        <div class="product__details__quantity">
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="product__details__tab">
+
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+
+
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                              <div class="product__details__tab__desc">
+                                  <h6>Products Information</h6>
+                                  <p>{!! nl2br(e($details->product_information)) !!}</p>
+                              </div>
+                          </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Details Section End -->
+    <style>
+        /* rating */
+    .rating-css div {
+        color: #ffe400;
+        font-size: 5px;
+        font-family: sans-serif;
+        font-weight: 300;
+        text-align: ;
+        text-transform: uppercase;
+        padding: 10px 0;
+      }
+      .rating-css input {
+        display: none;
+      }
+      .rating-css input + label {
+        font-size: 25px;
+        text-shadow: 1px 1px 0 #8f8420;
+        cursor: pointer;
+      }
+      .rating-css input:checked + label ~ label {
+        color: #b4afaf;
+      }
+      .rating-css label:active {
+        transform: scale(0.8);
+        transition: 0.3s ease;
+      }
+
+    /* End of Star Rating */
+    </style>
+
+
+
                                 </div>
                             </div>
                         </div>
