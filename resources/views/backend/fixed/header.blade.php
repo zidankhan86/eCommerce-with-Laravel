@@ -11,8 +11,8 @@
     </div>
     <!-- Navbar-->
     <ul class="navbar-nav ms-auto ms-md-0 me-1 me-lg-2">
-        <a href="{{ route('admin.notifications') }}">
-            <a class=" btn btn-warning">Distribute</a>
+        
+            <a href="{{ route('distribute.form') }}" class=" btn btn-warning">Distribute</a>
             {{-- @if ($unreadNotifications->count() > 0)
                 <span class="badge badge-pill badge-danger">{{ $unreadNotifications->count() }}</span>
             @endif --}}

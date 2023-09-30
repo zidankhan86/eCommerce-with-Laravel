@@ -169,6 +169,7 @@ Route::get('/contact-view/{id}',[ContactController::class,'contactview'])->name(
 //Shop
 Route::get('/shopForm',[ShopController::class,'shopForm'])->name('shop.form');
 Route::post('/shopStore',[ShopController::class,'shopStore'])->name('shop.store');
-
-
+//distribute
+Route::get('/distributeForm',[ShopController::class,'distributeForm'])->name('distribute.form');
+Route::post('/distribute-Store',[ShopController::class,'distributeStore'])->name('distribute.store');
 });
