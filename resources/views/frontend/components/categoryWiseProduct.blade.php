@@ -29,16 +29,37 @@
                         <a href="{{route('add.to.cart',$item->id)}}" class="primary-btn">ADD TO CART</a>
                     </div> --}}
                     <div class="featured__item__text">
-                        <h6><a href="#">{{$item->name}}</a></h6>
+                        <h6><a href="#">{{ $item->name }}</a></h6>
                         <div class="star-rating">
-                            <span class="star" style="font-size: 24px; color: gold;">&#9733;</span>
-                            <span class="star" style="font-size: 24px; color: gold;">&#9733;</span>
-                            <span class="star" style="font-size: 24px; color: gold;">&#9733;</span>
-                            <span class="star" style="font-size: 24px; color: gold;">&#9733;</span>
-                            <span class="star half" style="font-size: 24px; color: gold;">&#9733;</span>
-                          </div>
-                        <h5>{{$item->price}} Tk.</h5>
-                    </div><br>
+                            @php
+                                // Retrieve the product ratings for the current product
+                                $productRatings = App\Models\ProductRating::where('product_id', $item->id)->get();
+
+                                // Calculate the average rating and limit it to a maximum of 5
+                                $averageRating = min($productRatings->avg('rating'), 5);
+
+                                // Calculate the number of full stars
+                                $fullStars = floor($averageRating);
+
+                                // Calculate the presence of a half star
+                                $hasHalfStar = ($averageRating - $fullStars) >= 0.5;
+                            @endphp
+
+                            @for ($i = 1; $i <= 5; $i++)
+                                @if ($i <= $fullStars)
+                                    <span class="star" style="font-size: 24px; color: gold;">&#9733;</span>
+                                @elseif ($hasHalfStar)
+                                    <span class="star half" style="font-size: 24px; color: gold;">&#9733;</span>
+                                    @php $hasHalfStar = false; @endphp
+                                @else
+                                    <span class="star" style="font-size: 24px; color: gray;">&#9733;</span>
+                                @endif
+                            @endfor
+                        </div>
+
+                        <h5 style="color: rgb(214, 57, 17)">{{ $item->price }} Tk.</h5>
+                    </div>
+                    <br>
 
                 </div>
 

@@ -38,15 +38,14 @@
                                         <label for="rating{{ $i }}" class="fa fa-star"></label>
                                     @endfor
                                 </div>
-                                <button type="submit">Submit Rating</button>
+                                <button type="submit">Submit</button>
                             </div>
-
                         </form>
                         <div class="product__details__price">{{$details->price}}.00 Tk</div>
                         <p>{{$details->description}}</p>
                         <div class="product__details__quantity">
                             <div class="">
-                                <div class="pro-qty">
+                                <div class="">
                                     <a href="{{url('/product-checkout-single/product',$details->id)}}" class="primary-btn">ORDER</a>
                                 </div>
                             </div>

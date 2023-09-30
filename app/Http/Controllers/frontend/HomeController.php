@@ -11,6 +11,8 @@ use App\Models\Banner;
 use App\Models\BannerOne;
 use App\Models\BannerTwo;
 use App\Models\HeroBanner;
+use App\Models\ProductRating;
+use App\Models\SubCategory;
 
 class HomeController extends Controller
 {
@@ -27,6 +29,7 @@ class HomeController extends Controller
 
           //Category
           $categories = Category::all();
+          $subcategories = SubCategory::all();
 
           //Products
           $products = Product::simplePaginate(20);
@@ -40,10 +43,14 @@ class HomeController extends Controller
           //Latest Products
           $latestProducts = Product::where('status',1)->latest()->limit(6)->get();
 
+          //Product Stars
+          $productRatings =ProductRating::all();
+
 
          return view('frontend.pages.home',
          compact('categories','products','latestProducts',
-        'latestCategories','blogs','banners','heroBanners','bannersTwo','bannersOne'));
+        'latestCategories','blogs','banners','heroBanners',
+        'bannersTwo','bannersOne','subcategories','productRatings'));
     }
 
        public function categoryWiseProduct($id){
