@@ -88,7 +88,7 @@
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
                                 <div class="product__details__tab__desc">
                                     <h6>Products Infomation</h6>
-                                    <p>Product Information Link here</p>
+                                    <p>{!! nl2br(e($details->product_information)) !!}</p>
 
 
 
@@ -112,7 +112,7 @@
                                 <button type="submit">Rate This Product</button>
                             </div>
                         </form>
-                        
+
                         <p>{{$details->description}}</p>
                         <div class="product__details__quantity">
 
