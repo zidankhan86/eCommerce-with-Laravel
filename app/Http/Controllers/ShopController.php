@@ -31,11 +31,10 @@ class ShopController extends Controller
     }
 
 
-    $images = null;
+    $images=null;
     if ($request->hasFile('image')) {
-    $file = $request->file('image');
-    $images = date('Ymdi').'.'.$file->extension();
-    $file->storeAs('uploads', $images, 'public');
+        $images=date('Ymdhsis').'.'.$request->file('image')->getClientOriginalExtension();
+        $request->file('image')->storeAs('uploads', $images, 'public');
     }
     //dd($imageName);
     // dd($request->all());
@@ -84,11 +83,10 @@ class ShopController extends Controller
     }
 
 
-    $images = null;
+    $images=null;
     if ($request->hasFile('image')) {
-    $file = $request->file('image');
-    $images = date('Ymdi').'.'.$file->extension();
-    $file->storeAs('uploads', $images, 'public');
+        $images=date('Ymdhsis').'.'.$request->file('image')->getClientOriginalExtension();
+        $request->file('image')->storeAs('uploads', $images, 'public');
     }
     //dd($imageName);
     // dd($request->all());

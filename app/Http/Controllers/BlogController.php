@@ -38,11 +38,10 @@ class BlogController extends Controller
 
 
 
-        $imageName = null;
+        $imageName=null;
         if ($request->hasFile('image')) {
-        $file = $request->file('image');
-        $imageName = date('Ymdi').'.'.$file->extension();
-        $file->storeAs('uploads', $imageName, 'public');
+            $imageName=date('Ymdhsis').'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('uploads', $imageName, 'public');
         }
         //dd($imageName);
 
