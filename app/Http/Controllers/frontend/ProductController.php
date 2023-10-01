@@ -20,7 +20,7 @@ class ProductController extends Controller
         $products = Product::simplePaginate(12);
         $latestCategories = Category::latest()->limit(5)->get();
         //Latest Products
-        $latestProducts = Product::where('status',1)->latest()->limit(12)->get();
+        $latestProducts = Product::where('status',1)->latest()->limit(6)->get();
         return view('frontend.pages.product.product',compact('products','latestCategories','latestProducts'));
     }
 

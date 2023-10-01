@@ -137,11 +137,11 @@
                 <label for="exampleInputNumber3" class="form-label">Status</label>
 
                 <select name="status" id="" class="form-control">
-                    <option value="0">Inactive</option>
                     <option value="1">Active</option>
+                    <option value="0">Inactive</option>
                 </select>
 
-                @error('time')
+                @error('status')
 
                     <strong class="text-danger">{{$message}}</strong>
 
