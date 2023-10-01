@@ -58,6 +58,7 @@ Route::post('/contact-form',[ContactController::class,'contactForm'])->name('con
 Route::get('/login-frontend', [LoginController::class, 'showLoginFormFrontend'])->name('login.frontend');
 //profile
 Route::get('/profile',[ProfileController::class,'profile']);
+Route::get('/admin-profile',[ProfileController::class,'adminProfile']);
 //AddToCard
 Route::get('add-to-cart/{id}',[AddToCartController::class,'addToCart'])->name('add.to.cart');
 Route::get('/view-cart',[AddToCartController::class,'viewCart']);

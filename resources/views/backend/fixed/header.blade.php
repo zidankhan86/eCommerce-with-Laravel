@@ -11,7 +11,7 @@
     </div>
     <!-- Navbar-->
     <ul class="navbar-nav ms-auto ms-md-0 me-1 me-lg-2">
-        
+
             <a href="{{ route('distribute.form') }}" class=" btn btn-warning">Distribute</a>
             {{-- @if ($unreadNotifications->count() > 0)
                 <span class="badge badge-pill badge-danger">{{ $unreadNotifications->count() }}</span>
@@ -22,7 +22,7 @@
                 <i class="fas fa-user fa-fw"></i> <!-- User icon -->
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#!">{{ auth()->user()->name }}</a></li>
+                <li><a class="dropdown-item" href="{{ url('/admin-profile') }}">Profile</a></li>
                 <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
