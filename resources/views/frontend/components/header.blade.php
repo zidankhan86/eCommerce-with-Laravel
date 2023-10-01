@@ -30,7 +30,7 @@
                             @auth
                             @if (auth()->user()->role == 'customer')
 
-                            <a href="{{route('registration')}}"> <div>Profile</div></a>
+                            <a href="{{ url('/profile') }}"> <div>Profile</div></a>
                             @endif
                             @endauth
 

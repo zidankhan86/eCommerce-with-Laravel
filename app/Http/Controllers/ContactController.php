@@ -34,7 +34,8 @@ class ContactController extends Controller
             "message"=>$request->message,
 
         ]);
-        Alert::alert()->success('Thank you for your feedback.');
+        
+        notify()->success('Thank you for your feedback.');
         return back();
 
     }

@@ -2,6 +2,7 @@
 <html lang="zxx">
 
 <head>
+    @notifyCss
     <meta charset="UTF-8">
     <meta name="description" content="Ogani Template">
     <meta name="keywords" content="Ogani, unica, creative, html">
@@ -22,7 +23,6 @@
     <link rel="stylesheet" href="{{url('frontend/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('frontend/css/style.css')}}" type="text/css">
 
-
 </head>
 
 
@@ -41,7 +41,7 @@
 
 
      @yield('content')
-     @include('sweetalert::alert')
+     @include('notify::components.notify')
 
 
 
@@ -61,7 +61,7 @@
     <script src="{{asset ('frontend/js/mixitup.min.js') }}"></script>
     <script src="{{asset ('frontend/js/owl.carousel.min.js') }}"></script>
     <script src="{{asset ('frontend/js/main.js') }}"></script>
-
+    @notifyJs
 
 
 </body>

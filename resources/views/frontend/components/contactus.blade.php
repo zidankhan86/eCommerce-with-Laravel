@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-lg-12 text-center">
                         <textarea placeholder="Your message" name="message">{{old('message')}}</textarea>
-                        <button type="submit" class="site-btn">SEND MESSAGE</button>
+                        <button type="submit" class="btn btn-info" style="color: black">SEND MESSAGE</button>
                     </div>
                 </div>
             </form>

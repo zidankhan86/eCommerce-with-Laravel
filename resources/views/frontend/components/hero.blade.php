@@ -31,7 +31,7 @@
                         <form action="{{ route('user.search') }}">
                             @csrf
                             <input type="text" name="search_key"  placeholder="What do you need?">
-                            <button type="submit" class="site-btn">SEARCH</button>
+                            <button type="submit" class="btn btn-success">SEARCH</button>
                         </form>
                     </div>
                     <div class="hero__search__phone">

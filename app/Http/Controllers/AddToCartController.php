@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use notify;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -28,7 +29,8 @@ class AddToCartController extends Controller
                     ];
 
                   session()->put('cart',$myCart);
-                Alert::toast()->success('Product added to cart.');
+                  notify()->success('Product added to the cart');
+
                   return redirect()->back();
             }
 
@@ -45,7 +47,7 @@ class AddToCartController extends Controller
                 ];
 
                 session()->put('cart',$cart);
-              Alert::toast()->success('New product added.');
+              notify()->success('New product added.');
                 return redirect()->back();
 
             }
@@ -56,7 +58,7 @@ class AddToCartController extends Controller
             $cart[$id]['subtotal']=$cart[$id]['quantity'] * $cart[$id]['price'];
             session()->put('cart',$cart);
 
-          //  notify()->success('Cart updated.');
+           notify()->success('Cart updated.');
             return redirect()->back();
           }
 
@@ -75,8 +77,7 @@ class AddToCartController extends Controller
             public function clearCart()
             {
                 session()->forget('cart');
-
-                Alert::toast()->success('Cart Clear Success.');
+                notify()->success('Cart Clear Success.');
                 return redirect()->back();
             }
 
@@ -87,8 +88,7 @@ class AddToCartController extends Controller
               unset($cart[$id]);
         //      dd($cart);
                 session()->put('cart',$cart);
-
-            Alert::toast()->success('Item removed.');
+                notify()->success('Item removed.');
               return redirect()->back();
             }
         }

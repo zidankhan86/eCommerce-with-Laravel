@@ -21,6 +21,7 @@ use App\Http\Controllers\CompanyLogoController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\ProductController as FrontendProductController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopController;
 
 /*
@@ -50,13 +51,13 @@ Route::get('/blog-page',[BlogController::class,'blogPage']);
 Route::post('/comment-store',[CommentController::class,'commentStore'])->name('commentStore');
 //CategoryWiseProduct
 Route::get('/category/{id}',[FrontendHomeController::class,'categoryWiseProduct']);
-
 //ContactUs
 Route::get('/contact',[ContactController::class,'contact']);
 Route::post('/contact-form',[ContactController::class,'contactForm'])->name('contact.form.store');
-
+//login
 Route::get('/login-frontend', [LoginController::class, 'showLoginFormFrontend'])->name('login.frontend');
-
+//profile
+Route::get('/profile',[ProfileController::class,'profile']);
 //AddToCard
 Route::get('add-to-cart/{id}',[AddToCartController::class,'addToCart'])->name('add.to.cart');
 Route::get('/view-cart',[AddToCartController::class,'viewCart']);
