@@ -80,6 +80,21 @@
                 @enderror
                 </div>
 
+                <div class="mb-3 mx-sm-2">
+                    <label for="exampleInputNumber" class="form-label">Slect Location</label>
+                    <select name="shop_location" id="" class="form-control">
+
+                        @foreach ($distribute as $item)
+                        <option value="{{ $item->id }}">{{ $item->shop_area }}</option>
+                        @endforeach
+
+
+                    </select>
+                    @error('phone')
+                    <p class="text-danger">{{$message}}</p>
+                    @enderror
+                    </div>
+
 
 
 

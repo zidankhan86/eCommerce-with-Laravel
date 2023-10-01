@@ -42,7 +42,7 @@
             </div>
             <div class="mb-3 mx-sm-2">
             <label for="exampleInputNumber1" class="form-label">Shop Area</label>
-            <input type="text" class="form-control" id="shopArea"  name="shop_area" placeholder="Shop Location...">
+            <input type="text" class="form-control" id="shopArea"  name="shop_area" placeholder="Dhaka , Uttara...">
 
                 @error('shop_area')
                 <p class="text-danger">{{$message}}</p>

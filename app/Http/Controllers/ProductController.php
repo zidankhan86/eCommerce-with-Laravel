@@ -28,6 +28,7 @@ class ProductController extends Controller
             'image' => 'nullable|max:200',
             'weight' => 'required|numeric',
             'stock' => 'required|integer',
+            'product_stock'=>'required',
             'price' => 'required|numeric',
             'discount' => 'nullable|numeric|max:100',
             'time' => 'required',
@@ -56,6 +57,7 @@ class ProductController extends Controller
             "image"=>$images,
             "weight"=>$request->weight,
              "stock"=>$request->stock,
+             "product_stock"=>$request->product_stock,
              "price"=>$request->price,
              "discount"=>$request->discount,
              "time"=>$request->time,
@@ -164,6 +166,7 @@ class ProductController extends Controller
             'time' => 'required',
             'description' => 'required',
             'product_information'=> 'required',
+            'product_stock'=>'required',
             'status'=> 'required',
         ]);
 
@@ -188,6 +191,7 @@ class ProductController extends Controller
                 "image"=>$images,
                 "weight"=>$request->weight,
                  "stock"=>$request->stock,
+                 "product_stock"=>$request->product_stock,
                  "price"=>$request->price,
                  "discount"=>$request->discount,
                  "time"=>$request->time,
@@ -213,15 +217,10 @@ class ProductController extends Controller
 
         public function storeRating(Request $request, $id)
         {
-            $validator = Validator::make($request->all(), [
-                'product_id' => 'required',
-                'rating' => 'required',
-
+            //dd($request->all());
+            $request->validate([
+                'rating'=>'required'
             ]);
-
-            if ($validator->fails()) {
-                return redirect()->back()->withErrors($validator)->withInput();
-            }
             $product = Product::find($id);
 
             $rating = new ProductRating();
@@ -231,6 +230,7 @@ class ProductController extends Controller
 
             // Redirect back to the product details page
             //return redirect()->route('product-details', ['id' => $productId]);
+            notify()->success('Thank you for your feedback.');
             return back();
 }
 }

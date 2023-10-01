@@ -92,7 +92,7 @@
 
 
 
-    <!-- Product Details Section Begin -->
+    <!-- Product Details  -->
     <section class="product-details spad">
         <div class="container">
             <div class="row">
@@ -109,7 +109,7 @@
                                         <label for="rating{{ $i }}" class="fa fa-star"></label>
                                     @endfor
                                 </div>
-                                <button type="submit">Rate This Product</button>
+                                <button type="submit" class="btn btn-info">Rate This Product</button>
                             </div>
                         </form>
 
