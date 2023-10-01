@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Login - SB Admin</title>
+        <title>Login - eCommerce</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -50,8 +50,7 @@
                                     </div>
 
                                     <div class="card-footer  py-3">
-                                        <div class="small text-center">NOTE: <p>(Contact authority to collect your email & password )</p></div>
-                                        <div class="small text-right" >Click <a href="{{route('home')}}"> here</a> to go home</div>
+                                        <div class="small text-right" >Click <a href="{{route('home')}}"> here</a> to go  <i class="fa fa-home btn btn-success"></i> </div>
                                     </div>
 
                                 </div>

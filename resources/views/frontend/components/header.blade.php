@@ -6,7 +6,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__left">
                         <ul>
-                            <li><i class="fa fa-envelope"></i> nongorfood01@gmail.com</li>
+                            <li><i class="fa fa-envelope"></i> eCommerce.com</li>
                             <li>ORDER NOW</li>
                         </ul>
                     </div>
@@ -14,11 +14,11 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__right">
                         <div class="header__top__right__social">
-                            <a href="https://www.facebook.com/nongorfoodbd"><i class="fa fa-facebook"></i></a>
-                            <a href="https://twitter.com/nongorfood"><i class="fa fa-twitter"></i></a>
-                            <a href="https://www.facebook.com/nongorfoodbd"><i class="fa fa-linkedin"></i></a>
-                            <a href="https://www.linkedin.com/company/96106466/admin/feed/posts/"><i class="fa fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/channel/UC-0rsi0dXMF_k1zKjXZOAqw"><i class="fa fa-youtube"></i></a>
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.youtube.com"><i class="fa fa-youtube"></i></a>
                         </div>
                         <div class="header__top__right__language">
 

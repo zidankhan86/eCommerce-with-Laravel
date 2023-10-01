@@ -2,7 +2,7 @@
 
 @section('content')
 
-<br><h4 class=" text-success text-center">Comany Logo</h4>
+<br><h4 class=" text-success text-center">Company Logo</h4>
 
 <form action="{{route('logo.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -28,7 +28,7 @@
 
 
             <div class="mb-3 mx-sm-2">
-            <label for="exampleInputName2" class="form-label">Upload Image <strong>*(IMAGE SIZE MAX 250kb)*</strong></label>
+            <label for="exampleInputName2" class="form-label">Upload Image <strong class="text-danger">*(IMAGE SIZE MAX 250kb)*</strong></label>
             <input type="file" class="form-control" value="{{ old('image') }}" id="image" name="image">
             @error('image')
 
