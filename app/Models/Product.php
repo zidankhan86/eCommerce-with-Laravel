@@ -21,12 +21,13 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
-    public function ratings()
-{
-    return $this->hasMany(ProductRating::class);
-}
-public function averageRating()
-{
-    return $this->ratings->avg('rating');
-}
+
+        public function ratings()
+        {
+        return $this->hasMany(ProductRating::class);
+        }
+        public function averageRating()
+        {
+            return $this->ratings->avg('rating');
+        }
 }

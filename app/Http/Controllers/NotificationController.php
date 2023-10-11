@@ -11,8 +11,6 @@ class NotificationController extends Controller
     {
         $notifications = Auth::user()->unreadNotifications;
 
-        
-
         return view('backend.pages.notification.notifications', compact('notifications'));
     }
 }
