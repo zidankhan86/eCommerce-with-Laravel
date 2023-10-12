@@ -16,9 +16,9 @@
         <th scope="col">Category</th>
         <th scope="col">Weight</th>
         <th scope="col">Stock</th>
-        <th scope="col">Product  Price</th>
-        <th scope="col">Dicount Price</th>
-        <th scope="col">Shipping time</th>
+        <th scope="col">Price</th>
+        <th scope="col">Dicount</th>
+        <th scope="col">Shipping</th>
         <th scope="col">Status</th>
         <th scope="col">Action</th>
       </tr>
