@@ -28,6 +28,6 @@ class Distribute extends Model
      */
     public function StockRelation(): BelongsTo
     {
-        return $this->belongsTo(Product::class, 'name', 'id');
+        return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 }

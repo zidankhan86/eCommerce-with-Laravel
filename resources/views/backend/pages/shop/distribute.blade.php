@@ -15,29 +15,32 @@
 
 
 
-            <div class="mb-3 mx-sm-2">
+         <div class="mb-3 mx-sm-2">
             <label for="exampleInputName1" class="form-label">Select Product</label>
-                <select name="name" id="" class="form-control">
-                    @foreach ($productQuantity as $item)
-                  <option value="{{$item->name }}">{{ $item->name }}</option>
-                   @endforeach
-                </select>
-            @error('name')
-            <p class="text-danger">{{$message}}</p>
-            @enderror
-            </div>
 
-            <div class="mb-3 mx-sm-2">
-            <label for="exampleInputName1" class="form-label">Quantity</label>
-           <select name="stock" id="" class="form-control">
-                    @foreach ($productQuantity as $item)
-                  <option value="{{$item->stock }}">{{ $item->stock }}</option>
-                    @endforeach
-                </select>
-            @error('stock')
-            <p class="text-danger">{{$message}}</p>
+            <select name="name" id="productSelect" class="form-control">
+                <option value="">SELECT PRODUCT</option>
+                @foreach ($productQuantity as $item)
+                    <option value="{{ $item->name }}" data-stock="{{ $item->stock }}">{{ $item->name }}</option>
+                @endforeach
+            </select>
+            @error('name')
+            <p class="text-danger">{{ $message }}</p>
             @enderror
-            </div>
+        </div>
+
+        <div class="mb-3 mx-sm-2">
+            <label for="exampleInputName1" class="form-label">Quantity</label>
+            <select name="stock" id="stockSelect" class="form-control" readonly>
+                @foreach ($productQuantity as $item)
+                    <option value="{{ $item->stock }}">{{ $item->stock }}</option>
+                @endforeach
+            </select>
+            @error('stock')
+            <p class="text-danger">{{ $message }}</p>
+            @enderror
+        </div>
+
 
             <div>
                 @isset($item)
@@ -135,7 +138,17 @@
       </div>
 
   </form>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+<script>
+    $(document).ready(function() {
+        $('#productSelect').change(function() {
+            var selectedProduct = $(this).val();
+            var selectedStock = $('#productSelect option:selected').data('stock');
+            $('#stockSelect').val(selectedStock);
+        });
+    });
+</script>
 
 
 @endsection
