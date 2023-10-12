@@ -20,4 +20,14 @@ class Distribute extends Model
     {
         return $this->belongsTo(Shop::class, 'shop_id', 'id');
     }
+
+    /**
+     * Get the user that owns the Distribute
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function StockRelation(): BelongsTo
+    {
+        return $this->belongsTo(Product::class, 'name', 'id');
+    }
 }

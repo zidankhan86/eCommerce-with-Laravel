@@ -13,14 +13,17 @@ return new class extends Migration
     {
         Schema::create('distributes', function (Blueprint $table) {
             $table->id();
-            $table->string('product_name');
-            $table->string('quantity');
             $table->string('price');
             $table->string('selling_price');
+            $table->string('stock');
             $table->date('date');
+            $table->string('distribute_quantity');
             $table->string('image');
             $table->longText('note')->nullable();
             $table->foreignId('shop_id');
+            $table->string('name');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }

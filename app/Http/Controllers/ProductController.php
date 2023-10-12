@@ -52,10 +52,10 @@ class ProductController extends Controller
 
           Product::create([
 
-            "name"=>$request->name,
-            "category_id"=>$request->category_id,
-            "image"=>$images,
-            "weight"=>$request->weight,
+             "name"=>$request->name,
+             "category_id"=>$request->category_id,
+             "image"=>$images,
+             "weight"=>$request->weight,
              "stock"=>$request->stock,
              "product_stock"=>$request->product_stock,
              "price"=>$request->price,

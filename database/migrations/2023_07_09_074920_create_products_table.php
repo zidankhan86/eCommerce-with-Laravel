@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('image')->nullable();
             $table->float('weight');
-            $table->string(' product_stock');
+            $table->string('product_stock');
             $table->string('stock');
             $table->string('price');
             $table->string('discount')->nullable();

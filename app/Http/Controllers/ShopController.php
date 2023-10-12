@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Distribute;
+use App\Models\Product;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -61,16 +62,17 @@ class ShopController extends Controller
    }
 
    public function distributeForm(){
+    $productQuantity = Product::all();
     $distribute = Shop::all();
-    return view('backend.pages.shop.distribute',compact('distribute'));
+    return view('backend.pages.shop.distribute',compact('distribute','productQuantity'));
    }
 
    public function distributeStore(Request $request){
     //dd($request->all());
     $validator = Validator::make($request->all(), [
-        'product_name' => 'required|string',
+        'name' => 'required|string',
         'image' => 'nullable|max:200',
-        'quantity' => 'required',
+        'stock' => 'required',
         'price' => 'required',
         'selling_price' => 'required',
         'date' => 'required',
@@ -94,15 +96,16 @@ class ShopController extends Controller
 
       Distribute::create([
 
-        "product_name"=>$request->product_name,
+        "name"=>$request->name,
         "image"=>$images,
         "price"=>$request->price,
-        'quantity' =>$request->quantity,
+        'distribute_quantity' =>$request->distribute_quantity,
          "selling_price"=>$request->selling_price,
          "date"=>$request->date,
          "note"=>$request->note,
          'shop_id' =>$request->shop_id,
-
+         'product_id'=>$request->product_id,
+         "stock"=>$request->stock,
       ]);
 
 

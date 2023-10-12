@@ -16,22 +16,43 @@
 
 
             <div class="mb-3 mx-sm-2">
-            <label for="exampleInputName1" class="form-label">Product Name</label>
-            <input type="text" class="form-control" id="shopName" name="product_name" placeholder="Product Name..">
-
-            @error('product_name')
+            <label for="exampleInputName1" class="form-label">Select Product</label>
+                <select name="name" id="" class="form-control">
+                    @foreach ($productQuantity as $item)
+                  <option value="{{$item->name }}">{{ $item->name }}</option>
+                   @endforeach
+                </select>
+            @error('name')
             <p class="text-danger">{{$message}}</p>
             @enderror
             </div>
 
             <div class="mb-3 mx-sm-2">
             <label for="exampleInputName1" class="form-label">Quantity</label>
-            <input type="number" class="form-control" id="shopOwnerName" name="quantity" placeholder="Quantity..">
-
-            @error('quantity')
+           <select name="stock" id="" class="form-control">
+                    @foreach ($productQuantity as $item)
+                  <option value="{{$item->stock }}">{{ $item->stock }}</option>
+                    @endforeach
+                </select>
+            @error('stock')
             <p class="text-danger">{{$message}}</p>
             @enderror
             </div>
+
+            <div>
+                @isset($item)
+                    <input type="hidden" name="product_id" value="{{ $item->id }}">
+                @endisset
+            </div>
+
+            <div class="mb-3 mx-sm-2">
+                <label for="exampleInputName1" class="form-label">Enter Distribute Quantity</label>
+                <input type="number" class="form-control" id="distribute_quantity" name="distribute_quantity" placeholder="12..">
+                @error('distribute_quantity')
+                <p class="text-danger">{{$message}}</p>
+                @enderror
+                </div>
+
 
             <div class="mb-3 mx-sm-2">
             <label for="exampleInputName1" class="form-label">Product Image</label>
@@ -85,7 +106,7 @@
                     <select name="shop_location" id="" class="form-control">
 
                         @foreach ($distribute as $item)
-                        <option value="{{ $item->id }}">{{ $item->shop_area }}</option>
+                        <option value="{{ $item->shop_area }}">{{ $item->shop_area }}</option>
                         @endforeach
 
 

@@ -31,7 +31,7 @@
                         <form action="{{ route('user.search') }}">
                             @csrf
                             <input type="text" name="search_key"  placeholder="What do you need?">
-                            <button type="submit" class="btn btn-success">SEARCH</button>
+                            <button type="submit" class="btn btn-dark">SEARCH</button>
                         </form>
                     </div>
                     <div class="hero__search__phone">
@@ -50,7 +50,7 @@
                             <span>{{ $item->small_tittle }}</span>
                             <h2>{{ $item->tittle }}</h2>
                             <p>{{ $item->description }}</p>
-                            <a href="{{ url('/product') }}" class="primary-btn">SHOP NOW</a>
+                            <a href="{{ url('/product') }}" class="btn btn-dark">SHOP NOW</a>
                         </div>
                     </div>
                 @endforeach
