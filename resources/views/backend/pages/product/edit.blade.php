@@ -25,6 +25,20 @@
 
          </div>
 
+
+         <div class="mb-3 mx-sm-2">
+        <label for="exampleInputName1" class="form-label">Product stock</label>
+        <input type="text" class="form-control" value="{{$edit->product_stock}}" id="exampleInputName1" name="product_stock" placeholder="Product Name..">
+        @error('product_stock')
+
+        <strong class="text-danger">{{$message}}</strong>
+
+        @enderror
+
+         </div>
+
+
+
          <div class="mb-3 mx-sm-2">
             <label for="exampleInputName1" class="form-label">Select Category</label>
 
@@ -63,7 +77,7 @@
                  </div>
 
         <div class="mb-3 mx-sm-2">
-        <label for="exampleInputNumber2" class="form-label">Product Stock</label>
+        <label for="exampleInputNumber2" class="form-label"> Stock</label>
         <input type="number" class="form-control"  value="{{$edit->stock}}" id="exampleInputNumber2" name="stock" placeholder="70..">
         @error('stock')
 

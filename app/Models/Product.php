@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\ProductRating;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -30,4 +31,11 @@ class Product extends Model
         {
             return $this->ratings->avg('rating');
         }
+
+
+        public function stock(): HasMany
+        {
+            return $this->hasMany(Distribute::class, 'product_id', 'id');
+        }
+        
 }

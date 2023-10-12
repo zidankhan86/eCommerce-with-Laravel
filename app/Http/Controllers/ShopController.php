@@ -67,7 +67,7 @@ class ShopController extends Controller
     return view('backend.pages.shop.distribute',compact('distribute','productQuantity'));
    }
 
-   public function distributeStore(Request $request){
+   public function distributeStore(Request $request ){
     //dd($request->all());
     $validator = Validator::make($request->all(), [
         'name' => 'required|string',
@@ -90,24 +90,30 @@ class ShopController extends Controller
         $images=date('Ymdhsis').'.'.$request->file('image')->getClientOriginalExtension();
         $request->file('image')->storeAs('uploads', $images, 'public');
     }
-    //dd($imageName);
+    //dd($stock);
     // dd($request->all());
+    $selectedProductName = $request->input('name'); // Get the selected product name
+    $product = Product::where('name', $selectedProductName)->first(); // Find the product by name
 
+    if ($product && $product->stock >= $request->distribute_quantity) {
+        $product->stock -= $request->distribute_quantity;
+        $product->save();
+    } else {
+        return back()->with('error', 'Insufficient stock for distribution or product not found.');
+    }
 
-      Distribute::create([
-
-        "name"=>$request->name,
-        "image"=>$images,
-        "price"=>$request->price,
-        'distribute_quantity' =>$request->distribute_quantity,
-         "selling_price"=>$request->selling_price,
-         "date"=>$request->date,
-         "note"=>$request->note,
-         'shop_id' =>$request->shop_id,
-         'product_id'=>$request->product_id,
-         "stock"=>$request->stock,
-      ]);
-
+    Distribute::create([
+        "name" => $selectedProductName,
+        "image" => $images,
+        "price" => $request->price,
+        'distribute_quantity' => $request->distribute_quantity,
+        "selling_price" => $request->selling_price,
+        "date" => $request->date,
+        "note" => $request->note,
+        'shop_id' => $request->shop_id,
+        'product_id' => $product->id, // Use the ID of the selected product
+        "stock" => $product->stock,
+    ]);
 
       return back()->with('success', 'Distributed Successfully!');
 

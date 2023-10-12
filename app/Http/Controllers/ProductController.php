@@ -89,7 +89,7 @@ class ProductController extends Controller
                 'weight' => 'required|numeric',
                 'stock' => 'required|integer',
                 'price' => 'required|numeric',
-                'discount' => 'nullable|numeric|max:100',
+                //'discount' => 'nullable|numeric|max:100',
                 'time' => 'required',
                 'description' => 'required',
 
@@ -155,18 +155,18 @@ class ProductController extends Controller
         public function productupdate( Request $request ,$id){
 
 
+           // dd($request->all());
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string',
+            'name' => 'required',
             'category_id' => 'required',
             'image' => 'nullable|max:200',
-            'weight' => 'required|numeric',
+            'weight' => 'required',
             'stock' => 'required|integer',
-            'price' => 'required|numeric',
-            'discount' => 'nullable|numeric|max:100',
+            'product_stock'=>'required',
+            'price' => 'required',
             'time' => 'required',
             'description' => 'required',
             'product_information'=> 'required',
-            'product_stock'=>'required',
             'status'=> 'required',
         ]);
 
@@ -181,23 +181,23 @@ class ProductController extends Controller
             $request->file('image')->storeAs('uploads', $images, 'public');
         }
             //dd($imageName);
-           // dd($request->all());
+            //dd($request->all());
 
             $update=Product::find($id);
 
             $update->update([
                 "name"=>$request->name,
-                "category_id"=>$request->category_id,
-                "image"=>$images,
-                "weight"=>$request->weight,
-                 "stock"=>$request->stock,
-                 "product_stock"=>$request->product_stock,
-                 "price"=>$request->price,
-                 "discount"=>$request->discount,
-                 "time"=>$request->time,
-                 "description"=>$request->description,
-                 'product_information' =>$request->product_information,
-                 'status' =>$request->status,
+             "category_id"=>$request->category_id,
+             "image"=>$images,
+             "weight"=>$request->weight,
+             "stock"=>$request->stock,
+             "product_stock"=>$request->product_stock,
+             "price"=>$request->price,
+             "discount"=>$request->discount,
+             "time"=>$request->time,
+             "description"=>$request->description,
+             'product_information' =>$request->product_information,
+             'status' =>$request->status,
             ]);
             Alert::toast()->success('Your post has been edited');
             return redirect()->route('product.list');
