@@ -92,7 +92,7 @@
             @enderror
             </div>
 
-            {{-- <div class="mb-3 mx-sm-2">
+            <div class="mb-3 mx-sm-2">
                 <label for="exampleInputNumber" class="form-label">Dicount Price</label>
                 <input type="number" class="form-control" id="exampleInputNumber" value="{{ old('discount') }}" name="discount" placeholder="25%..">
 
@@ -101,7 +101,7 @@
                 <strong class="text-danger">{{$message}}</strong>
 
                 @enderror
-                </div> --}}
+                </div>
 
              <div class="mb-3 mx-sm-2">
             <label for="exampleInputNumber3" class="form-label">Shipping time</label>

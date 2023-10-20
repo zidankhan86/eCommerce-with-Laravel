@@ -39,6 +39,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <a href="{{route('add.to.cart',$details->id)}}" class="primary-btn">ADD TO CART</a>
                         {{-- <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a> --}}
                         <ul>
@@ -92,16 +93,16 @@
 
 
 
-    <!-- Product Details  -->
-    <section class="product-details spad">
-        <div class="container">
-            <div class="row">
+                    <!-- Product Review  -->
+                    <section class="product-details spad">
+                        <div class="container">
+                            <div class="row">
 
-                <div class="col-lg-6 col-md-6">
-                    <div class="product__details__text">
-                        <h3>{{$details->name}}</h3>
-                        <form action="{{ route('product.rate',$details->id) }}" method="POST">
-                            @csrf
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="product__details__text">
+                                        <h3>{{$details->name}}</h3>
+                                        <form action="{{ route('product.rate',$details->id) }}" method="POST">
+                                            @csrf
                             <div class="rating-css">
                                 <div class="star-icon">
                                     @for ($i = 1; $i <= 5; $i++)

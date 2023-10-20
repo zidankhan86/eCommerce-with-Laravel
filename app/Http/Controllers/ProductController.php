@@ -50,7 +50,7 @@ class ProductController extends Controller
         // dd($request->all());
 
 
-          Product::create([
+        $product=  Product::create([
 
              "name"=>$request->name,
              "category_id"=>$request->category_id,
@@ -66,7 +66,14 @@ class ProductController extends Controller
              'status' =>$request->status,
 
           ]);
+          
+          if ($product) {
+            // Calculate the discounted price
+            $discountedPrice = $product->price - $product->discount;
 
+            // Update the product's discounted price
+            $product->update(['discounted_price' => $discountedPrice]);
+        }
 
           return back()->with('success', 'Product Added Successfully!');
 
@@ -174,7 +181,6 @@ class ProductController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-
         $images=null;
         if ($request->hasFile('image')) {
             $images=date('Ymdhsis').'.'.$request->file('image')->getClientOriginalExtension();
@@ -199,6 +205,7 @@ class ProductController extends Controller
              'product_information' =>$request->product_information,
              'status' =>$request->status,
             ]);
+
             Alert::toast()->success('Your post has been edited');
             return redirect()->route('product.list');
 
