@@ -14,6 +14,7 @@
  @include('frontend.components.bannerTwo')
  @include('frontend.components.product')
  @include('frontend.components.banner')
+ @include('frontend\components\trendingProduct')
  @include('frontend.components.blog')
 
 @endsection

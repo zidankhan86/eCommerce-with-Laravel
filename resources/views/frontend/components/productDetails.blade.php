@@ -30,7 +30,14 @@
                     <div class="product__details__text">
                         <h3>{{$details->name}}</h3>
 
-                        <div class="product__details__price">{{$details->price}}.00 Tk</div>
+                        @if ($details->discount)
+                        <div style="display: flex;">
+                            <h5 style="color: rgb(214, 57, 17); margin-right: 10px;"><del>{{ $details->price }} Tk.</del></h5>
+                            <h5 style="color: rgb(214, 57, 17;">{{ $details->discounted_price }} Tk.</h5>
+                        </div>
+                        @else
+                        <h5 style="color: rgb(214, 57, 17)">{{ $details->price }} Tk.</h5>
+                        @endif
                         <p>{{$details->description}}</p>
                         <div class="product__details__quantity">
                             <div class="">
@@ -39,7 +46,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <a href="{{route('add.to.cart',$details->id)}}" class="primary-btn">ADD TO CART</a>
                         {{-- <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a> --}}
                         <ul>

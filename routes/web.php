@@ -123,7 +123,8 @@ Route::get('/new-arrival-product-form',[ProductController::class,'NewArrivalprod
 Route::get('/new-arrival-product-list',[ProductController::class,'NewArrivalproductList'])->name('new.arrival.product.list');
 Route::post('/new-product-store',[ProductController::class,'newProductStore'])->name('new.product.store');
 Route::post('/product/rate/{id}', [ProductController::class,'storeRating'])->name('product.rate');
-
+//Trending Products
+Route::get('/trending/product', [ProductController::class,'trendingProduct'])->name('trending.product');
 //Banner
 Route::get('/banner-form-one',[BannerController::class,'bannerFormOne'])->name('banner.form.one');
 Route::get('/banner-list-one',[BannerController::class,'bannerListOne'])->name('banner.list.one');

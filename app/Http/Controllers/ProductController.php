@@ -66,14 +66,19 @@ class ProductController extends Controller
              'status' =>$request->status,
 
           ]);
-          
+
           if ($product) {
+            // Assuming $product->discount is the discount percentage (e.g., 70%)
+            $discountPercentage = $product->discount / 100;
+            $originalPrice = $product->price;
+
             // Calculate the discounted price
-            $discountedPrice = $product->price - $product->discount;
+            $discountedPrice = $originalPrice - ($originalPrice * $discountPercentage);
 
             // Update the product's discounted price
             $product->update(['discounted_price' => $discountedPrice]);
         }
+
 
           return back()->with('success', 'Product Added Successfully!');
 
@@ -240,4 +245,9 @@ class ProductController extends Controller
             notify()->success('Thank you for your feedback.');
             return back();
 }
+//Trending Product
+public function trendingProduct(){
+    return view('frontend.components.trendingProduct');
+}
+
 }
