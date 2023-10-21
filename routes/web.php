@@ -125,6 +125,7 @@ Route::post('/new-product-store',[ProductController::class,'newProductStore'])->
 Route::post('/product/rate/{id}', [ProductController::class,'storeRating'])->name('product.rate');
 //Trending Products
 Route::get('/trending/product', [ProductController::class,'trendingProduct'])->name('trending.product');
+Route::get('/trending/status/{id}', [ProductController::class,'trendingStatus'])->name('trending.status');
 //Banner
 Route::get('/banner-form-one',[BannerController::class,'bannerFormOne'])->name('banner.form.one');
 Route::get('/banner-list-one',[BannerController::class,'bannerListOne'])->name('banner.list.one');

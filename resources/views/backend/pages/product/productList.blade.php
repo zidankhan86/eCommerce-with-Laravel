@@ -50,6 +50,7 @@
         <td>
             <a href="{{route('product.edit',$item->id)}}" class="btn btn-success"><i class="fas fa-edit"></i></a>
             <a href="{{route('product.delete',$item->id)}}" class="btn btn-danger" onclick="return confirm('Do you want to delete ?')"><i class="fas fa-trash"></i></a>
+            <a href="{{route('trending.status',$item->id)}}" class="btn btn-success">Trending</a>
         </td>
 
       </tr>

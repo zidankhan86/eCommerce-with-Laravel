@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="latest-product__text">
-                    <h4>Latest Products</h4>
+                    <h4>Trending Products</h4>
                     <div class="latest-product__slider owl-carousel">
 
                         <div class="latest-prdouct__slider__item" style="display: flex;">

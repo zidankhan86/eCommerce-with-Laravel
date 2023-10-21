@@ -249,5 +249,15 @@ class ProductController extends Controller
 public function trendingProduct(){
     return view('frontend.components.trendingProduct');
 }
+public function trendingStatus($id){
+    $product = Product::find($id);
+    $product->update([
+        "status"=>"2"
+    ]);
+
+    Alert::toast()->success('Your status has been changed');
+    return redirect()->route('product.list');
+
+}
 
 }
