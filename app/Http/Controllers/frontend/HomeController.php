@@ -45,12 +45,12 @@ class HomeController extends Controller
 
           //Product Stars
           $productRatings =ProductRating::all();
-
-
+         //Trending
+         $trendingProduct = Product::where('status',2)->latest()->limit(8)->get();
          return view('frontend.pages.home',
          compact('categories','products','latestProducts',
         'latestCategories','blogs','banners','heroBanners',
-        'bannersTwo','bannersOne','subcategories','productRatings'));
+        'bannersTwo','bannersOne','subcategories','productRatings','trendingProduct'));
     }
 
        public function categoryWiseProduct($id){

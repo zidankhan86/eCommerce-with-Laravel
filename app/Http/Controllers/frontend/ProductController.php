@@ -96,7 +96,7 @@ class ProductController extends Controller
         $admins = User::where('role', 'admin')->get(); // Assuming 'User' is your admin model
          Notification::send($admins, new OrderReceivedNotification($order));
 
-    $order->save();
+       $order->save();
 
         session()->forget('cart');
 

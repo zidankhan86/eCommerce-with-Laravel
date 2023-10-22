@@ -133,18 +133,12 @@ class ProductController extends Controller
              "discount"=>$request->discount,
              "time"=>$request->time,
              "description"=>$request->description,
-
-
           ]);
-
           return back()->with('success', 'New Arrival Added Successfully!');
-
     }
 
     public function NewArrivalproductList(){
-
         $products = NewArrival::latest()->get();
-
         return view('backend.pages.product.newArrivalProductList',compact('products'));
     }
 
@@ -244,20 +238,24 @@ class ProductController extends Controller
             //return redirect()->route('product-details', ['id' => $productId]);
             notify()->success('Thank you for your feedback.');
             return back();
-}
-//Trending Product
-public function trendingProduct(){
-    return view('frontend.components.trendingProduct');
-}
-public function trendingStatus($id){
-    $product = Product::find($id);
-    $product->update([
-        "status"=>"2"
-    ]);
+            }
 
-    Alert::toast()->success('Your status has been changed');
-    return redirect()->route('product.list');
 
-}
 
-}
+            //Trending Product
+              public function trendingProduct(){
+                $trendingProduct = Product::where('status',2)->latest()->limit(8)->get();
+                return view('frontend.components.trendingProduct',compact('trendingProduct'));
+            }
+            public function trendingStatus($id){
+                $product = Product::find($id);
+                $product->update([
+                    "status"=>"2"
+                ]);
+
+                Alert::toast()->success('Your status has been changed');
+                return redirect()->route('product.list');
+
+            }
+
+            }
