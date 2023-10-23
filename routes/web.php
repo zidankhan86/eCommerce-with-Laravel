@@ -89,12 +89,14 @@ Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword']
 
 //Middleware for check valid user
 Route::group(['middleware' => 'customerAuth'], function () {
- //Cart Product Order
+//Cart Product Order
 Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
 //Single Product Order
 Route::get('/product-checkout-single/product/{id}',[FrontendProductController::class,'singleProductCheckout']);
 //Order Create for both
 Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
+//Order Tracking
+Route::get('/order/tracking/{id}',[OrderController::class,'orderTracking'])->name('order.tracking');
 });
 
 //middleware auth and admin

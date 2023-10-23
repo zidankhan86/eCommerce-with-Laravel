@@ -42,7 +42,9 @@
             <td>{{ $item->phone }}</td>
             <td>{{ $item->email }}</td>
             <td>{{ $item->note }}</td>
-            <td class="text-danger">Processing</td>
+            <td >
+                <a href="{{ route('order.tracking',$item->id) }}" class="btn btn-warning"><i class="fas fa-eye"></i></a>
+            </td>
             <td>
                 <a href="{{route('order.invoice' ,$item->id)}}" class="btn btn-info"><i class="fas fa-file-invoice"></i></a>
             </td>

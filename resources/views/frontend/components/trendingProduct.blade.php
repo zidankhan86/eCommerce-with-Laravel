@@ -11,7 +11,7 @@
 
                         <div class="latest-prdouct__slider__item" style="display: flex;">
                             @foreach ($trendingProduct as $item)
-                            <a href="#" class="latest-product__item" >
+                            <a href="{{ url('/product-details',$item->id) }}" class="latest-product__item" >
                                 <div class="latest-product__item__pic">
                                     <img src="{{ asset('/public/uploads/' . $item->image) }}" alt="">
                                     <div class="latest-product__item__text">
