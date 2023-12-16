@@ -2,7 +2,11 @@
 
 @section('content')
 
-<br><h4 class=" text-success text-center">Category Form</h4>
+<div class="container">
+    <div class="container">
+        <div class="container">
+            <div class="container">
+            <br><h4 class=" text-success text-center">Category Form</h4>
 
 <form action="{{route('category.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -55,6 +59,10 @@
       </div>
 
   </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

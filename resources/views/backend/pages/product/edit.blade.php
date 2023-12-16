@@ -1,6 +1,10 @@
 @extends('backend.master')
 
 @section('content')
+<div class="container">
+<div class="container">
+<div class="container">
+
 
 <br><h4 class="text-success text-center">Edit Product</h4>
 
@@ -163,6 +167,9 @@
 
   </form>
 
+  </div>
+  </div>
+  </div>
 
 
 @endsection

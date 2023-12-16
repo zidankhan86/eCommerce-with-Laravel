@@ -1,6 +1,10 @@
 @extends('backend.master')
 
 @section('content')
+<div class="container">
+<div class="container">
+<div class="container">
+
 
  <br><a class="btn btn-success float-end ml-2" href="{{ route('product.form') }}"><i class="fa fa-plus" aria-hidden="true"></i> Add Product</a><br>
  <br><h4 class="text-success text-center">Products List</h4><br>
@@ -58,7 +62,7 @@
 
     </tbody>
   </table>
-
+  </div></div></div>
 
 @endsection
 

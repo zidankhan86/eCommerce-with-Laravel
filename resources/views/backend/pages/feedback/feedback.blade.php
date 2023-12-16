@@ -2,8 +2,14 @@
 
 @section('content')
 
+<div class="container">
+<div class="container">
 
- <br><h4 class="text-success text-center">User Name</h4><br>
+<div class="container">
+
+
+
+ <br><h4 class="text-success text-center">User Feedback</h4><br>
 
 
 
@@ -46,6 +52,9 @@
     </tbody>
   </table>
 
+  </div>
+</div>
+</div>
 
 @endsection
 

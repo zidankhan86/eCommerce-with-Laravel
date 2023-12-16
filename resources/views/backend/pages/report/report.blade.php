@@ -1,8 +1,12 @@
 @extends('backend.master')
 
 @section('content')
+<div class="container">
+<div class="container">
+<div class="container">
+    
 
-<h1>Order Report</h1>
+<br><h1>Order Report</h1><br>
 
 <form action="{{route('order.report.search')}}" method="get">
 
@@ -22,18 +26,18 @@
 </div>
 
 </form>
-<div id="orderReport">
+<br><div id="orderReport">
 
-<h1>Order Reports- {{date('Y-m-d')}}</h1>
+<h1>Order Reports- {{date('Y-m-d')}}</h1><br>
     <table class="table table-striped">
         <thead>
         <tr>
 
             <th scope="col">Serial</th>
-            <th scope="col">Product Name</th>
+            <th scope="col">Product</th>
             <th scope="col">Total</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
+            <th scope="col">F Name</th>
+            <th scope="col">L Name</th>
             <th scope="col">City</th>
             <th scope="col">Address</th>
             <th scope="col">Postcode</th>
@@ -72,7 +76,7 @@
     </table>
 </div>
 <button onclick="printDiv('orderReport')" class="btn btn-success">Print</button>
-
+</div></div></div>
 
 <script>
     function printDiv(divId){

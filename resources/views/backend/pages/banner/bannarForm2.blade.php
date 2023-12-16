@@ -1,6 +1,9 @@
 @extends('backend.master')
 
 @section('content')
+<div class="container">
+<div class="container">
+<div class="container">
 
 <br><h4 class=" text-success text-center">Banner Form-2</h4>
 
@@ -44,6 +47,9 @@
 
   </form>
 
+  </div>
+  </div>
+  </div>
 
 
 @endsection

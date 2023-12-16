@@ -1,7 +1,9 @@
 @extends('backend.master')
 
 @section('content')
-
+<div class="container">
+<div class="container">
+<div class="container">
 <br><h4 class="text-success text-center">Add Product</h4>
 
 <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
@@ -165,6 +167,9 @@
       </div>
 
   </form>
+  </div>
+  </div>
+  </div>
 
 
 
