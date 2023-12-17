@@ -1,6 +1,9 @@
 @extends('backend.master')
 
 @section('content')
+
+<script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
+
 <div class="container">
 <div class="container">
 <div class="container">
@@ -119,7 +122,7 @@
 
 
 
-              <div class="mb-3 mx-sm-2">
+              <div class="mb-3 mx-sm-2" id="editor">
                 <label for="exampleInputName1" class="form-label">Product Description</label>
                 <input type="text" class="form-control" id="exampleInputName1" value="{{ old('description') }}" name="description" placeholder="Write product description here.." style="height: 100px;">
                 @error('description')
@@ -128,9 +131,9 @@
 
                 @enderror
 
-              </div>
+              </div><br><br>
 
-              <div class="mb-3 mx-sm-2">
+              <div class="mb-3 mx-sm-2" id="editor2">
                 <label for="exampleInputName1" class="form-label">Product Information</label>
                 <textarea class="form-control" id="exampleInputName1" name="product_information" placeholder="Write more details about your product here.." style="height: 150px;">{{ old('product_information') }}</textarea>
                 @error('product_information')
@@ -171,8 +174,37 @@
   </div>
   </div>
 
+  <script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor2' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 
+<style>
+            #container {
+                width: 1000px;
+                margin: 20px auto;
+            }
+            .ck-editor__editable[role="textbox"] {
+                /* editing area */
+                min-height: 200px;
+            }
+            .ck-content .image {
+                /* block images */
+                max-width: 80%;
+                margin: 20px auto;
+            }
+        </style>
 @endsection
 
 
