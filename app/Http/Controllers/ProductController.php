@@ -20,21 +20,21 @@ class ProductController extends Controller
     }
 
     public function productStore(Request $request){
-
+        // dd($request->all());
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string',
-            'category_id' => 'required',
-            'image' => 'nullable|max:200',
-            'weight' => 'required|numeric',
-            'stock' => 'required|integer',
-            'product_stock'=>'required',
-            'price' => 'required|numeric',
-            'discount' => 'nullable|numeric|max:100',
-            'time' => 'required',
-            'description' => 'required',
-            'product_information'=> 'required',
-            'status'=> 'required',
+            'name'                  => 'required|string',
+            'category_id'           => 'required',
+            'image'                 => 'nullable|max:200',
+            'weight'                => 'required|numeric',
+            'stock'                 => 'required|integer',
+            'product_stock'         =>'required',
+            'price'                 => 'required|numeric',
+            'discount'              => 'nullable|numeric|max:100',
+            'time'                  => 'required',
+            'description'           => 'required',
+            'product_information'   => 'required',
+            'status'                => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -52,18 +52,18 @@ class ProductController extends Controller
 
         $product=  Product::create([
 
-             "name"=>$request->name,
-             "category_id"=>$request->category_id,
-             "image"=>$images,
-             "weight"=>$request->weight,
-             "stock"=>$request->stock,
-             "product_stock"=>$request->product_stock,
-             "price"=>$request->price,
-             "discount"=>$request->discount,
-             "time"=>$request->time,
-             "description"=>$request->description,
-             'product_information' =>$request->product_information,
-             'status' =>$request->status,
+             "name"                 =>$request->name,
+             "category_id"          =>$request->category_id,
+             "image"                =>$images,
+             "weight"               =>$request->weight,
+             "stock"                =>$request->stock,
+             "product_stock"        =>$request->product_stock,
+             "price"                =>$request->price,
+             "discount"             =>$request->discount,
+             "time"                 =>$request->time,
+             "description"          =>$request->description,
+             'product_information'  =>$request->product_information,
+             'status'               =>$request->status,
 
           ]);
 
