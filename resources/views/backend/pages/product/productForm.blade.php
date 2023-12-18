@@ -38,7 +38,7 @@
 
         <div class="mb-3 mx-sm-2">
             <label for="exampleInputImage" class="form-label">Image <strong>*(IMAGE SIZE MAX 200kb)*</strong></label>
-            <input type="file" class="form-control" name="image" placeholder="Product Image..">
+            <input type="file" class="form-control dropify" name="image" placeholder="Product Image..">
             @error('image')
             <div class="text-danger">{{ $message }}</div>
             @enderror
@@ -170,4 +170,15 @@
     }
 </style>
 
+
+<script>
+    $('.dropify').dropify({
+    messages: {
+        'default': 'Drag and drop a file here or click',
+        'replace': 'Drag and drop or click to replace',
+        'remove':  'Remove',
+        'error':   'Ooops, something wrong happended.'
+    }
+    });
+    </script>
 @endsection
