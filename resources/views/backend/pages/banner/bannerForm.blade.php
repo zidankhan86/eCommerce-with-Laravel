@@ -43,7 +43,7 @@
 
 
       <div class="text-center">
-        <button type="submit" class="btn btn-primary">Post</button>
+        <button type="submit" class="btn btn-primary">Upload Banner</button>
       </div>
 
   </form>
@@ -59,8 +59,8 @@
         'remove':  'Remove',
         'error':   'Ooops, something wrong happended.'
     }
-});
-</script>
+    });
+    </script>
 
 
 @endsection

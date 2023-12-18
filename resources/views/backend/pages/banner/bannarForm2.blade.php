@@ -32,7 +32,7 @@
 
             <div class="mb-3 mx-sm-2">
             <label for="exampleInputName2" class="form-label">Upload Image <strong>*(IMAGE SIZE MAX 250kb)*</strong></label>
-            <input type="file" class="form-control" value="{{ old('image') }}" id="image" name="image">
+            <input type="file" class="form-control dropify" value="{{ old('image') }}"  name="image">
             @error('image')
 
             <strong class="text-danger">{{$message}}</strong>
@@ -50,7 +50,16 @@
   </div>
   </div>
   </div>
-
+  <script>
+    $('.dropify').dropify({
+    messages: {
+        'default': 'Drag and drop a file here or click',
+        'replace': 'Drag and drop or click to replace',
+        'remove':  'Remove',
+        'error':   'Ooops, something wrong happended.'
+    }
+    });
+    </script>
 
 @endsection
 

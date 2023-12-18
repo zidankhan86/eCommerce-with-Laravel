@@ -44,7 +44,7 @@
 
             <div class="mb-3 mx-sm-2">
             <label for="exampleInputName2" class="form-label">Upload Image</label>
-            <input type="file" class="form-control" value="{{$edit->image }}" id="exampleInputName2" name="image">
+            <input type="file" class="form-control dropify" value="{{$edit->image }}" name="image">
             @error('image')
 
             <strong class="text-danger">{{$message}}</strong>
@@ -62,7 +62,16 @@
   </div>
   </div>
 
-
+  <script>
+    $('.dropify').dropify({
+    messages: {
+        'default': 'Drag and drop a file here or click',
+        'replace': 'Drag and drop or click to replace',
+        'remove':  'Remove',
+        'error':   'Ooops, something wrong happended.'
+    }
+    });
+    </script>
 
 @endsection
 
