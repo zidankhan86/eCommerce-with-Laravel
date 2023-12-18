@@ -1,12 +1,7 @@
 @extends('backend.master')
 
 @section('content')
-<script src="{{ asset('js/dropify.js') }}"></script>
-<!-- Include jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- Include Dropify CSS and JS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
+
 
 
 <div class="container">
@@ -55,7 +50,7 @@
   </div>
   </div>
   </div>
-  
+
   <script>
     $('.dropify').dropify({
     messages: {
