@@ -61,27 +61,25 @@
             @enderror
             </div>
 
-
-      <div class="text-center">
-        <button type="submit" class="btn btn-primary">Post</button>
-      </div>
-
-  </form>
-  </div>
-  </div>
-  </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary"><i class="fas fa-upload"></i> Upload Banner</button>
+        </div>
+            </form>
+                </div>
+                 </div>
+                    </div>
 
 
-  <script>
-    $('.dropify').dropify({
-    messages: {
-        'default': 'Drag and drop a file here or click',
-        'replace': 'Drag and drop or click to replace',
-        'remove':  'Remove',
-        'error':   'Ooops, something wrong happended.'
-    }
-    });
-    </script>
+    <script>
+        $('.dropify').dropify({
+        messages: {
+            'default': 'Drag and drop a file here or click',
+            'replace': 'Drag and drop or click to replace',
+            'remove':  'Remove',
+            'error':   'Ooops, something wrong happended.'
+        }
+        });
+        </script>
 @endsection
 
 

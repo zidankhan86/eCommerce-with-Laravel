@@ -157,11 +157,9 @@
     /* End of Star Rating */
     </style>
 
-
-
-                                </div>
-                            </div>
-                        </div>
+   </div>
+         </div>
+                  </div>
                     </div>
                 </div>
             </div>

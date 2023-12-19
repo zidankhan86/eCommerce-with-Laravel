@@ -42,7 +42,7 @@
 
 
       <div class="text-center">
-        <button type="submit" class="btn btn-primary">Post</button>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-upload"></i> Upload Banner</button>
       </div>
 
   </form>
