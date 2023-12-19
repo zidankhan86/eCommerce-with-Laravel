@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
-
-
 <body>
-
-
-
-
 
     <!-- Product Details Section Begin -->
     <section class="product-details spad">
@@ -17,13 +11,8 @@
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
-
-
                                 src="{{ asset('/public/uploads/' . $details->image) }}" alt="">
-
-
                         </div>
-
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -38,7 +27,7 @@
                         @else
                         <h5 style="color: rgb(214, 57, 17)">{{ $details->price }} Tk.</h5>
                         @endif
-                        <p>{{$details->description}}</p>
+                        <p>{!!$details->description!!}</p>
                         <div class="product__details__quantity">
                             <div class="">
                                 <div class="">
@@ -82,28 +71,22 @@
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
-
-
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
                               <div class="product__details__tab__desc">
                                   <h6>Products Information</h6>
-                                  <p>{!! nl2br(e($details->product_information)) !!}</p>
+                                  <p>{!!($details->product_information)!!}</p>
                               </div>
                           </div>
-
-
                             </div>
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
                                 <div class="product__details__tab__desc">
                                     <h6>Products Infomation</h6>
-                                    <p>{!! nl2br(e($details->product_information)) !!}</p>
+                                    <p>{!!($details->product_information)!!}</p>
 
-
-
-                    <!-- Product Review  -->
-                    <section class="product-details spad">
-                        <div class="container">
-                            <div class="row">
+                            <!-- Product Review  -->
+                            <section class="product-details spad">
+                                <div class="container">
+                                    <div class="row">
 
                                 <div class="col-lg-6 col-md-6">
                                     <div class="product__details__text">
@@ -120,22 +103,15 @@
                                 <button type="submit" class="btn btn-info">Rate This Product</button>
                             </div>
                         </form>
-
                         <p>{{$details->description}}</p>
                         <div class="product__details__quantity">
-
                         </div>
-
-
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="product__details__tab">
-
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
-
-
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
                               <div class="product__details__tab__desc">
                                   <h6>Products Information</h6>
