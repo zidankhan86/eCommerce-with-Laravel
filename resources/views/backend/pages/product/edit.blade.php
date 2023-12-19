@@ -62,7 +62,7 @@
 
          <div class="mb-3 mx-sm-2">
             <label for="exampleInputName1" class="form-label">Product Image</label>
-            <input type="file" class="form-control"  id="exampleInputName1" value="{{$edit->image}}" name="image" placeholder="Product Image..">
+            <input type="file" class="form-control dropify" value="{{$edit->image}}" name="image" placeholder="Product Image..">
             @error('image')
 
             <strong class="text-danger">{{$message}}</strong>
@@ -106,9 +106,7 @@
                 <input type="number" class="form-control" id="exampleInputNumber"  value="{{$edit->discount}}" name="discount" placeholder="25%..">
 
                 @error('discount')
-
                 <strong class="text-danger">{{$message}}</strong>
-
                 @enderror
                 </div>
 
@@ -121,9 +119,6 @@
 
                 @enderror
              </div>
-
-
-
 
               <div class="mb-3 mx-sm-2">
                 <label for="exampleInputName1" class="form-label">Product Description</label>
@@ -170,7 +165,16 @@
   </div>
   </div>
   </div>
-
+  <script>
+    $('.dropify').dropify({
+    messages: {
+        'default': 'Drag and drop a file here or click',
+        'replace': 'Drag and drop or click to replace',
+        'remove':  'Remove',
+        'error':   'Ooops, something wrong happended.'
+    }
+    });
+    </script>
 
 @endsection
 
