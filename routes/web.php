@@ -4,6 +4,7 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\BannerController;
@@ -12,17 +13,17 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\AddToCartController;
 use App\Http\Controllers\HeroBannerController;
+use App\Http\Controllers\CompanyLogoController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\CompanyLogoController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\ProductController as FrontendProductController;
-use App\Http\Controllers\NotificationController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,10 +66,11 @@ Route::get('/view-cart',[AddToCartController::class,'viewCart']);
 Route::get('/clear-cart',[AddToCartController::class,'clearCart'])->name('cart.clear');
 Route::get('/cart-item/delete/{id}',[AddToCartController::class,'cartItemDelete'])->name('cart.item.delete');
 
-//Wishlist
-// Route::get('/wishlist', [WishlistController::class, 'wishlist'])->name('wishlist.index');
-// Route::post('/wishlist', [WishlistController::class, 'addToWishlist'])->name('wishlist.add');
-// Route::delete('/wishlist/{id}', [WishlistController::class, 'removeFromWishlist'])->name('wishlist.remove');
+ //Wishlist
+ Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
+ Route::post('/wishlist/add/{id}', [WishlistController::class,'addToWishlist'])->name('add.to.wishlist');
+ Route::get('/wishlist/remove/{wishlist}', [WishlistController::class, 'removeFromWishlist'])->name('remove.Wishlist');
+ Route::post('/cart/add-from-wishlist/{id}', [WishlistController::class, 'addToCartFromWishlist'])->name('cart.add-from-wishlist');
 
 //Backend
 

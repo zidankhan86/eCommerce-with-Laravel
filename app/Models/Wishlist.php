@@ -12,23 +12,15 @@ class Wishlist extends Model
     protected $guarded = [];
 
 
-    /**
-     * Get the user that owns the Wishlist
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
-    /**
-     * Get the user that owns the Wishlist
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
+ 
     public function product(): BelongsTo
     {
-        return $this->belongsTo(Product::class ,'product_id');
+        return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 }
+    
