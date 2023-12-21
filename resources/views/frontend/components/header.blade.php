@@ -78,12 +78,12 @@
             <div class="col-lg-3">
                 <div class="header__cart">
                     <ul>
-                        <li><a href="#"><i class="fa fa-heart"></i> <span> @auth
+                        <li><a href="{{route('wishlist.index')}}"><i class="fa fa-heart"></i> <span> @auth
                                 <button>
                                     {{ Auth::user()->wishlistProducts->count() }}
                                 </button>
                             @else
-                                <button style="color: rgb(16, 56, 29)">
+                                <button">
                                     0
                                 </button>
                             @endauth</span></a></li> 
