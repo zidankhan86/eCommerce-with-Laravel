@@ -1,6 +1,13 @@
 @extends('backend.master')
 
 @section('content')
+
+<!-- Include Bootstrap CSS and JS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 <div class="container">
 <div class="container">
 <div class="container">
@@ -49,12 +56,32 @@
         <td>{{ $item->price}} Tk.</td>
         <td>{{ $item->discount}}.00%</td>
         <td>{{ $item->time}}</td>
-        <td>{{ $item->status ? 'Active':'Inactive'}}</td>
+        <td>{{ $item->status == 1 ? 'Active' : ($item->status == 2 ? 'Trending' : 'Inactive') }}</td>
 
         <td>
             <a href="{{route('product.edit',$item->id)}}" class="btn btn-success"><i class="fas fa-edit"></i></a>
+
+
+            <div class="">
+            <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+            <i class="fas fa-action"></i> </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{ route('trending.status', ['id' => $item->id]) }}">
+                <i class="fas fa-arrow-up"></i> Trending
+                </a>
+                <a class="dropdown-item" href="#">
+                <i class="fas fa-check-circle"></i> Active
+                </a>
+                <a class="dropdown-item" href="#">
+                <i class="fas fa-times-circle"></i> Inactive
+                </a>
+            </div>
+            </div>
+
             <a href="{{route('product.delete',$item->id)}}" class="btn btn-danger" onclick="return confirm('Do you want to delete ?')"><i class="fas fa-trash"></i></a>
-            <a href="{{route('trending.status',$item->id)}}" class="btn btn-success">Trending</a>
+           
+
         </td>
 
       </tr>
