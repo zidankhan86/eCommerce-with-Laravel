@@ -54,7 +54,7 @@
             </div>
 
             <div class="mb-3 col-md-6">
-                <label for="exampleInputInhouseStock" class="form-label">In-house Stock</label>
+                <label for="exampleInputInhouseStock" class="form-label">Stock</label>
                 <input type="number" class="form-control" value="{{ old('stock') }}" id="exampleInputInhouseStock" name="stock" placeholder="70..">
                 @error('stock')
                 <div class="text-danger">{{ $message }}</div>
@@ -63,15 +63,8 @@
         </div>
 
         <div class="row">
-            <div class="mb-3 col-md-6">
-                <label for="exampleInputProductStock" class="form-label">Product Stock</label>
-                <input type="number" class="form-control" value="{{ old('product_stock') }}" id="exampleInputProductStock" name="product_stock" placeholder="Your Product Stock..">
-                @error('product_stock')
-                <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
-
-            <div class="mb-3 col-md-6">
+           
+            <div class="mb-3 col-md-12">
                 <label for="exampleInputPrice" class="form-label">Price</label>
                 <input type="number" class="form-control" id="exampleInputPrice" value="{{ old('price') }}" name="price" placeholder="500..">
                 @error('price')
