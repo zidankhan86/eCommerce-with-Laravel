@@ -50,17 +50,17 @@ class ProductController extends Controller
     public function order(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'first_name' => 'required|string',
-            'last_name' => 'required|string',
-            'address' => 'required|string',
-            'optional_address' => 'nullable|string',
-            'city' => 'required|string',
-            'postcode' => 'required|string',
-            'phone' => 'required|string',
-            'email' => 'required|email',
-            'note' => 'nullable|string',
-            'total_price' => 'nullable|numeric|min:0',
-            'name' => 'nullable|string',
+            'first_name'        => 'required|string',
+            'last_name'         => 'required|string',
+            'address'           => 'required|string',
+            'optional_address'  => 'nullable|string',
+            'city'              => 'required|string',
+            'postcode'          => 'required|string',
+            'phone'             => 'required|string',
+            'email'             => 'required|email',
+            'note'              => 'nullable|string',
+            'total_price'       => 'nullable|numeric|min:0',
+            'name'              => 'nullable|string',
         ]);
 
         if ($validator->fails()) {
@@ -76,24 +76,24 @@ class ProductController extends Controller
         //dd($request->all());
 
         $order = Order::create([
-            "first_name"=>$request->first_name,
-            "last_name"=>$request->last_name,
-            "address"=>$request->address,
-            "optional_address"=>$request->optional_address,
-            "city"=>$request->city,
-            "postcode"=>$request->postcode,
-            "phone"=>$request->phone,
-            "email"=>$request->email,
-            "note"=>$request->note,
-            "total_price" => $request->total_price,
-            "total_price" => $subtotal,
-            "name"=> $request->name,
-            "name" => $productNames,
+            "first_name"        =>$request->first_name,
+            "last_name"         =>$request->last_name,
+            "address"           =>$request->address,
+            "optional_address"  =>$request->optional_address,
+            "city"              =>$request->city,
+            "postcode"          =>$request->postcode,
+            "phone"             =>$request->phone,
+            "email"             =>$request->email,
+            "note"              =>$request->note,
+            "total_price"       => $request->total_price,
+            "total_price"       => $subtotal,
+            "name"              => $request->name,
+            "name"              => $productNames,
         ]);
 
 
 
-        $admins = User::where('role', 'admin')->get(); // Assuming 'User' is your admin model
+        $admins = User::where('role', 'admin')->get(); 
          Notification::send($admins, new OrderReceivedNotification($order));
 
        $order->save();

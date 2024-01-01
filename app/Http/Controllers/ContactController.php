@@ -17,9 +17,9 @@ class ContactController extends Controller
        // dd($request->all());
 
        $validator = Validator::make($request->all(), [
-        'name' => 'required',
-        'email' => 'required|email',
-        'message' => 'required',
+        'name'      => 'required',
+        'email'     => 'required|email',
+        'message'   => 'required',
     ]);
 
     // If validation fails, redirect back with error messages
@@ -29,9 +29,9 @@ class ContactController extends Controller
 
         Contact::create([
 
-            "name"=>$request->name,
-            "email"=>$request->email,
-            "message"=>$request->message,
+            "name"      =>$request->name,
+            "email"     =>$request->email,
+            "message"   =>$request->message,
 
         ]);
         
