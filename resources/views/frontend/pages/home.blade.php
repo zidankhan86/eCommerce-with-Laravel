@@ -13,6 +13,7 @@
  @include('frontend.components.latestProduct')
  @include('frontend.components.bannerTwo')
  @include('frontend.components.product')
+ @include('frontend.pages.product.latest-product-squad')
  @include('frontend.components.banner')
  @include('frontend\components\trendingProduct')
  @include('frontend.components.blog')
