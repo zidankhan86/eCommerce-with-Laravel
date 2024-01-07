@@ -32,10 +32,5 @@ class Product extends Model
             return $this->ratings->avg('rating');
         }
 
-
-        public function stock(): HasMany
-        {
-            return $this->hasMany(Distribute::class, 'product_id', 'id');
-        }
         
 }
