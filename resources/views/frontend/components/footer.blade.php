@@ -9,8 +9,8 @@
                     </div>
                     <ul>
                         <li>Address: </li>
-                        <li>Phone: 01711-004311</li>
-                        <li>Email: nongor.food@gmail.com</li>
+                        <li>Phone: 01711111111</li>
+                        <li>Email: eCommerce@gmail.com</li>
                     </ul>
                 </div>
             </div>
