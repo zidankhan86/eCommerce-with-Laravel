@@ -10,12 +10,14 @@
  @include('frontend.components.navLayer')
  @include('frontend.components.hero')
  @include('frontend.components.bannerOne')
- @include('frontend.components.latestProduct')
+ 
+ <livewire:latest-product/>
  @include('frontend.components.bannerTwo')
  @include('frontend.components.product')
  @include('frontend.pages.product.latest-product-squad')
  @include('frontend.components.banner')
- @include('frontend.components.trendingProduct')
+ <!-- @include('frontend.components.trendingProduct') -->
+ <livewire:trending-product/>
  @include('frontend.components.blog')
 
 @endsection
