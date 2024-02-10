@@ -4,6 +4,6 @@
 
 
 @include('frontend.components.product')
-@include('frontend.components.latestProduct')
+<livewire:latest-product/>
 
 @endsection
