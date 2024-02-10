@@ -93,6 +93,11 @@
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-print"></i></div>
                     Print Report
                 </a>
+                <hr>
+                <a class="nav-link" href="{{route('sub.category.form')}}">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-cog"></i></div>
+                    Settings
+                </a>
             </div>
         </div>
         <div class="sb-sidenav-footer">
