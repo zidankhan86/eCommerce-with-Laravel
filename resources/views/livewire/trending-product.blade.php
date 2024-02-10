@@ -7,9 +7,6 @@
                     <h4 style="text-align: center"><b>Trending Products</b> </h4>
                     <div class="latest-product__slider owl-carousel">
 
-
-
-
                         <div class="latest-prdouct__slider__item" style="display: flex;">
                             @foreach ($trendingProduct as $item)
                             <a href="{{ url('/product-details',$item->id) }}" class="latest-product__item" >
