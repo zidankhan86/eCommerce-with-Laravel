@@ -28,7 +28,7 @@ class HomeController extends Controller
           $bannersTwo = BannerTwo::all();
 
           //Category
-          $categories = Category::all();
+          $categories = Category::latest()->limit(11)->get();
           $subcategories = SubCategory::all();
 
           //Products

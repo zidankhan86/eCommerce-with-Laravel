@@ -16,7 +16,6 @@
  @include('frontend.components.product')
  @include('frontend.pages.product.latest-product-squad')
  @include('frontend.components.banner')
- <!-- @include('frontend.components.trendingProduct') -->
  <livewire:trending-product/>
  @include('frontend.components.blog')
 
