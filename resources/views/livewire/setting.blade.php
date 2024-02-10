@@ -1,7 +1,8 @@
-<div class="container">
+<div class="container"><br>
+<h1 style="text-align: center;">Website Title</h1>
     <div style="display: flex; flex-wrap: wrap;">
         <div style="flex: 1; margin-right: 20px;">
-            <br><br>
+          
             @if (session('success'))
                 <span class="btn btn-success">{{session('success')}}</span>
             @endif
@@ -20,7 +21,7 @@
         </div>
         <div style="flex: 1;">
     <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
-        <thead><br><br><br><br>
+        <thead><br><br><br>
             <tr style="background-color: #f2f2f2;">
                 <th style="padding: 8px; border: 1px solid #ddd;">Title</th>
             </tr>
