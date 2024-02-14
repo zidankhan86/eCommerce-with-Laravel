@@ -31,7 +31,7 @@ class ProductSeeder extends Seeder
             $category = Category::create($categoryData);
 
             // Create products for the created category
-            for ($i = 1; $i <= 5; $i++) {
+            for ($i = 1; $i <= 20; $i++) {
                 Product::create([
                     'category_id' => $category->id,
                     'name' => 'Product ' . $i,

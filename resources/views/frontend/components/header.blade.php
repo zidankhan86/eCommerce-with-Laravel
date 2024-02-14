@@ -9,7 +9,7 @@
                         @php
                         $title = App\Models\Title::latest()->first();
                         @endphp
-                      <li><i class="fa fa-envelope"></i>{{$title->title}}</li>
+                      <li><i class="fa fa-envelope"></i>{{optional($title)->title}}</li>
                             <li>ORDER NOW</li>
                         </ul>
                     </div>

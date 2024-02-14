@@ -4,7 +4,7 @@
         @php
         $title = App\Models\Title::latest()->first();
         @endphp
-    <title>{{$title->title}}</title>
+    <title>{{optional($title)->title}}</title>
         @include('backend.fixed.style')
     </head>
     <body class="sb-nav-fixed">
