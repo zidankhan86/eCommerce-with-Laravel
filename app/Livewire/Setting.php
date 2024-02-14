@@ -23,7 +23,8 @@ class Setting extends Component
         request()->session()->flash('success','Title Created successfully!!!');
        
     }
-    public function render()
+    
+     public function render()
     {
        $titles=Title::paginate(5); 
         return view('livewire.setting',compact('titles'));

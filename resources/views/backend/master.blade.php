@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        @php
+        $title = App\Models\Title::latest()->first();
+        @endphp
+    <title>{{$title->title}}</title>
         @include('backend.fixed.style')
     </head>
     <body class="sb-nav-fixed">

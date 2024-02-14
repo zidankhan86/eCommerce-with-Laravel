@@ -25,16 +25,6 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\ProductController as FrontendProductController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 
 
@@ -105,6 +95,7 @@ Route::get('/order/tracking/{id}',[OrderController::class,'orderTracking'])->nam
 Route::group(['middleware' => 'auth','admin','prefix'=>'admin'], function () {
 //Notification
 Route::get('/admin/notifications', [NotificationController::class, 'notifications'])->name('admin.notifications');
+
 //Category
 Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
 Route::get('/category-form',[CategoryController::class,'categoryForm'])->name('category.form');
@@ -127,9 +118,11 @@ Route::get('/new-arrival-product-form',[ProductController::class,'NewArrivalprod
 Route::get('/new-arrival-product-list',[ProductController::class,'NewArrivalproductList'])->name('new.arrival.product.list');
 Route::post('/new-product-store',[ProductController::class,'newProductStore'])->name('new.product.store');
 Route::post('/product/rate/{id}', [ProductController::class,'storeRating'])->name('product.rate');
+
 //Trending Products
 Route::get('/trending/product', [ProductController::class,'trendingProduct'])->name('trending.product');
 Route::get('/trending/status/{id}', [ProductController::class,'trendingStatus'])->name('trending.status');
+
 //Banner
 Route::get('/banner-form-one',[BannerController::class,'bannerFormOne'])->name('banner.form.one');
 Route::get('/banner-list-one',[BannerController::class,'bannerListOne'])->name('banner.list.one');
@@ -167,7 +160,6 @@ Route::get('/hero-delete/{id}',[HeroBannerController::class,'herodelete'])->name
 //Order
 Route::get('/order-list',[OrderController::class,'orderList'])->name('order.list');
 Route::get('/order-invoice/{id}',[OrderController::class,'orderinvoice'])->name('order.invoice');
-
 Route::get('/report',[ReportController::class,'report'])->name('report');
 Route::get('/report/search',[ReportController::class,'reportSearch'])->name('order.report.search');
 

@@ -6,7 +6,10 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__left">
                         <ul>
-                            <li><i class="fa fa-envelope"></i> eCommerce.com</li>
+                        @php
+                        $title = App\Models\Title::latest()->first();
+                        @endphp
+                      <li><i class="fa fa-envelope"></i>{{$title->title}}</li>
                             <li>ORDER NOW</li>
                         </ul>
                     </div>

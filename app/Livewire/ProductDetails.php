@@ -4,7 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 
-class Product extends Component
+class ProductDetails extends Component
 {
     public $productId;
     public $productDetails;
@@ -17,9 +17,8 @@ class Product extends Component
     public function LoadProductDetails(){
         $this->productDetails = Product::find($this->productId);
     }
-    
     public function render()
     {
-        return view('livewire.product');
+        return view('livewire.product-details');
     }
 }
