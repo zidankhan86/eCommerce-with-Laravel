@@ -13,7 +13,21 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::factory(50)->create();
+        // $categories = [
+        //     ["type" => "Food", "status" => true],
+        //     ["type" => "Banana", "status" => true],
+        //     ["type" => "Shoes", "status" => true],
+        //     ["type" => "Dresses", "status" => true],
+        //     ["type" => "Handbags", "status" => true],
+        //     ["type" => "Books", "status" => true],
+        //     ["type" => "Cosmetics", "status" => true],
+        //     ["type" => "Kitchenware", "status" => true],
+        //     ["type" => "Stationery", "status" => true]
+        // ];
+    
+        // foreach ($categories as $category) {
+        //     Category::create($category);
+        // }
 
            
     }
