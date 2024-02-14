@@ -29,12 +29,14 @@
         <thead><br><br><br>
             <tr style="background-color: #f2f2f2;">
                 <th style="padding: 8px; border: 1px solid #ddd;">Title</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($titles as $title)
             <tr>
                 <td style="padding: 8px; border: 1px solid #ddd;">{{ $title->title }}</td>
+                <td > <button class="btn btn-danger" wire:click="delete({{$title->id}})"><i class="fas fa-trash"></i></button></td>
             </tr>
             @endforeach
         </tbody>

@@ -10,6 +10,7 @@ class Setting extends Component
 {
     use WithPagination;
     public $title;
+
     
     public function createTitle(){
         $this->validate([
@@ -22,6 +23,14 @@ class Setting extends Component
         $this->reset(['title']);
         request()->session()->flash('success','Title Created successfully!!!');
        
+    }
+    
+    public function delete($id){
+
+        $deleteId = Title::find($id);
+        $deleteId->delete();
+        session()->flash('success','Title deleted');
+
     }
     
      public function render()
