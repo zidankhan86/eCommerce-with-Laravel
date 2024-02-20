@@ -6,24 +6,9 @@
                <livewire:hero-section-category/>
             </div>
             <div class="col-lg-9">
-                <div class="hero__search">
-                    <div class="hero__search__form">
-                        <form action="{{ route('user.search') }}">
-                            @csrf
-                            <input type="text" name="search_key"  placeholder="What do you need?">
-                            <button type="submit" class="btn btn-dark">SEARCH</button>
-                        </form>
-                    </div>
-                    <div class="hero__search__phone">
-                        <div class="hero__search__phone__icon">
-                            <i class="fa fa-phone"></i>
-                        </div>
-                        <div class="hero__search__phone__text">
-                            <h5>01711-004311</h5>
-                            <span>support 24/7 time</span>
-                        </div>
-                    </div>
-                </div>
+                <livewire:search/>
+
+            
                 @foreach ($heroBanners as $item)
                     <div class="hero__item" style="background-image: url('{{ url('/public/uploads/'.$item->image) }}'); background-size: cover;">
                         <div class="hero__text">
