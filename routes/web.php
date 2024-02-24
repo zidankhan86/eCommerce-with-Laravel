@@ -56,11 +56,7 @@ Route::get('/view-cart',[AddToCartController::class,'viewCart']);
 Route::get('/clear-cart',[AddToCartController::class,'clearCart'])->name('cart.clear');
 Route::get('/cart-item/delete/{id}',[AddToCartController::class,'cartItemDelete'])->name('cart.item.delete');
 
- //Wishlist
- Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
- Route::post('/wishlist/add/{id}', [WishlistController::class,'addToWishlist'])->name('add.to.wishlist');
- Route::get('/wishlist/remove/{wishlist}', [WishlistController::class, 'removeFromWishlist'])->name('remove.Wishlist');
- Route::post('/cart/add-from-wishlist/{id}', [WishlistController::class, 'addToCartFromWishlist'])->name('cart.add-from-wishlist');
+ 
 
 //Backend
 
@@ -81,6 +77,11 @@ Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword']
 
 //Middleware for check valid user
 Route::group(['middleware' => 'customerAuth'], function () {
+    //Wishlist
+ Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
+ Route::post('/wishlist/add/{id}', [WishlistController::class,'addToWishlist'])->name('add.to.wishlist');
+ Route::get('/wishlist/remove/{wishlist}', [WishlistController::class, 'removeFromWishlist'])->name('remove.Wishlist');
+ Route::post('/cart/add-from-wishlist/{id}', [WishlistController::class, 'addToCartFromWishlist'])->name('cart.add-from-wishlist');
 //Cart Product Order
 Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
 //Single Product Order

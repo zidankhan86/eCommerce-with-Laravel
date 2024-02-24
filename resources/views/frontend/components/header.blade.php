@@ -86,7 +86,7 @@
                                     {{ Auth::user()->wishlistProducts->count() }}
                                 </button>
                             @else
-                                <button">
+                                <button>
                                     0
                                 </button>
                             @endauth</span></a></li> 

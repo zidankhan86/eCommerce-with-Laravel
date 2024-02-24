@@ -24,16 +24,18 @@
                         <ul class="featured__item__pic__hover">
 
                         <li>
-                        @php
-                            $inWishlist = Auth::check() && Auth::user()->wishlistProducts->contains('id', $item->id);
-                        @endphp
-                                <form method="POST" action="{{ route('add.to.wishlist', ['id' => $item->id]) }}">
-                                    @csrf
+                                @php
+                                $inWishlist = Auth::check() && Auth::user()->wishlistProducts->contains('id', $item->id);
+                                @endphp
 
-                                    <button type="submit" class="wishlist-button">
-                                        <i class="fa fa-heart"></i>
-                                    </button>
-                                </form>
+                            <form method="POST" action="{{ route('add.to.wishlist', ['id' => $item->id]) }}">
+                                @csrf
+
+                                <button type="submit" class="wishlist-button{{ $inWishlist ? ' in-wishlist' : '' }}">
+                                    <i class="fa fa-heart"></i>
+                                </button>
+                            </form>
+
                             </li>
                             <li><a href="{{url('/product-details',$item->id)}}"><i class="fa fa-eye"></i></a></li>
                             <li><a href="{{route('add.to.cart',$item->id)}}"><i class="fa fa-shopping-cart"></i></a></li>
