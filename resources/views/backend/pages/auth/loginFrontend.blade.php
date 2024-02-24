@@ -1,125 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>eCommece.com</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style>
-    body {
-        color: #999;
-		background: #f5f5f5;
-		font-family: 'Varela Round', sans-serif;
-	}
-	.form-control {
-		box-shadow: none;
-		border-color: #ddd;
-	}
-	.form-control:focus {
-		border-color: #4aba70;
-	}
-	.login-form {
-        width: 350px;
-		margin: 0 auto;
-		padding: 30px 0;
-	}
-    .login-form form {
-        color: #434343;
-		border-radius: 1px;
-    	margin-bottom: 15px;
-        background: #fff;
-		border: 1px solid #f3f3f3;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-        padding: 30px;
-	}
-	.login-form h4 {
-		text-align: center;
-		font-size: 22px;
-        margin-bottom: 20px;
-	}
-    .login-form .avatar {
-        color: #fff;
-		margin: 0 auto 30px;
-        text-align: center;
-		width: 100px;
-		height: 100px;
-		border-radius: 50%;
-		z-index: 9;
-		background: #4aba70;
-		padding: 15px;
-		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-	}
-    .login-form .avatar i {
-        font-size: 62px;
-    }
-    .login-form .form-group {
-        margin-bottom: 20px;
-    }
-	.login-form .form-control, .login-form .btn {
-		min-height: 40px;
-		border-radius: 2px;
-        transition: all 0.5s;
-	}
-	.login-form .close {
-        position: absolute;
-		top: 15px;
-		right: 15px;
-	}
-	.login-form .btn {
-		background: #4aba70;
-		border: none;
-		line-height: normal;
-	}
-	.login-form .btn:hover, .login-form .btn:focus {
-		background: #42ae68;
-	}
-    .login-form .checkbox-inline {
-        float: left;
-    }
-    .login-form input[type="checkbox"] {
-        margin-top: 2px;
-    }
-    .login-form .forgot-link {
-        float: right;
-    }
-    .login-form .small {
-        font-size: 13px;
-    }
-    .login-form a {
-        color: #4aba70;
-    }
-</style>
-</head>
-<body>
-<div class="login-form">
 
-    <form action="{{route('login.submit')}}" method="post">
-        @csrf
-
-		<div class="avatar"><i class="material-icons">&#xE7FF;</i></div>
-    	<h4 class="modal-title">Login to Your Account</h4>
-        <div class="form-group">
-            <input type="text" class="form-control" name="email" placeholder="Your Email" required="required">
+<link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/logins/login-6/assets/css/login-6.css">
+<!-- Login 6 - Bootstrap Brain Component -->
+<section class="bg-primary p-3 p-sm-4 p-xl-3"><br><br>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-6 col-md-7">
+        <div class="card border-0 shadow-sm rounded-4">
+          <div class="card-body p-3 p-sm-4 p-xl-3">
+            <div class="row">
+              <div class="col-12">
+                <div class="mb-4">
+                  <h3 class="fw-bold">Log in</h3>
+                </div>
+              </div>
+            </div>
+            <form action="{{route('login.submit')}}" method="post">
+            @csrf
+              <div class="row gy-3 overflow-hidden">
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                     <input type="text" class="form-control" name="email" placeholder="Your Email" required="required">
+                    <label for="email" class="form-label">Email</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                    <label for="password" class="form-label">Password</label>
+                  </div>
+                </div>
+                
+                <div class="col-12">
+                  <div class="d-grid">
+                    <button class="btn bsb-btn-2xl btn-primary" type="submit">Log in now</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-12">
+                <hr class="mt-4 mb-3 border-secondary-subtle">
+                <div class="d-flex gap-3 gap-md-4 flex-column flex-md-row justify-content-md-end">
+                  <a href="{{ route('registration') }}" class="link-secondary text-decoration-none">Create new account</a>
+                  <a href="{{route('password.request')}}" class="link-secondary text-decoration-none">Forgot password</a>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <p class="mt-4 mb-3">Or continue with</p>
+                <div class="d-flex gap-3 flex-column">
+                  <a href="#!" class="btn bsb-btn-xl btn-danger">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                    </svg>
+                    <span class="ms-2 fs-6 text-uppercase">Sign in With Github</span>
+                  </a>
+                  <a href="#!" class="btn bsb-btn-xl btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                    <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
+                    </svg>
+                    <span class="ms-2 fs-6 text-uppercase">Sign in With Google</span>
+                  </a>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
-        </div>
-        <div class="form-group small clearfix">
-            <label class="checkbox-inline"><input type="checkbox"> Remember me</label>
-            <a href="{{ route('password.request') }}" class="forgot-link">Forgot Password?</a>
-        </div>
+      </div>
+    </div>
+  </div><br><br><br><br>
+</section>
 
-        <button type="submit" class="btn btn-primary btn-block btn-lg">Login</button>
-    </form>
-    <div class="text-center small">Don't have an account? <a href="{{ route('registration') }}">Sign up</a></div>
-    <div class="text-center small">Wants to go home? Click <a href="{{ route('home') }}">here</a></div>
-
-</div>
-
-</body>
-</html>
