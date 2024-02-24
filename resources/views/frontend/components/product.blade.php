@@ -22,21 +22,20 @@
                     <div class="featured__item__pic">
                         <a href="{{url('/product-details',$item->id)}}"> <img src="{{ asset('/public/uploads/' . $item->image) }}" alt="Product Image"></a>
                         <ul class="featured__item__pic__hover">
-
+                       @auth
                         <li>
-                                @php
-                                $inWishlist = Auth::check() && Auth::user()->wishlistProducts->contains('id', $item->id);
-                                @endphp
+                            @php
+                            $inWishlist = Auth::check() && Auth::user()->wishlistProducts->contains('id', $item->id);
+                            @endphp
 
                             <form method="POST" action="{{ route('add.to.wishlist', ['id' => $item->id]) }}">
                                 @csrf
-
                                 <button type="submit" class="wishlist-button{{ $inWishlist ? ' in-wishlist' : '' }}">
                                     <i class="fa fa-heart"></i>
                                 </button>
                             </form>
-
                             </li>
+                          @endauth
                             <li><a href="{{url('/product-details',$item->id)}}"><i class="fa fa-eye"></i></a></li>
                             <li><a href="{{route('add.to.cart',$item->id)}}"><i class="fa fa-shopping-cart"></i></a></li>
 
