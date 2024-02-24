@@ -27,7 +27,8 @@ class LoginController extends Controller
 ]);
 
 if ($validator->fails()) {
-    return redirect()->back()->withErrors($validator)->withInput();
+    notify()->error('error','Invalid credentials');
+    return redirect()->back();
 }
 
 $credentials = $request->only(['email', 'password']);
@@ -43,9 +44,9 @@ if (Auth::attempt($credentials, $remember)) {
         return redirect()->route('home');
     }
 }
-
+notify()->error('error','Invalid credentials');
 // Authentication failed
-return redirect()->back()->withInput()->withErrors(['login' => 'Invalid credentials']);
+return redirect()->back();
 
 }
 

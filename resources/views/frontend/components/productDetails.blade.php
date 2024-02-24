@@ -44,11 +44,37 @@
                             <li><b>Weight</b> <span>{{$details->weight}} Kg</span></li>
                             <li><b>Share on</b>
                                 <div class="share">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                </div>
+                                    <!DOCTYPE html>
+                                    <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+                                        <head>
+
+                                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+                                            <style>
+                                                div#social-links {
+                                                    margin: 0 auto;
+                                                    max-width: 400px;
+                                                }
+                                                div#social-links ul li {
+                                                    display: inline-block;
+                                                }
+                                                div#social-links ul li a {
+                                                    padding: 10px;
+                                                    border: 1px solid #ccc;
+                                                    margin: 1px;
+                                                    font-size: 20px;
+                                                    color: #222;
+                                                    background-color: #ccc;
+                                                }
+                                            </style>
+                                        </head>
+                                        <body>
+                                            <div class="container mt-4">
+                                            
+                                                {!! $shareComponent !!}
+                                            </div>
+                                        </body>
+                                    </html>
+                                 </div>
                             </li>
                         </ul>
                     </div>

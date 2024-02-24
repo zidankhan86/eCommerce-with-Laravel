@@ -25,9 +25,20 @@ class ProductController extends Controller
     }
 
     public function productDetails($id){
-
+        $routeName = 'details';
+        $url = route($routeName, ['id' => $id]);
+        $shareComponent = \Share::page(
+            $url,
+            'Your share text comes here',
+        )
+        ->facebook()
+        ->twitter()
+        ->linkedin()
+        ->telegram()
+        ->whatsapp()        
+        ->reddit();
         $details = Product::find($id);
-        return view('frontend.pages.product.details',compact('details'));
+        return view('frontend.pages.product.details',compact('details','shareComponent'));
     }
 
     public function productCheckout($id){

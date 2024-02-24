@@ -21,6 +21,7 @@ use App\Http\Controllers\HeroBannerController;
 use App\Http\Controllers\CompanyLogoController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\SocialShareButtonsController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\ProductController as FrontendProductController;
@@ -34,7 +35,7 @@ Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 Route::get('/hero',[HeroBannerController::class,'hero']);
 //product
 Route::get('/product',[FrontendProductController::class,'product']);
-Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails']);
+Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails'])->name('details');
 Route::get('/search',[SearchController::class,'search'])->name('user.search');
 //Blog
 Route::get('/blog',[BlogController::class,'blog'])->name('blog');
@@ -56,7 +57,8 @@ Route::get('/view-cart',[AddToCartController::class,'viewCart']);
 Route::get('/clear-cart',[AddToCartController::class,'clearCart'])->name('cart.clear');
 Route::get('/cart-item/delete/{id}',[AddToCartController::class,'cartItemDelete'])->name('cart.item.delete');
 
- 
+ //Social share
+Route::get('/social-media-share', [SocialShareButtonsController::class,'ShareWidget']);
 
 //Backend
 
