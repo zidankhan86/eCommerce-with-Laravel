@@ -2,42 +2,32 @@
 
 @section('content')
 
-<!-- Include Bootstrap CSS and JS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-<div class="container">
-<div class="container">
-<div class="container">
-
-
- <br><a class="btn btn-success float-end ml-2" href="{{ route('product.form') }}"><i class="fa fa-plus" aria-hidden="true"></i> Add Product</a><br>
- <br><h4 class="text-success text-center">Products List</h4><br>
-
-
-
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">serial</th>
-        <th scope="col">Image</th>
-        <th scope="col"> Name</th>
-        <th scope="col">Category</th>
-        <th scope="col">Weight</th>
-        <th scope="col">Total Stock</th>
-        <th scope="col">Inhouse Stock</th>
-        <th scope="col">Price</th>
-        <th scope="col">Dicount</th>
-        <th scope="col">Shipping</th>
-        <th scope="col">Status</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-
-        @php
+   <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Product Table
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">serial</th>
+                                            <th scope="col">Image</th>
+                                            <th scope="col"> Name</th>
+                                            <th scope="col">Category</th>
+                                            <th scope="col">Weight</th>
+                                            <th scope="col">Total Stock</th>
+                                            <th scope="col">Inhouse Stock</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Dicount</th>
+                                            <th scope="col">Shipping</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                   
+                                    <tbody>
+                                        @php
             $id = 1;
         @endphp
         @foreach ($products as $item)
@@ -86,10 +76,15 @@
 
       </tr>
       @endforeach
-
-    </tbody>
-  </table>
-  </div></div></div>
+                                        
+                                       
+                                        
+                                        
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
 @endsection
 
