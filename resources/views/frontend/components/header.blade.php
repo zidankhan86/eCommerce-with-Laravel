@@ -64,8 +64,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
+                @php
+                $logo = App\Models\CompanyLogo::latest()->first();
+                @endphp
                 <div class="header__logo">
-                    <a href="{{ route('home') }}"><img src="{{url('frontend/img/logo.png')}}" alt=""></a>
+                    <a href="{{ route('home') }}"><img src="{{url('/public/uploads/', $logo->image)}}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -92,7 +95,6 @@
                             @endauth</span></a></li> 
                         <li><a href="{{url('/view-cart')}}"><i class="fa fa-shopping-bag"></i> <span>{{session()->has('cart') ? count(session()->get('cart')) : 0}}</span></a></li>
                     </ul>
-                    <!-- <div class="header__cart__price">item: <span>$150.00</span></div>  -->
                 </div>
             </div>
         </div>

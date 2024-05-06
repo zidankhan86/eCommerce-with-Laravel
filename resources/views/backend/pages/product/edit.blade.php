@@ -13,63 +13,51 @@
         <p class="alert alert-success"> {{session('success')}}</p>
          @endif
 
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="exampleInputName1" class="form-label">Product Name</label>
+              <input type="text" class="form-control" value="{{$edit->name}}" id="exampleInputName1" name="name" placeholder="Product Name..">
+                @error('name')
+                <strong class="text-danger">{{$message}}</strong>
+                @enderror
+            </div>
 
-
-        <div class="mb-3 mx-sm-2">
-        <label for="exampleInputName1" class="form-label">Product Name</label>
-        <input type="text" class="form-control" value="{{$edit->name}}" id="exampleInputName1" name="name" placeholder="Product Name..">
-        @error('name')
-        <strong class="text-danger">{{$message}}</strong>
-        @enderror
-         </div>
-
-
-         <div class="mb-3 mx-sm-2">
-            <label for="exampleInputName1" class="form-label">Select Category</label>
-
-            <select name="category_id" id="" class="form-control">
-
-                @foreach ($categories as $item)
-
-
-                <option value="{{$item->id}}">{{$item->type}}</option>
-
-                @endforeach
-
-
-            </select>
-
-             </div>
+            <div class="col-md-6 mb-3">
+              <label for="exampleInputName1" class="form-label">Select Category</label>
+              <select name="category_id" id="" class="form-control">
+                  @foreach ($categories as $item)
+                  <option value="{{$item->id}}">{{$item->type}}</option>
+                  @endforeach
+              </select>
+            </div>
+          </div>
 
          <div class="mb-3 mx-sm-2">
             <label for="exampleInputName1" class="form-label">Product Image</label>
             <input type="file" class="form-control dropify" value="{{$edit->image}}" name="image" placeholder="Product Image..">
-            @error('image')
+                @error('image')
+                <strong class="text-danger">{{$message}}</strong>
+                @enderror
+          </div>
 
-            <strong class="text-danger">{{$message}}</strong>
 
-            @enderror
-             </div>
-             <div class="mb-3 mx-sm-2">
+            <div class="row">
+              <div class="col-md-6 mb-3">
                 <label for="exampleInputName1" class="form-label">Product Weight</label>
                 <input type="number" class="form-control" step="0.01"  value="{{$edit->weight}}" id="exampleInputName1" name="weight" placeholder="0.5kg..">
+                    @error('weight')
+                    <strong class="text-danger">{{$message}}</strong>
+                    @enderror
+              </div>
 
-                @error('weight')
-
-                <strong class="text-danger">{{$message}}</strong>
-
-                @enderror
-                 </div>
-
-        <div class="mb-3 mx-sm-2">
-        <label for="exampleInputNumber2" class="form-label"> Stock</label>
-        <input type="number" class="form-control"  value="{{$edit->stock}}" id="exampleInputNumber2" name="stock" placeholder="70..">
-        @error('stock')
-
-        <strong class="text-danger">{{$message}}</strong>
-
-        @enderror
-        </div>
+              <div class="col-md-6 mb-3">
+                <label for="exampleInputNumber2" class="form-label"> Stock</label>
+                <input type="number" class="form-control"  value="{{$edit->stock}}" id="exampleInputNumber2" name="stock" placeholder="70..">
+                  @error('stock')
+                  <strong class="text-danger">{{$message}}</strong>
+                  @enderror
+              </div>
+            </div>
 
         <div class="mb-3 mx-sm-2">
             <label for="exampleInputNumber" class="form-label">Product Price</label>
@@ -128,34 +116,27 @@
                     <option value="1">Active</option>
                 </select>
 
-                @error('time')
-
+                  @error('time')
                     <strong class="text-danger">{{$message}}</strong>
-
-                    @enderror
-                 </div> <br> <br>
-
-
-
+                   @enderror
+            </div> <br> <br>
       <div class="text-center">
         <button type="submit" class="btn btn-primary">Save Changes</button>
       </div>
-
-  </form>
-
-  </div>
-  </div>
-  </div>
-  <script>
-    $('.dropify').dropify({
-    messages: {
-        'default': 'Drag and drop a file here or click',
-        'replace': 'Drag and drop or click to replace',
-        'remove':  'Remove',
-        'error':   'Ooops, something wrong happended.'
-    }
-    });
-    </script>
+          </form>
+        </div>
+      </div>
+   </div>
+        <script>
+          $('.dropify').dropify({
+          messages: {
+              'default': 'Drag and drop a file here or click',
+              'replace': 'Drag and drop or click to replace',
+              'remove':  'Remove',
+              'error':   'Ooops, something wrong happended.'
+          }
+          });
+          </script>
 
 @endsection
 

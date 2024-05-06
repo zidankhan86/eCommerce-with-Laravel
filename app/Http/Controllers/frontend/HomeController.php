@@ -29,8 +29,7 @@ class HomeController extends Controller
 
           //Category
           $categories = Category::latest()->limit(11)->get();
-          $subcategories = SubCategory::all();
-
+         
           //Products
           $products = Product::simplePaginate(20);
 
@@ -50,7 +49,7 @@ class HomeController extends Controller
          return view('frontend.pages.home',
          compact('categories','products','latestProducts',
         'latestCategories','blogs','banners','heroBanners',
-        'bannersTwo','bannersOne','subcategories','productRatings','trendingProduct'));
+        'bannersTwo','bannersOne','productRatings','trendingProduct'));
     }
 
        public function categoryWiseProduct($id){
