@@ -5,10 +5,7 @@
 <div class="container">
 <div class="container">
 
-
 <br><h4 class="text-success text-center">Edit Product</h4>
-
-
 <form action="{{route('product.update',$edit->id)}}" method="POST" enctype="multipart/form-data">
     @csrf
 
@@ -22,25 +19,9 @@
         <label for="exampleInputName1" class="form-label">Product Name</label>
         <input type="text" class="form-control" value="{{$edit->name}}" id="exampleInputName1" name="name" placeholder="Product Name..">
         @error('name')
-
         <strong class="text-danger">{{$message}}</strong>
-
         @enderror
-
          </div>
-
-
-         <div class="mb-3 mx-sm-2">
-        <label for="exampleInputName1" class="form-label">Product stock</label>
-        <input type="text" class="form-control" value="{{$edit->product_stock}}" id="exampleInputName1" name="product_stock" placeholder="Product Name..">
-        @error('product_stock')
-
-        <strong class="text-danger">{{$message}}</strong>
-
-        @enderror
-
-         </div>
-
 
 
          <div class="mb-3 mx-sm-2">

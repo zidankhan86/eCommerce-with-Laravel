@@ -20,9 +20,7 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{route('category.list')}}"> Category</a>
                     </nav>
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{route('sub.category.form')}}">Sub Category</a>
-                    </nav>
+                    
                 </div>
 
 

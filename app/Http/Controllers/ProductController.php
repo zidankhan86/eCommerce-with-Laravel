@@ -1,13 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Product;
 use App\Models\Category;
-use App\Models\NewArrival;
 use Illuminate\Http\Request;
 use App\Models\ProductRating;
-use Illuminate\Support\Facades\Redis;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 
@@ -62,7 +59,6 @@ class ProductController extends Controller
              "description"          =>$request->description,
              'product_information'  =>$request->product_information,
              'status'               =>$request->status,
-
           ]);
 
           if ($product) {
@@ -82,65 +78,7 @@ class ProductController extends Controller
 
         }
 
-        public function NewArrivalproductForm(){
-
-            return view('backend.pages.product.newArrivalProductForm');
-        }
-
-          public function newProductStore(Request $request){
-
-
-
-           // dd($request->all());
-
-            $validator = Validator::make($request->all(), [
-                'name' => 'required|string',
-                'image' => 'nullable',
-                'weight' => 'required|numeric',
-                'stock' => 'required|integer',
-                'price' => 'required|numeric',
-                //'discount' => 'nullable|numeric|max:100',
-                'time' => 'required',
-                'description' => 'required',
-
-            ]);
-
-            if ($validator->fails()) {
-                return redirect()->back()->withErrors($validator)->withInput();
-            }
-
-
-        //dd($request->all());
-
-        $imageName=null;
-        if ($request->hasFile('image')) {
-            $imageName=date('Ymdhsis').'.'.$request->file('image')->getClientOriginalExtension();
-            $request->file('image')->storeAs('uploads', $imageName, 'public');
-
-
-           // dd($imageName);
-        }
-
-              NewArrival::create([
-
-             "name"=>$request->name,
-             "image"=>$imageName,
-             "weight"=>$request->weight,
-             "stock"=>$request->stock,
-             "price"=>$request->price,
-             "discount"=>$request->discount,
-             "time"=>$request->time,
-             "description"=>$request->description,
-          ]);
-          return back()->with('success', 'New Arrival Added Successfully!');
-    }
-
-    public function NewArrivalproductList(){
-        $products = NewArrival::latest()->get();
-        return view('backend.pages.product.newArrivalProductList',compact('products'));
-    }
-
-
+                  
         public function productList(){
 
             $products = Product::latest()->get();
@@ -161,16 +99,16 @@ class ProductController extends Controller
 
            // dd($request->all());
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'category_id' => 'required',
-            'image' => 'nullable|max:200',
-            'weight' => 'required',
-            'stock' => 'required|integer',
-            'price' => 'required',
-            'time' => 'required',
-            'description' => 'required',
-            'product_information'=> 'required',
-            'status'=> 'required',
+            'name'                  => 'required',
+            'category_id'           => 'required',
+            'image'                 => 'nullable|max:200',
+            'weight'                => 'required',
+            'stock'                 => 'required|integer',
+            'price'                 => 'required',
+            'time'                  => 'required',
+            'description'           => 'required',
+            'product_information'   => 'required',
+            'status'                => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -188,34 +126,34 @@ class ProductController extends Controller
             $update=Product::find($id);
 
             $update->update([
-                "name"=>$request->name,
-             "category_id"=>$request->category_id,
-             "image"=>$images,
-             "weight"=>$request->weight,
-             "stock"=>$request->stock,
-             "price"=>$request->price,
-             "discount"=>$request->discount,
-             "time"=>$request->time,
-             "description"=>$request->description,
-             'product_information' =>$request->product_information,
-             'status' =>$request->status,
+             "name"              =>$request->name,
+             "category_id"          =>$request->category_id,
+             "image"                =>$images,
+             "weight"               =>$request->weight,
+             "stock"                =>$request->stock,
+             "price"                =>$request->price,
+             "discount"             =>$request->discount,
+             "time"                 =>$request->time,
+             "description"          =>$request->description,
+             'product_information'  =>$request->product_information,
+             'status'               =>$request->status,
             ]);
 
-            Alert::toast()->success('Your post has been edited');
-            return redirect()->route('product.list');
+            return redirect()->back()->with('success','Your post has been edited');
 
         }
 
         public function productDelete($id){
 
             $delete =  Product::find($id);
-            $delete->delete();
 
+            $delete->delete();
 
             Alert::toast('Deleted! Product Deleted');
 
             return redirect()->back();
         }
+
 
         public function storeRating(Request $request, $id)
         {
@@ -223,33 +161,34 @@ class ProductController extends Controller
             $request->validate([
                 'rating'=>'required'
             ]);
+
             $product = Product::find($id);
 
             $rating = new ProductRating();
             $rating->product_id = $product->id;
             $rating->rating = $request->input('rating');
             $rating->save();
-
-            // Redirect back to the product details page
-            //return redirect()->route('product-details', ['id' => $productId]);
             notify()->success('Thank you for your feedback.');
             return back();
             }
 
-
-
             //Trending Product
               public function trendingProduct(){
+
                 $trendingProduct = Product::where('status',2)->latest()->limit(8)->get();
+
                 return view('frontend.components.trendingProduct',compact('trendingProduct'));
             }
             public function trendingStatus($id){
+
                 $product = Product::find($id);
+
                 $product->update([
                     "status"=>"2"
                 ]);
 
                 Alert::toast()->success('Your status has been changed');
+
                 return redirect()->route('product.list');
 
             }
