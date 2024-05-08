@@ -77,11 +77,6 @@
 
                 </div>
 
-                <a class="nav-link" href="{{route('blog.list')}}">
-                    <div class="sb-nav-link-icon"><i class="fa-solid fa-blog"></i></div>
-                    Blogs
-                </a>
-
                 <a class="nav-link" href="{{route('contact.list')}}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-comment"></i></div>
                     User Feedback

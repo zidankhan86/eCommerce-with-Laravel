@@ -68,7 +68,11 @@
                 $logo = App\Models\CompanyLogo::latest()->first();
                 @endphp
                 <div class="header__logo">
+                    @if($logo)
                     <a href="{{ route('home') }}"><img src="{{url('/public/uploads/', $logo->image)}}" alt=""></a>
+                    @else
+                        <a href="{{ route('home') }}">Inseart a logo</a>
+                     @endif
                 </div>
             </div>
             <div class="col-lg-6">
@@ -76,7 +80,6 @@
                     <ul>
                         <li class="active"><a href="{{url('/')}}">Home</a></li>
                         <li><a href="{{url('/product')}}">Shop</a></li>
-                        <li><a href="{{url('/blog-page')}}">Blog</a></li>
                         <li><a href="{{url('/contact')}}">Contact</a></li>
                     </ul>
                 </nav>

@@ -47,13 +47,17 @@ if ($request->hasFile('image')) {
 
     return back()->with('success','Logo Uploaded Successfully!');
 
-
    }
+
    public function LogoDelete($id)
    {
+
     $delete = CompanyLogo::find($id);
+
     $delete->delete();
-    return back();
+
+    return back()->with('success','logo deleted!!');
+
    }
    public function LogoList()
    {

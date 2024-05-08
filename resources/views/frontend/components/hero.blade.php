@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 @foreach ($heroBanners as $item)
-                    <div class="hero__item" style="background-image: url('{{ url('/uploads/'.$item->image) }}'); background-size: cover;">
+                    <div class="hero__item" style="background-image: url('{{ url('/public/uploads/'.$item->image) }}'); background-size: cover;">
                         <div class="hero__text">
                             <span>{{ $item->small_tittle }}</span>
                             <h2>{{ $item->tittle }}</h2>
