@@ -20,8 +20,10 @@ class ProductController extends Controller
         $products = Product::simplePaginate(12);
         $latestCategories = Category::latest()->limit(5)->get();
         //Latest Products
-        $latestProducts = Product::where('status',1)->latest()->limit(6)->get();
-        return view('frontend.pages.product.product',compact('products','latestCategories','latestProducts'));
+        $latestProducts = Product::where('status',1)->latest()->limit(7)->get();
+        $total_products = Product::count();
+        $products_has_discount = Product::whereNotNull('discount')->latest()->limit(4)->get();
+        return view('frontend.pages.product.shop',compact('products','latestCategories','latestProducts','total_products','products_has_discount'));
     }
 
     public function productDetails($id){

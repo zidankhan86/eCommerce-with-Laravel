@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>More To Love</h2>
+                    <h2>ALL PRODUCTS</h2>
                 </div>
                 <div class="featured__controls">
 
@@ -42,10 +42,7 @@
                         </ul>
                              </div>
 
-                        {{-- <div>
-                            <a href="{{route('add.to.cart',$item->id)}}" class="primary-btn">ADD TO CART</a>
-                        </div> --}}
-
+                      
                         <div class="featured__item__text">
 
                             @if($item->discount)

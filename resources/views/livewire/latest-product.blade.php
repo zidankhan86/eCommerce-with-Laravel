@@ -3,16 +3,10 @@
 <br><br>
 <div class="row">
     <div class="col-lg-12">
-
         <div class="featured__controls">
-
             <ul>
                 <li class="active" data-filter="*"><strong>New Arrival</strong></li>
-
-
             </ul>
-
-
         </div>
     </div>
 </div>

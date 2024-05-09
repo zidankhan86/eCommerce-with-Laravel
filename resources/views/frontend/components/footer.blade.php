@@ -4,9 +4,18 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer__about">
+                    @php
+                    $logo = App\Models\CompanyLogo::latest()->first();
+                    @endphp
                     <div class="footer__about__logo">
-                        <a href="{{ route('home') }}"><img src="{{url('frontend/img/logo.png')}}" alt=""></a>
+                        @if($logo)
+                        <a href="{{ route('home') }}"><img src="{{url('/public/uploads/', $logo->image)}}" alt=""></a>
+                        @else
+                            <a href="{{ route('home') }}">Inseart a logo</a>
+                         @endif
                     </div>
+
+                   
                     <ul>
                         <li>Address: </li>
                         <li>Phone: 01711111111</li>

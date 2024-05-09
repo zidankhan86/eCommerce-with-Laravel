@@ -1,18 +1,17 @@
 
-
 <!-- Latest Product Section Begin -->
 <section class="latest-product spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4>Latest Products</h4>
+                        <h4>New In Town</h4>
                         <div class="latest-product__slider owl-carousel">
 
                             <div class="latest-prdouct__slider__item">
 
                             @php
-                $latestProducts = \App\Models\Product::where('status', 1)->latest()->limit(3)->get();
+                            $latestProducts = \App\Models\Product::where('status', 1)->latest()->limit(3)->get();
                             @endphp
 
                             @if($latestProducts->isNotEmpty())
