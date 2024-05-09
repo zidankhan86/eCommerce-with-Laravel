@@ -92,35 +92,6 @@ class CategoryController extends Controller
         return view('backend.pages.category.subCategory',compact('category'));
     }
 
-    public function subCategoryStore(Request $request){
-          //dd($request->all());
-         $validator = Validator::make($request->all(), [
-            'sub_cat_type' => 'required|unique:sub_categories',
-            'type' => 'required',
-            'category_id'=>'required',
-            'status'=>'required'
-        ]);
-
-    if ($validator->fails()) {
-
-        Alert::toast()->error('Failed');
-        return redirect()->back()->withErrors($validator)->withInput();
-    }
-
-        //dd($request->all());
-
-        SubCategory::create([
-
-
-            "sub_cat_type"=>$request->sub_cat_type,
-            "type"=>$request->type,
-            "category_id"=>$request->category_id,
-            "status"=>$request->status
-
-        ]);
-
-        return back()->with('success', 'Sub Category Added Successfully');
-    }
 
 
 }
