@@ -51,19 +51,27 @@
                    Company Logo
                 </a>
 
-               
+                <a class="nav-link" href="{{route('contact.list')}}">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-comment"></i></div>
+                    User Feedback
+                </a>
+                <a class="nav-link" href="#">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-blog"></i></div>
+                    About
+                </a>
 
-
+                <hr>
                 <a class="nav-link collapsed" href="" data-bs-toggle="collapse" data-bs-target="#collapseBanners" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-feather"></i></div>
-                    Banners
+                    CMS Settings
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
+                
                 <div class="collapse" id="collapseBanners" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                <a class="nav-link" href="{{route('hero.list')}}">
-                    <div class="sb-nav-link-icon"><i class="fa-solid fa-feather"></i></div>
-                    Hero Banner
-                </a>
+               
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{route('hero.list')}}">Hero Banner</a>
+                    </nav>
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{route('banner.list.one')}}">Banner-1(Top)</a>
                     </nav>
@@ -74,23 +82,30 @@
                         <a class="nav-link" href="{{route('banner.list')}}">Banner-3(bottom)</a>
 
                     </nav>
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{route('website.form')}}">Domain name</a>
+
+                    </nav>
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="#">About</a>
+
+                    </nav>
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="#">Footer</a>
+
+                    </nav>
 
                 </div>
 
-                <a class="nav-link" href="{{route('contact.list')}}">
-                    <div class="sb-nav-link-icon"><i class="fa-solid fa-comment"></i></div>
-                    User Feedback
-                </a>
+              
+
 
                 <a class="nav-link" href="{{route('report')}}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-print"></i></div>
                     Print Report
                 </a>
-                <hr>
-                <a class="nav-link" href="{{route('sub.category.form')}}">
-                    <div class="sb-nav-link-icon"><i class="fa-solid fa-cog"></i></div>
-                    Settings
-                </a>
+                
+               
             </div>
         </div>
         <div class="sb-sidenav-footer">

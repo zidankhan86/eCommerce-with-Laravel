@@ -56,8 +56,8 @@
             <div class="col-lg-12">
                 <div class="footer__copyright">
                     <div class="footer__copyright__text"><p>
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved  by Zidan eCommerce
-</p></div>
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved  by {{env('app_name')}}
+                    </p></div>
                     <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
                 </div>
             </div>

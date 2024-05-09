@@ -87,7 +87,7 @@ class CategoryController extends Controller
 
         return back();
     }
-    public function SubcategoryForm(){
+    public function websiteTitle(){
         $category=Category::all();
         return view('backend.pages.category.subCategory',compact('category'));
     }

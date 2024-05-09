@@ -35,7 +35,7 @@ class ProductSeeder extends Seeder
                 Product::create([
                     'category_id' => $category->id,
                     'name' => 'Product ' . $i,
-                    'image' => '2023073101.webp',
+                    'image' => '2024050803395039.jpg',
                     'weight' => 1.5 + $i,
                     'stock' => 10 + $i,
                     'price' => 20.99 + $i,

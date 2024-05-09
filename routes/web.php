@@ -98,7 +98,7 @@ Route::get('/admin/notifications', [NotificationController::class, 'notification
 //Category
 Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
 Route::get('/category-form',[CategoryController::class,'categoryForm'])->name('category.form');
-Route::get('/sub-category-form',[CategoryController::class,'SubcategoryForm'])->name('sub.category.form');
+Route::get('/website-title-form',[CategoryController::class,'websiteTitle'])->name('website.form');
 Route::post('/sub-category-store',[CategoryController::class,'subCategoryStore'])->name('sub.category.store');
 Route::post('/category-store',[CategoryController::class,'categoryStore'])->name('category.store');
 Route::get('/category-list',[CategoryController::class,'categoryList'])->name('category.list');
