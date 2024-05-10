@@ -57,7 +57,7 @@ class CategoryController extends Controller
     public function categorupdate(Request $request ,$id){
   // dd($request->all());
   $validator = Validator::make($request->all(), [
-    'name' => 'required|string',
+
     'type' => 'required|string|unique:categories',
             'status'=>'required'
         ]);
@@ -71,14 +71,12 @@ class CategoryController extends Controller
         $update = Category::find($id);
         $update->update([
 
-            "name"=>$request->name,
             "type"=>$request->type,
             "status"=>$request->status
 
         ]);
 
-        Alert::toast()->success('Category Updated');
-        return redirect()->route('category.list');
+        return redirect()->back()->with('success','Category Updated Successfully!!');
     }
 
     public function categordelete($id){

@@ -78,7 +78,7 @@ class ProductController extends Controller
 
         }
 
-                  
+
         public function productList(){
 
             $products = Product::latest()->get();
@@ -139,7 +139,7 @@ class ProductController extends Controller
              'status'               =>$request->status,
             ]);
 
-            return redirect()->back()->with('success','Your post has been edited');
+            return redirect()->back()->with('success','product edited successful!!');
 
         }
 

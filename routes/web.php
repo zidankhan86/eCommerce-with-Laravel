@@ -47,11 +47,14 @@ Route::get('/login-frontend', [LoginController::class, 'showLoginFormFrontend'])
 //profile
 Route::get('/profile',[ProfileController::class,'profile']);
 Route::get('/admin-profile',[ProfileController::class,'adminProfile']);
+
 //AddToCard
-Route::get('add-to-cart/{id}',[AddToCartController::class,'addToCart'])->name('add.to.cart');
-Route::get('/view-cart',[AddToCartController::class,'viewCart']);
-Route::get('/clear-cart',[AddToCartController::class,'clearCart'])->name('cart.clear');
-Route::get('/cart-item/delete/{id}',[AddToCartController::class,'cartItemDelete'])->name('cart.item.delete');
+Route::controller(AddToCartController::class)->group(function(){
+Route::get('add-to-cart/{id}','addToCart')->name('add.to.cart');
+Route::get('/view-cart','viewCart');
+Route::get('/clear-cart','clearCart')->name('cart.clear');
+Route::get('/cart-item/delete/{id}','cartItemDelete')->name('cart.item.delete');
+});
 
  //Social share
 Route::get('/social-media-share', [SocialShareButtonsController::class,'ShareWidget']);
@@ -59,9 +62,11 @@ Route::get('/social-media-share', [SocialShareButtonsController::class,'ShareWid
 //Backend
 
 //Login
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'loginProcess'])->name('login.submit');
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::controller(LoginController::class)->group(function(){
+Route::get('/login','showLoginForm')->name('login');
+Route::post('/login','loginProcess')->name('login.submit');
+Route::get('/logout','logout')->name('logout');
+});
 
 //Registration
 Route::get('/registration', [LoginController::class, 'registration'])->name('registration');
@@ -75,11 +80,18 @@ Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword']
 
 //Middleware for check valid user
 Route::group(['middleware' => 'customerAuth'], function () {
+
     //Wishlist
- Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
- Route::post('/wishlist/add/{id}', [WishlistController::class,'addToWishlist'])->name('add.to.wishlist');
- Route::get('/wishlist/remove/{wishlist}', [WishlistController::class, 'removeFromWishlist'])->name('remove.Wishlist');
- Route::post('/cart/add-from-wishlist/{id}', [WishlistController::class, 'addToCartFromWishlist'])->name('cart.add-from-wishlist');
+
+
+ Route::controller(WishlistController::class)->group(function(){
+    Route::get('/wishlist',  'index')->name('wishlist.index');
+    Route::post('/wishlist/add/{id}', 'addToWishlist')->name('add.to.wishlist');
+    Route::get('/wishlist/remove/{wishlist}','removeFromWishlist')->name('remove.Wishlist');
+    Route::post('/cart/add-from-wishlist/{id}','addToCartFromWishlist')->name('cart.add-from-wishlist');
+ });
+
+
 //Cart Product Order
 Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
 //Single Product Order
@@ -97,29 +109,35 @@ Route::get('/admin/notifications', [NotificationController::class, 'notification
 
 //Category
 Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
-Route::get('/category-form',[CategoryController::class,'categoryForm'])->name('category.form');
-Route::get('/website-title-form',[CategoryController::class,'websiteTitle'])->name('website.form');
-Route::post('/category-store',[CategoryController::class,'categoryStore'])->name('category.store');
-Route::get('/category-list',[CategoryController::class,'categoryList'])->name('category.list');
-Route::get('/category-edit/{id}',[CategoryController::class,'categoryedit'])->name('category.edit');
-Route::post('/category-update/{id}',[CategoryController::class,'categorupdate'])->name('category.update');
-Route::get('/category-delete/{id}',[CategoryController::class,'categordelete'])->name('category.delete');
+
+//Category
+Route::controller(CategoryController::class)->group(function(){
+    Route::get('/category-form','categoryForm')->name('category.form');
+    Route::get('/website-title-form','websiteTitle')->name('website.form');
+    Route::post('/category-store','categoryStore')->name('category.store');
+    Route::get('/category-list','categoryList')->name('category.list');
+    Route::get('/category-edit/{id}','categoryedit')->name('category.edit');
+    Route::post('/category-update/{id}','categorupdate')->name('category.update');
+    Route::get('/category-delete/{id}','categordelete')->name('category.delete');
+});
+
 
 //Product
-Route::get('/product-form',[ProductController::class,'productForm'])->name('product.form');
-Route::post('/product-store',[ProductController::class,'productStore'])->name('product.store');
-Route::get('/product-list',[ProductController::class,'productList'])->name('product.list');
-Route::get('/product-edit/{id}',[ProductController::class,'productEdit'])->name('product.edit');
-Route::post('/product-update/{id}',[ProductController::class,'productupdate'])->name('product.update');
-Route::get('/product-delete/{id}',[ProductController::class,'productDelete'])->name('product.delete');
-Route::get('/new-arrival-product-form',[ProductController::class,'NewArrivalproductForm'])->name('new.arrival.product.form');
-Route::get('/new-arrival-product-list',[ProductController::class,'NewArrivalproductList'])->name('new.arrival.product.list');
-Route::post('/new-product-store',[ProductController::class,'newProductStore'])->name('new.product.store');
-Route::post('/product/rate/{id}', [ProductController::class,'storeRating'])->name('product.rate');
-
+Route::controller(ProductController::class)->group(function(){
+Route::get('/product-form','productForm')->name('product.form');
+Route::post('/product-store','productStore')->name('product.store');
+Route::get('/product-list','productList')->name('product.list');
+Route::get('/product-edit/{id}','productEdit')->name('product.edit');
+Route::post('/product-update/{id}','productupdate')->name('product.update');
+Route::get('/product-delete/{id}','productDelete')->name('product.delete');
+Route::get('/new-arrival-product-form','NewArrivalproductForm')->name('new.arrival.product.form');
+Route::get('/new-arrival-product-list','NewArrivalproductList')->name('new.arrival.product.list');
+Route::post('/new-product-store','newProductStore')->name('new.product.store');
+Route::post('/product/rate/{id}','storeRating')->name('product.rate');
 //Trending Products
-Route::get('/trending/product', [ProductController::class,'trendingProduct'])->name('trending.product');
-Route::get('/trending/status/{id}', [ProductController::class,'trendingStatus'])->name('trending.status');
+Route::get('/trending/product', 'trendingProduct')->name('trending.product');
+Route::get('/trending/status/{id}','trendingStatus')->name('trending.status');
+});
 
 //Banner
 Route::get('/banner-form-one',[BannerController::class,'bannerFormOne'])->name('banner.form.one');
