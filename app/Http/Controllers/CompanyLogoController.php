@@ -64,4 +64,37 @@ if ($request->hasFile('image')) {
     $logo = CompanyLogo::all();
     return view('backend.pages.companyLogo.logoList',compact('logo'));
    }
-}
+
+   public function Logo_edit($id){
+
+    $logo = CompanyLogo::find($id);
+
+    return view('backend.pages.companyLogo.edit',compact('logo'));
+   }
+
+   public function logo_update(Request $request,$id){
+    $validator = Validator::make($request->all(), [
+        'tittle' => 'nullable',
+        'image' => 'required|max:200',
+    ]);
+
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+
+    $imageName=null;
+    if ($request->hasFile('image')) {
+        $imageName=date('Ymdhsis').'.'.$request->file('image')->getClientOriginalExtension();
+        $request->file('image')->storeAs('uploads', $imageName, 'public');
+    }
+    $update = CompanyLogo::find($id);
+    $update->update([
+
+        "tittle"=>$request->tittle,
+        "image"=>$imageName
+    ]);
+
+    return redirect()->back()->with('success','Logo Updated');
+
+    }
+    }

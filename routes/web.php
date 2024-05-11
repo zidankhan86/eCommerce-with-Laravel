@@ -48,29 +48,24 @@ Route::get('/login-frontend', [LoginController::class, 'showLoginFormFrontend'])
 Route::get('/profile',[ProfileController::class,'profile']);
 Route::get('/admin-profile',[ProfileController::class,'adminProfile']);
 
-//AddToCard
-Route::controller(AddToCartController::class)->group(function(){
-Route::get('add-to-cart/{id}','addToCart')->name('add.to.cart');
-Route::get('/view-cart','viewCart');
-Route::get('/clear-cart','clearCart')->name('cart.clear');
-Route::get('/cart-item/delete/{id}','cartItemDelete')->name('cart.item.delete');
-});
+
 
  //Social share
 Route::get('/social-media-share', [SocialShareButtonsController::class,'ShareWidget']);
 
 //Backend
 
-//Login
+//Login //Registration
 Route::controller(LoginController::class)->group(function(){
-Route::get('/login','showLoginForm')->name('login');
-Route::post('/login','loginProcess')->name('login.submit');
-Route::get('/logout','logout')->name('logout');
+    Route::get('/login','showLoginForm')->name('login');
+    Route::post('/login','loginProcess')->name('login.submit');
+    Route::get('/logout','logout')->name('logout');
+    Route::get('/registration', 'registration')->name('registration');
+    Route::post('/registration', 'registrationStore')->name('registration.submit');
 });
 
-//Registration
-Route::get('/registration', [LoginController::class, 'registration'])->name('registration');
-Route::post('/registration', [LoginController::class, 'registrationStore'])->name('registration.submit');
+
+
 
 //Forget password
 Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
@@ -80,10 +75,14 @@ Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword']
 
 //Middleware for check valid user
 Route::group(['middleware' => 'customerAuth'], function () {
-
+    //AddToCard
+Route::controller(AddToCartController::class)->group(function(){
+    Route::get('add-to-cart/{id}','addToCart')->name('add.to.cart');
+    Route::get('/view-cart','viewCart');
+    Route::get('/clear-cart','clearCart')->name('cart.clear');
+    Route::get('/cart-item/delete/{id}','cartItemDelete')->name('cart.item.delete');
+    });
     //Wishlist
-
-
  Route::controller(WishlistController::class)->group(function(){
     Route::get('/wishlist',  'index')->name('wishlist.index');
     Route::post('/wishlist/add/{id}', 'addToWishlist')->name('add.to.wishlist');
@@ -121,58 +120,65 @@ Route::controller(CategoryController::class)->group(function(){
     Route::get('/category-delete/{id}','categordelete')->name('category.delete');
 });
 
-
 //Product
 Route::controller(ProductController::class)->group(function(){
-Route::get('/product-form','productForm')->name('product.form');
-Route::post('/product-store','productStore')->name('product.store');
-Route::get('/product-list','productList')->name('product.list');
-Route::get('/product-edit/{id}','productEdit')->name('product.edit');
-Route::post('/product-update/{id}','productupdate')->name('product.update');
-Route::get('/product-delete/{id}','productDelete')->name('product.delete');
-Route::get('/new-arrival-product-form','NewArrivalproductForm')->name('new.arrival.product.form');
-Route::get('/new-arrival-product-list','NewArrivalproductList')->name('new.arrival.product.list');
-Route::post('/new-product-store','newProductStore')->name('new.product.store');
-Route::post('/product/rate/{id}','storeRating')->name('product.rate');
-//Trending Products
-Route::get('/trending/product', 'trendingProduct')->name('trending.product');
-Route::get('/trending/status/{id}','trendingStatus')->name('trending.status');
+    Route::get('/product-form','productForm')->name('product.form');
+    Route::post('/product-store','productStore')->name('product.store');
+    Route::get('/product-list','productList')->name('product.list');
+    Route::get('/product-edit/{id}','productEdit')->name('product.edit');
+    Route::post('/product-update/{id}','productupdate')->name('product.update');
+    Route::get('/product-delete/{id}','productDelete')->name('product.delete');
+    Route::get('/new-arrival-product-form','NewArrivalproductForm')->name('new.arrival.product.form');
+    Route::get('/new-arrival-product-list','NewArrivalproductList')->name('new.arrival.product.list');
+    Route::post('/new-product-store','newProductStore')->name('new.product.store');
+    Route::post('/product/rate/{id}','storeRating')->name('product.rate');
+    //Trending Products
+    Route::get('/trending/product', 'trendingProduct')->name('trending.product');
+    Route::get('/trending/status/{id}','trendingStatus')->name('trending.status');
 });
 
 //Banner
-Route::get('/banner-form-one',[BannerController::class,'bannerFormOne'])->name('banner.form.one');
-Route::get('/banner-list-one',[BannerController::class,'bannerListOne'])->name('banner.list.one');
-Route::post('/banner-store-one',[BannerController::class,'bannerStoreOne'])->name('banner.store.one');
-Route::get('/bander-one-delete/{id}',[BannerController::class,'bannerOneDelete'])->name('banner.one.delete');
-Route::get('/banner-form-two',[BannerController::class,'bannerFormTwo'])->name('banner.form.two');
-Route::get('/banner-list-two',[BannerController::class,'bannerListTwo'])->name('banner.list.two');
-Route::post('/banner-store-two',[BannerController::class,'bannerStoreTwo'])->name('banner.store.two');
-Route::get('/bander-two-delete/{id}',[BannerController::class,'bannerTwoDelete'])->name('banner.two.delete');
-Route::get('/banner-form',[BannerController::class,'bannerForm'])->name('banner.form');
-Route::post('/banner-store',[BannerController::class,'bannerStore'])->name('banner.store');
-Route::get('/banner-list',[BannerController::class,'bannerlist'])->name('banner.list');
-Route::post('/banner-update/{id}',[BannerController::class,'bannerupdate'])->name('banner.update');
-Route::get('/banner-delete/{id}',[BannerController::class,'bannerdelete'])->name('banner.delete');
-Route::get('/banner-edit/{id}',[BannerController::class,'banneredit'])->name('banner.edit');
-
+Route::controller(BannerController::class)->group(function(){
+    Route::get('/banner-form-one','bannerFormOne')->name('banner.form.one');
+    Route::get('/banner-list-one','bannerListOne')->name('banner.list.one');
+    Route::post('/banner-store-one','bannerStoreOne')->name('banner.store.one');
+    Route::get('/bander-one-delete/{id}','bannerOneDelete')->name('banner.one.delete');
+    Route::get('/banner-form-two','bannerFormTwo')->name('banner.form.two');
+    Route::get('/banner-list-two','bannerListTwo')->name('banner.list.two');
+    Route::post('/banner-store-two','bannerStoreTwo')->name('banner.store.two');
+    Route::get('/bander-two-delete/{id}','bannerTwoDelete')->name('banner.two.delete');
+    Route::get('/banner-form','bannerForm')->name('banner.form');
+    Route::post('/banner-store','bannerStore')->name('banner.store');
+    Route::get('/banner-list','bannerlist')->name('banner.list');
+    Route::post('/banner-update/{id}','bannerupdate')->name('banner.update');
+    Route::get('/banner-delete/{id}','bannerdelete')->name('banner.delete');
+    Route::get('/banner-edit/{id}','banneredit')->name('banner.edit');
+});
 //Logo
-Route::get('/logo-form',[CompanyLogoController::class,'LogoForm'])->name('logo.form');
-Route::post('/logo-store',[CompanyLogoController::class,'LogoStore'])->name('logo.store');
-Route::get('/logo-delete/{id}',[CompanyLogoController::class,'LogoDelete'])->name('logo.delete');
-Route::get('/logo-list',[CompanyLogoController::class,'LogoList'])->name('logo.list');
-
+Route::controller(CompanyLogoController::class)->group(function(){
+    Route::get('/logo-form','LogoForm')->name('logo.form');
+    Route::post('/logo-store','LogoStore')->name('logo.store');
+    Route::get('/logo-delete/{id}','LogoDelete')->name('logo.delete');
+    Route::get('/logo-list','LogoList')->name('logo.list');
+    Route::get('/logo-edit/{id}','Logo_edit')->name('logo.edit');
+    Route::post('/logo-update/{id}','logo_update')->name('logo.update');
+});
 
 //Hero
-Route::get('/hero-form',[HeroBannerController::class,'heroPost'])->name('hero.post');
-Route::post('/hero-store',[HeroBannerController::class,'herostore'])->name('hero.store');
-Route::get('/hero-list',[HeroBannerController::class,'herolist'])->name('hero.list');
-Route::get('/hero-delete/{id}',[HeroBannerController::class,'herodelete'])->name('hero.delete');
+Route::controller(HeroBannerController::class)->group(function(){
+    Route::get('/hero-form','heroPost')->name('hero.post');
+    Route::post('/hero-store','herostore')->name('hero.store');
+    Route::get('/hero-list','herolist')->name('hero.list');
+    Route::get('/hero-delete/{id}','herodelete')->name('hero.delete');
+});
 
 //Order
-Route::get('/order-list',[OrderController::class,'orderList'])->name('order.list');
-Route::get('/order-invoice/{id}',[OrderController::class,'orderinvoice'])->name('order.invoice');
-Route::get('/report',[ReportController::class,'report'])->name('report');
-Route::get('/report/search',[ReportController::class,'reportSearch'])->name('order.report.search');
+Route::controller(OrderController::class)->group(function(){
+    Route::get('/order-list','orderList')->name('order.list');
+    Route::get('/order-invoice/{id}','orderinvoice')->name('order.invoice');
+    Route::get('/report','report')->name('report');
+    Route::get('/report/search','reportSearch')->name('order.report.search');
+});
 
 Route::get('/contact-list',[ContactController::class,'contactlist'])->name('contact.list');
 Route::get('/contact-view/{id}',[ContactController::class,'contactview'])->name('contact.view');

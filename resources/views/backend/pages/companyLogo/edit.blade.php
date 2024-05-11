@@ -4,7 +4,7 @@
     <br>
     <h4 class=" text-success text-center">Company Logo</h4>
 
-    <form action="{{ route('logo.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('logo.update',$logo->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         @if (session('success'))
@@ -14,11 +14,9 @@
             <p class="alert alert-danger"> {{ session('error') }}
         @endif
 
-
-
         <div class="mb-3 mx-sm-2">
             <label for="exampleInputName1" class="form-label">Banner Title(Optional)</label>
-            <input type="text" class="form-control" value="{{ old('tittle') }}" id="title" name="tittle"
+            <input type="text" class="form-control" value="{{ $logo->tittle }}" id="title" name="tittle"
                 placeholder="Dry Food..">
             @error('tittle')
                 <strong class="text-danger">{{ $message }}</strong>
@@ -30,7 +28,7 @@
         <div class="mb-3 mx-sm-2">
             <label for="exampleInputName2" class="form-label">Upload Image <strong class="text-danger">*(IMAGE SIZE MAX
                     250kb)*</strong></label>
-            <input type="file" class="form-control" value="{{ old('image') }}" id="image" name="image">
+            <input type="file" class="form-control" value="{{ $logo->image }}" id="image" name="image">
             @error('image')
                 <strong class="text-danger">{{ $message }}</strong>
             @enderror
