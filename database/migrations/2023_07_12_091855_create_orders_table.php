@@ -24,6 +24,9 @@ return new class extends Migration
             $table->string('note')->nullable();
             $table->decimal('total_price')->default(0.00)->nullable();
             $table->string('name')->nullable();
+            $table->string('status')->default('processing');
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('product_id')->nullable()->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

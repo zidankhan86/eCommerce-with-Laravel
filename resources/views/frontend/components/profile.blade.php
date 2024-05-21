@@ -27,24 +27,58 @@
 
             </li>
             {{-- <button type="submit" style="background-color: #ff5733; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Logout</button> --}}
-        </form>
-        </ul><br><br>
-
-        <!-- Order History -->
-        {{-- <h3>Order History</h3>
-        <ul style="list-style: none; padding: 0; text-align: left;">
-            <li>
-                <strong>Order #12345</strong> - $50.00<br>
-                <span>Placed on: January 5, 2023</span>
-            </li>
-            <li>
-                <strong>Order #67890</strong> - $75.00<br>
-                <span>Placed on: February 15, 2023</span>
-            </li>
-            <!-- Add more order history entries here -->
-        </ul> --}}
-
-        <!-- Logout Button -->
+             </form>
+                        </ul><br><br>
+                    </div><br><br>
+                            <!-- Booking History -->
+                            <h3>Booking History</h3><br>                 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                      <table class="table">
+                          <thead>
+                              <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">Booking Name</th>
+                                  <th scope="col">Order ID</th>
+                                  <th scope="col">Pay</th>
+                                  <th scope="col">Placed On</th>
+                                  <th scope="col">Transaction No</th>
+                                  <th scope="col">Order Status</th>
+                                  <th scope="col">Action</th>
+                                  <th scope="col">Invoice</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              @if (empty($order))
+                              <tr>
+                                  <td colspan="8">No Order History</td>
+                              </tr>
+                              @else
+                              @foreach ($order as $index => $item)
+                              <tr>
+                                  <th scope="row">{{ $index + 1 }}</th>
+                                  <td>{{ $item->first_name }}</td>
+                                  <td>#{{ $item->total_price }}{{ $item->id }}67890</td>
+                                  <td>BDT {{ $item->total_price }}</td>
+                                  <td>{{ $item->created_at }}</td>
+                                 
+                                  <td>{{ $item->status }}</td>
+                                  <td>
+                                      {{-- @if($item->status == 'Pending')
+                                      <a href="{{ route('cancel.hotel', $item->id) }}" class="btn btn-danger">Cancel Booking</a>
+                                      @elseif($item->status == 'Canceled')
+                                      <button class="genric-btn danger circle" style="color: rgb(223, 13, 48);">Booking Canceled</button>
+                                      @endif --}}
+                                  </td>
+                                  
+                              </tr>
+                              @endforeach
+                              @endif
+                          </tbody>
+                      </table>
+                  </div>
 
     </div>
 </body>

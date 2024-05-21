@@ -102,7 +102,16 @@
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                            <label for=""></label>
+                            <input type="hidden"
+                                class="form-control" name="user_id" value="{{ auth()->user()->id }}">
+                            
+                            </div>
 
+                            <input type="hidden" name="product_id" value="{{$orders->id}}">
+
+                            
 
                             <div class="checkout__input__checkbox">
                                 <label for="acc">

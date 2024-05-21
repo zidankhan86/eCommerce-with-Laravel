@@ -128,9 +128,6 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('/product-edit/{id}','productEdit')->name('product.edit');
     Route::post('/product-update/{id}','productupdate')->name('product.update');
     Route::get('/product-delete/{id}','productDelete')->name('product.delete');
-    Route::get('/new-arrival-product-form','NewArrivalproductForm')->name('new.arrival.product.form');
-    Route::get('/new-arrival-product-list','NewArrivalproductList')->name('new.arrival.product.list');
-    Route::post('/new-product-store','newProductStore')->name('new.product.store');
     Route::post('/product/rate/{id}','storeRating')->name('product.rate');
     //Trending Products
     Route::get('/trending/product', 'trendingProduct')->name('trending.product');

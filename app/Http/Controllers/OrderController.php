@@ -10,17 +10,21 @@ class OrderController extends Controller
     public function orderList(){
 
         $orders = Order::latest()->get();
+
         return view('backend.pages.order.orderList',compact('orders'));
     }
 
     public function orderinvoice($id){
 
         $invoice = Order::find($id);
+
         return view('backend.pages.order.orderView',compact('invoice'));
     }
 
     public function orderTracking($id){
+
         Order::find($id);
+
         return view('frontend.pages.orderTrack.orderTrack');
     }
 
@@ -48,14 +52,10 @@ class OrderController extends Controller
             return redirect()->back();
         }
 
-
-
        $from=$request->from_date;
        $to=$request->to_date;
 
-
 //       $status=$request->status;
-
 
         $orders=Order::whereBetween('created_at', [$from, $to])->get();
         return view('backend.pages.report.report',compact('orders'));

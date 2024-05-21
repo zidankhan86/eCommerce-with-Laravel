@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-  <html lang="zxx">
-
-
-
-  <body>
-
-
-
 
       <!-- Checkout Section Begin -->
       <section class="checkout spad">
@@ -121,12 +112,7 @@
                                   </div>
 
 
-
-
-
-
-
-
+                                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                                   <div class="col-lg-6">
                                       <div class="checkout__input">
                                           <p>Email<span>*</span></p>

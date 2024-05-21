@@ -18,10 +18,10 @@ class Product extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function ProductCategory(): BelongsTo
-    {
-        return $this->belongsTo(Category::class, 'category_id', 'id');
-    }
+        public function ProductCategory(): BelongsTo
+        {
+            return $this->belongsTo(Category::class, 'category_id', 'id');
+        }
 
         public function ratings()
         {

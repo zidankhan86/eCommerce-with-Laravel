@@ -74,6 +74,7 @@ class ProductController extends Controller
             'note'              => 'nullable|string',
             'total_price'       => 'nullable|numeric|min:0',
             'name'              => 'nullable|string',
+
         ]);
 
         if ($validator->fails()) {
@@ -102,6 +103,8 @@ class ProductController extends Controller
             "total_price"       => $subtotal,
             "name"              => $request->name,
             "name"              => $productNames,
+            "user_id"           => $request->user_id,
+            "product_id"           => $request->product_id,
         ]);
 
 
@@ -124,6 +127,7 @@ class ProductController extends Controller
 
 
         $product = Product::findOrFail($id);
-        return view('frontend.pages.product.checkoutSigleProduct',compact('product'));
+        $orders= Order::find($id);
+        return view('frontend.pages.product.checkoutSigleProduct',compact('product','orders'));
     }
 }
