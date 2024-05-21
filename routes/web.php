@@ -94,7 +94,7 @@ Route::controller(AddToCartController::class)->group(function(){
 //Cart Product Order
 Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
 //Single Product Order
-Route::get('/product-checkout-single/product/{id}',[FrontendProductController::class,'singleProductCheckout']);
+// Route::get('/product-checkout-single/product/{id}',[FrontendProductController::class,'singleProductCheckout']);
 //Order Create for both
 Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
 //Order Tracking
@@ -173,6 +173,11 @@ Route::controller(HeroBannerController::class)->group(function(){
 Route::controller(OrderController::class)->group(function(){
     Route::get('/order-list','orderList')->name('order.list');
     Route::get('/order-invoice/{id}','orderinvoice')->name('order.invoice');
+    
+});
+
+Route::controller(ReportController::class)->group(function(){
+
     Route::get('/report','report')->name('report');
     Route::get('/report/search','reportSearch')->name('order.report.search');
 });

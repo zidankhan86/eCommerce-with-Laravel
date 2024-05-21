@@ -109,7 +109,7 @@
                             
                             </div>
 
-                            <input type="hidden" name="product_id" value="{{$orders->id}}">
+                            <input type="hidden" name="product_id" value="{{$product->id}}">
 
                             
 

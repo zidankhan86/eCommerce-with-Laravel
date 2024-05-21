@@ -31,7 +31,7 @@
                         <div class="product__details__quantity">
                             <div class="">
                                 <div class="">
-                                    <a href="{{url('/product-checkout-single/product',$details->id)}}" class="primary-btn">ORDER</a>
+                                    <a href="{{route('product.checkout',$details->id)}}" class="primary-btn">ORDER</a>
                                 </div>
                             </div>
                         </div>

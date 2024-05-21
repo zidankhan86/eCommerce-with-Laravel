@@ -10,23 +10,28 @@
 
 <form action="{{route('order.report.search')}}" method="get">
 
-<div class="row">
-    <div class="col-md-4">
-        <label for="">From date:</label>
-        <input name="from_date" type="date" class="form-control">
-
+<div class="container">
+        <div class="row align-items-end">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="from_date">From date:</label>
+                    <input name="from_date" type="date" class="form-control" id="from_date">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="to_date">To date:</label>
+                    <input name="to_date" type="date" class="form-control" id="to_date">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-success btn-block">Search</button>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <label for="">To date:</label>
-        <input name="to_date" type="date" class="form-control">
-    </div>
-    <div class="col-md-4">
-        <button type="submit" class="btn btn-success">Search</button>
-    </div>
-</div>
 
 </form>
-<br><div id="orderReport">
+<div id="orderReport">
 
 <h1>Order Reports- {{date('Y-m-d')}}</h1><br>
     <table class="table table-striped">

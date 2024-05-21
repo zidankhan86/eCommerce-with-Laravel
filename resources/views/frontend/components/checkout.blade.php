@@ -113,6 +113,7 @@
 
 
                                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                                <input type="hidden" name="product_id" value="{{$products->id}}">
                                   <div class="col-lg-6">
                                       <div class="checkout__input">
                                           <p>Email<span>*</span></p>

@@ -20,7 +20,6 @@ class ReportController extends Controller
     public function reportSearch(Request $request)
     {
 
-    //dd('yes');
         $validator = Validator::make($request->all(), [
             'from_date'    => 'required|date',
             'to_date'      => 'required|date|after:from_date',
@@ -33,16 +32,12 @@ class ReportController extends Controller
             return redirect()->back();
         }
 
-
-
        $from=$request->from_date;
+
        $to=$request->to_date;
 
-
-//       $status=$request->status;
-
-
         $orders=Order::whereBetween('created_at', [$from, $to])->get();
+        
         return view('backend.pages.report.report',compact('orders'));
 
     }

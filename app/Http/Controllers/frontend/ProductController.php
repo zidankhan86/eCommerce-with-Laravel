@@ -18,11 +18,16 @@ class ProductController extends Controller
     public function product(){
 
         $products = Product::simplePaginate(12);
+
         $latestCategories = Category::latest()->limit(5)->get();
+
         //Latest Products
         $latestProducts = Product::where('status',1)->latest()->limit(7)->get();
+
         $total_products = Product::count();
+
         $products_has_discount = Product::whereNotNull('discount')->latest()->limit(4)->get();
+
         return view('frontend.pages.product.shop',compact('products','latestCategories','latestProducts','total_products','products_has_discount'));
     }
 
@@ -99,12 +104,12 @@ class ProductController extends Controller
             "phone"             =>$request->phone,
             "email"             =>$request->email,
             "note"              =>$request->note,
-            "total_price"       => $request->total_price,
-            "total_price"       => $subtotal,
-            "name"              => $request->name,
-            "name"              => $productNames,
-            "user_id"           => $request->user_id,
-            "product_id"           => $request->product_id,
+            "total_price"       =>$request->total_price,
+            "total_price"       =>$subtotal,
+            "name"              =>$request->name,
+            "name"              =>$productNames,
+            "user_id"           =>$request->user_id,
+            "product_id"        =>$request->product_id,
         ]);
 
 
@@ -123,11 +128,4 @@ class ProductController extends Controller
     }
 
 
-    public function singleProductCheckout($id){
-
-
-        $product = Product::findOrFail($id);
-        $orders= Order::find($id);
-        return view('frontend.pages.product.checkoutSigleProduct',compact('product','orders'));
-    }
 }
