@@ -28,13 +28,7 @@
                         <h5 style="color: rgb(214, 57, 17)">{{ $details->price }} Tk.</h5>
                         @endif
                         <p>{!!$details->description!!}</p>
-                        <div class="product__details__quantity">
-                            <div class="">
-                                <div class="">
-                                    <a href="{{route('product.checkout',$details->id)}}" class="primary-btn">ORDER</a>
-                                </div>
-                            </div>
-                        </div>
+                        
 
                         <a href="{{route('add.to.cart',$details->id)}}" class="primary-btn">ADD TO CART</a>
                         {{-- <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a> --}}

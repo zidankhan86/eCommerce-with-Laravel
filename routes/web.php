@@ -93,8 +93,7 @@ Route::controller(AddToCartController::class)->group(function(){
 
 //Cart Product Order
 Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
-//Single Product Order
-// Route::get('/product-checkout-single/product/{id}',[FrontendProductController::class,'singleProductCheckout']);
+
 //Order Create for both
 Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
 //Order Tracking

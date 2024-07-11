@@ -53,47 +53,37 @@
 
                 <a class="nav-link" href="{{route('contact.list')}}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-comment"></i></div>
-                    User Feedback
+                    Messages
                 </a>
-                <a class="nav-link" href="#">
-                    <div class="sb-nav-link-icon"><i class="fa-solid fa-blog"></i></div>
-                    About
-                </a>
+           
 
                 <hr>
                 <a class="nav-link collapsed" href="" data-bs-toggle="collapse" data-bs-target="#collapseBanners" aria-expanded="false" aria-controls="collapseLayouts">
-                    <div class="sb-nav-link-icon"><i class="fa-solid fa-feather"></i></div>
-                    CMS Settings
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-cog"></i></div>
+                    Settings
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
                 
                 <div class="collapse" id="collapseBanners" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{route('hero.list')}}">Hero Banner</a>
+                        <a class="nav-link" href="{{route('hero.list')}}">Website Banner</a>
                     </nav>
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{route('banner.list.one')}}">Banner-1(Top)</a>
+                        <a class="nav-link" href="{{route('banner.list.one')}}">Set Banner 1</a>
                     </nav>
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{route('banner.list.two')}}">Banner-2(Middle)</a>
-                    </nav>
+                        <a class="nav-link" href="{{route('banner.list.two')}}">Set Banner 2</a>
+                    </nav>  
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{route('banner.list')}}">Banner-3(bottom)</a>
+                        <a class="nav-link" href="{{route('banner.list')}}">Set Banner 3</a>
 
                     </nav>
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{route('website.form')}}">Domain name</a>
+                        <a class="nav-link" href="{{route('website.form')}}">Website name</a>
 
                     </nav>
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">About</a>
-
-                    </nav>
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Footer</a>
-
-                    </nav>
+                   
 
                 </div>
 

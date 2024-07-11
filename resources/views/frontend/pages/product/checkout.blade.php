@@ -4,4 +4,4 @@
 
 @include('frontend.components.checkout')
 
-  @endsection
+@endsection
